@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: alfgarci <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/04 13:36:09 by alfgarci          #+#    #+#              #
-#    Updated: 2023/11/04 13:36:10 by alfgarci         ###   ########.fr        #
+#    Updated: 2023/11/04 13:56:17 by vicgarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,10 +19,11 @@ NC		=\033[0m
 #---cub3d-------------------------------
 NAME 	=	cub3d
 	#---SRC
-EXTRA_DIR	=	extra
-STARTUP_DIR	=	sturtup
+EXTRA_DIR	=	extras
+STARTUP_DIR	=	startup
 SRC 	=	${STARTUP_DIR}/init.c \
-			${EXTRA_DIR}/exit_error.c 
+			${EXTRA_DIR}/exit_error.c \
+			main.c \
 
 	#---OBJ
 OBJ 	=	${SRC:.c=.o}
@@ -31,8 +32,8 @@ INC 	=	.
 
 #---LIBFT-------------------------------
 LIBFT_DIR	=	libft_def
-LIBFT_NAME	=	ft_def
-	#---INC
+LIBFT_NAME	=	ft
+#---INC
 LIBFT_INC	= ${LIBFT_DIR}
 
 #---MATH--------------------------------
