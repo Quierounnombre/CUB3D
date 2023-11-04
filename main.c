@@ -1,35 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   define.h                                           :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 14:22:25 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/11/04 13:48:37 by vicgarci         ###   ########.fr       */
+/*   Created: 2023/11/04 13:36:16 by vicgarci          #+#    #+#             */
+/*   Updated: 2023/11/04 13:52:00 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DEFINE_H
-# define DEFINE_H
+#include "Cub3D.h"
 
-//Parse info
+int	main(int argc, char **argv)
+{
+	t_cube	*cube;
 
-# define WALL 1
-# define EMPTY 0
-# define WEST 2
-# define SOUTH 3
-# define NORTH 4
-# define EAST 5
-
-//Error msg
-
-# define ERROR_MSG "Error\n"
-# define ERROR_MALLOC "Malloc has fail :(\n"
-
-//Size of a piece of wall
-
-# define DIM_X	64
-# define DIM_Y	64
-
-#endif
+	(void)argc;
+	(void)argv;
+	cube = init();
+	free(cube);
+	return (0);
+}

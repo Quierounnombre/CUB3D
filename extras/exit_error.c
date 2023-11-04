@@ -1,35 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   define.h                                           :+:      :+:    :+:   */
+/*   exit_error.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 14:22:25 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/11/04 13:48:37 by vicgarci         ###   ########.fr       */
+/*   Created: 2023/11/04 13:42:02 by vicgarci          #+#    #+#             */
+/*   Updated: 2023/11/04 13:47:16 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DEFINE_H
-# define DEFINE_H
+#include "../Cub3D.h"
 
-//Parse info
-
-# define WALL 1
-# define EMPTY 0
-# define WEST 2
-# define SOUTH 3
-# define NORTH 4
-# define EAST 5
-
-//Error msg
-
-# define ERROR_MSG "Error\n"
-# define ERROR_MALLOC "Malloc has fail :(\n"
-
-//Size of a piece of wall
-
-# define DIM_X	64
-# define DIM_Y	64
-
-#endif
+void	exit_error(char *s, int code);
+{
+	ft_putstr_fd(ERROR_MSG, STDERR_FILENO);
+	ft_putstr_fd(s, STDERR_FILENO);
+	exit(code);
+}
