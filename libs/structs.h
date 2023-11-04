@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:22:29 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/11/04 16:38:14 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/11/04 17:17:43 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ typedef struct t_map
 
 typedef struct s_cam
 {
-	int			angel;
+	int			angle;
 	int			fov;
 	t_vector2D	pos;
 }	t_cam;
