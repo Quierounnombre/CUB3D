@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:22:25 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/11/04 14:14:41 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/11/04 16:37:27 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,10 @@
 
 # define ERROR_MSG "Error\n"
 # define ERROR_MALLOC "Malloc has fail :(\n"
+# define ERROR_OPEN "Open has fail :(\n"
+# define ERROR_PARSE "There are numerous reasons why this error message could \
+apear but mainly, the user has submited a wrong formated file or didnt submit \
+the right number of files in the first place (ONLY 1, NOT 0, NOT 2).\n"
 
 //Size of a piece of wall
 

@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 13:36:16 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/11/04 14:00:12 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/11/04 16:52:39 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,14 @@ int	main(int argc, char **argv)
 {
 	t_cube	*cube;
 
-	(void)argc;
-	(void)argv;
-	cube = init();
-	free(cube);
-	return (0);
+	cube = NULL;
+	if (parse(argc, argv))
+	{
+		cube = init(*argv);
+		free(cube);
+	}
+	else
+		exit_error(ERROR_PARSE, errno, cube);
 }
 
 

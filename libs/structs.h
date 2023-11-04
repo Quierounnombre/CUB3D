@@ -6,17 +6,17 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:22:29 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/11/04 14:07:25 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/11/04 16:38:14 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCTS_H
 # define STRUCTS_H
 
-# include "libft_def/libft.h"
-
 typedef int		t_point;
 typedef void	*t_img;
+typedef int		t_fd;
+typedef char	*t_path;
 
 typedef struct s_color
 {
@@ -50,6 +50,7 @@ typedef struct s_cam
 
 typedef struct s_cube
 {
+	t_path	file;
 	t_map	*map;
 	t_cam	*cam;
 }	t_cube;

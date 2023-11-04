@@ -6,7 +6,7 @@
 #    By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/04 13:36:09 by alfgarci          #+#    #+#              #
-#    Updated: 2023/11/04 14:45:32 by vicgarci         ###   ########.fr        #
+#    Updated: 2023/11/04 16:20:29 by vicgarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,17 +31,25 @@ SRCS_STARTUP = $(addprefix $(STARTUP_DIR), $(addsuffix .c, $(FILES_STARTUP)))
 
 FILES_EXTRAS =	exit_error \
 				free_cube \
+				open_fd \
 
 EXTRAS_DIR = ./extras/
 SRCS_EXTRAS = $(addprefix $(EXTRAS_DIR), $(addsuffix .c, $(FILES_EXTRAS)))
 
+FILES_PARSE =	parse \
+				check_argv \
+
+PARSE_DIR = ./parse/
+SRCS_PARSE = $(addprefix $(PARSE_DIR), $(addsuffix .c, $(FILES_PARSE)))
+
 SRC 	=	$(SRCS_STARTUP) \
 			$(SRCS_EXTRAS) \
+			$(SRCS_PARSE) \
 			main.c \
 
-	#---OBJ
+#---OBJ
 OBJ 	=	${SRC:.c=.o}
-	#---INC
+#---INC
 INC 	=	.
 
 #---LIBFT-------------------------------
