@@ -1,23 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_map.c                                         :+:      :+:    :+:   */
+/*   free_cube.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/04 14:08:03 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/11/04 14:49:34 by vicgarci         ###   ########.fr       */
+/*   Created: 2023/11/04 14:40:45 by vicgarci          #+#    #+#             */
+/*   Updated: 2023/11/04 14:45:05 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Cub3D.h"
 
-t_map	*init_map(t_cube *cube)
+static void	free_map(t_map	*map)
 {
-	t_map	*local_map;
+	int		i;
 
-	local_map = (t_map *)malloc(sizeof(t_map));
-	if (!local_map)
-		exit_error(ERROR_MALLOC, errno, cube);
-	return (local_map);
+	i = 0;
+	while (map->map[i])
+	{
+		free(map->map[i]);
+		i++;
+	}
+	free(map->map);
+	free(map);
+}
+
+void	free_cube(t_cube	*cube)
+{
+	if (cube)
+	{
+		if (cube->cam)
+			free(cube->cam);
+		if (cube->map)
+			free_map(cube->map);
+		free(cube);
+	}
 }

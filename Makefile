@@ -6,7 +6,7 @@
 #    By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/04 13:36:09 by alfgarci          #+#    #+#              #
-#    Updated: 2023/11/04 14:32:19 by vicgarci         ###   ########.fr        #
+#    Updated: 2023/11/04 14:45:32 by vicgarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,8 @@ FILES_STARTUP =	init_cam \
 STARTUP_DIR = ./startup/
 SRCS_STARTUP = $(addprefix $(STARTUP_DIR), $(addsuffix .c, $(FILES_STARTUP)))
 
-FILES_EXTRAS = exit_error \
+FILES_EXTRAS =	exit_error \
+				free_cube \
 
 EXTRAS_DIR = ./extras/
 SRCS_EXTRAS = $(addprefix $(EXTRAS_DIR), $(addsuffix .c, $(FILES_EXTRAS)))
