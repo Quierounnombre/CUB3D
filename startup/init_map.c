@@ -1,35 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   define.h                                           :+:      :+:    :+:   */
+/*   init_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 14:22:25 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/11/04 14:14:41 by vicgarci         ###   ########.fr       */
+/*   Created: 2023/11/04 14:08:03 by vicgarci          #+#    #+#             */
+/*   Updated: 2023/11/04 14:14:51 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DEFINE_H
-# define DEFINE_H
+#include "../Cub3D.h"
 
-//Parse info
+t_map	*init_map(void)
+{
+	t_map	*local_map;
 
-# define WALL 1
-# define EMPTY 0
-# define WEST 2
-# define SOUTH 3
-# define NORTH 4
-# define EAST 5
-
-//Error msg
-
-# define ERROR_MSG "Error\n"
-# define ERROR_MALLOC "Malloc has fail :(\n"
-
-//Size of a piece of wall
-
-# define DIM_X	64
-# define DIM_Y	64
-
-#endif
+	local_map = (t_map *)malloc(sizeof(t_map));
+	if (!local_map)
+		exit_error(ERROR_MALLOC, errno);
+	return (local_map);
+}

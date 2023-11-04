@@ -6,7 +6,7 @@
 #    By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/04 13:36:09 by alfgarci          #+#    #+#              #
-#    Updated: 2023/11/04 13:56:17 by vicgarci         ###   ########.fr        #
+#    Updated: 2023/11/04 14:32:19 by vicgarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,11 +18,24 @@ NC		=\033[0m
 
 #---cub3d-------------------------------
 NAME 	=	cub3d
-	#---SRC
-EXTRA_DIR	=	extras
-STARTUP_DIR	=	startup
-SRC 	=	${STARTUP_DIR}/init.c \
-			${EXTRA_DIR}/exit_error.c \
+
+#---SRC
+
+FILES_STARTUP =	init_cam \
+				init_cube \
+				init_map \
+				init \
+
+STARTUP_DIR = ./startup/
+SRCS_STARTUP = $(addprefix $(STARTUP_DIR), $(addsuffix .c, $(FILES_STARTUP)))
+
+FILES_EXTRAS = exit_error \
+
+EXTRAS_DIR = ./extras/
+SRCS_EXTRAS = $(addprefix $(EXTRAS_DIR), $(addsuffix .c, $(FILES_EXTRAS)))
+
+SRC 	=	$(SRCS_STARTUP) \
+			$(SRCS_EXTRAS) \
 			main.c \
 
 	#---OBJ

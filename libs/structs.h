@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:22:29 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/11/02 14:48:34 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/11/04 14:07:25 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,8 @@
 
 # include "libft_def/libft.h"
 
-typedef struct s_point
-{
-	t_vector2D	pos;
-	int			value;
-}	t_point;
+typedef int		t_point;
+typedef void	*t_img;
 
 typedef struct s_color
 {
@@ -30,10 +27,10 @@ typedef struct s_color
 
 typedef struct s_texture
 {
-	void	*north;
-	void	*south;
-	void	*west;
-	void	*east;
+	t_img	north;
+	t_img	south;
+	t_img	west;
+	t_img	east;
 	t_color	celing;
 	t_color	floor;
 }	t_texture;
