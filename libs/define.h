@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:22:25 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/11/04 16:37:27 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/11/04 17:38:22 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 # define SOUTH 3
 # define NORTH 4
 # define EAST 5
+# define VOID_IN_MAP 6
+# define END_OF_MAP 7
 
 //Error msg
 

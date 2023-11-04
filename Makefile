@@ -6,7 +6,7 @@
 #    By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/04 13:36:09 by alfgarci          #+#    #+#              #
-#    Updated: 2023/11/04 16:20:29 by vicgarci         ###   ########.fr        #
+#    Updated: 2023/11/04 18:06:39 by vicgarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,9 @@ NAME 	=	cub3d
 FILES_STARTUP =	init_cam \
 				init_cube \
 				init_map \
+				store_map_line \
+				increase_map_size \
+				store_map\
 				init \
 
 STARTUP_DIR = ./startup/

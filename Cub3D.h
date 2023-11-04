@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:19:38 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/11/04 16:39:37 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/11/04 18:07:46 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,9 @@ t_cube	*init(t_path file);
 t_cube	*init_cube(t_cube *cube, t_path file);
 t_map	*init_map(t_cube	*cube);
 t_cam	*init_cam(t_cube	*cube);
+t_point	*store_map_line(char *s, t_cube *cube);
+t_point	**increase_map_size(int size, t_point **map, t_cube *cube);
+t_point	**store_map(char **raw_map, t_cube *cube);
 //---------------------------------------------------------------------------
 
 //PARSE
