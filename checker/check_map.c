@@ -68,21 +68,6 @@ char **get_map(char **dump, int n_lines)
 	return (map);
 }
 
-t_bool	is_map_closed(char **map, int rows, int cols) {
-	int	i;
-	int	j;
-
-	i = -1;
-	j = -1;
-	while (++i < rows)
-		if (map[i][0] != '1' || map[i][cols - 1] != '1')
-			return (FALSE);
-	while (++j < cols)
-		if (map[0][j] != '1' || map[rows - 1][j] != '1')
-			return (FALSE);
-	return (TRUE);
-}
-
 t_bool	check_map(char **dump, int n_lines, t_cube *cube)
 {
 	char	**map;
