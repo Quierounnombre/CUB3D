@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   init_mlx_img.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/04 13:35:38 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/11/09 13:31:45 by vicgarci         ###   ########.fr       */
+/*   Created: 2023/11/09 13:28:25 by vicgarci          #+#    #+#             */
+/*   Updated: 2023/11/09 13:32:14 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Cub3D.h"
 
-t_cube	*init(t_path file)
+t_mlx_img	*init_mlx_img(t_cube *cube)
 {
-	t_cube	*local_cube;
+	t_mlx_img	*local_img;
 
-	local_cube = NULL;
-	local_cube = init_cube(local_cube, file);
-	local_cube->map = init_map(local_cube);
-	local_cube->cam = init_cam(local_cube);
-	local_cube->mlx_img = init_mlx_img(local_cube);
-	return (local_cube);
+	local_img = (t_mlx_img *)malloc(sizeof(t_mlx_img));
+	if (!local_img)
+		exit_error(ERROR_MALLOC, errno, cube);
+	return (local_img);
 }

@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 14:40:45 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/11/04 16:49:46 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/11/09 13:32:49 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,13 @@ static void	free_map(t_map	*map)
 	int		i;
 
 	i = 0;
-	while (map->map[i])
+	if (map->map)
 	{
-		free(map->map[i]);
-		i++;
+		while (map->map[i])
+		{
+			free(map->map[i]);
+			i++;
+		}
 	}
 	free(map->map);
 	free(map);
@@ -36,6 +39,8 @@ void	free_cube(t_cube	*cube)
 			free(cube->cam);
 		if (cube->map)
 			free_map(cube->map);
+		if (cube->mlx_img)
+			free(cube->mlx_img);
 		free(cube);
 	}
 }

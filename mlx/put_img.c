@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   put_img.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/04 13:35:38 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/11/09 13:31:45 by vicgarci         ###   ########.fr       */
+/*   Created: 2023/11/09 13:43:46 by vicgarci          #+#    #+#             */
+/*   Updated: 2023/11/09 13:59:36 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Cub3D.h"
 
-t_cube	*init(t_path file)
+void	put_img(t_cube *cube, t_img img, int x, int y)
 {
-	t_cube	*local_cube;
-
-	local_cube = NULL;
-	local_cube = init_cube(local_cube, file);
-	local_cube->map = init_map(local_cube);
-	local_cube->cam = init_cam(local_cube);
-	local_cube->mlx_img = init_mlx_img(local_cube);
-	return (local_cube);
+	if (mlx_put_image_to_window(cube->mlx, cube->win, img, x, y) <= 0)
+		exit_error(ERROR_MLX_PUT_IMG, errno, cube);
 }

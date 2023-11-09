@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   init_img.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/04 13:35:38 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/11/09 13:31:45 by vicgarci         ###   ########.fr       */
+/*   Created: 2023/11/09 13:26:37 by vicgarci          #+#    #+#             */
+/*   Updated: 2023/11/09 14:00:59 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Cub3D.h"
 
-t_cube	*init(t_path file)
+void	init_img(t_cube *cube)
 {
-	t_cube	*local_cube;
 
-	local_cube = NULL;
-	local_cube = init_cube(local_cube, file);
-	local_cube->map = init_map(local_cube);
-	local_cube->cam = init_cam(local_cube);
-	local_cube->mlx_img = init_mlx_img(local_cube);
-	return (local_cube);
+	cube->mlx_img->img = mlx_new_image(cube->mlx, WIDTH, HEIGHT);
+	if (!cube->mlx_img->img)
+		exit_error(ERROR_MLX_IMG, errno, cube);
+	cube->mlx_img->adres = mlx_get_data_addr(cube->mlx_img,
+			&cube->mlx_img->bits_per_pixel,
+			&cube->mlx_img->line,
+			&cube->mlx_img->endian);
 }

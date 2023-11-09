@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   mlx_start.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/04 13:35:38 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/11/09 13:31:45 by vicgarci         ###   ########.fr       */
+/*   Created: 2023/11/09 13:09:46 by vicgarci          #+#    #+#             */
+/*   Updated: 2023/11/09 13:10:34 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Cub3D.h"
 
-t_cube	*init(t_path file)
+void	mlx_start(t_cube *cube)
 {
-	t_cube	*local_cube;
-
-	local_cube = NULL;
-	local_cube = init_cube(local_cube, file);
-	local_cube->map = init_map(local_cube);
-	local_cube->cam = init_cam(local_cube);
-	local_cube->mlx_img = init_mlx_img(local_cube);
-	return (local_cube);
+	cube->mlx = mlx_init();
+	if (!cube->mlx)
+		exit_error(ERROR_MLX_INIT, errno, cube);
 }

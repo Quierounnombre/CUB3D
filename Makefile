@@ -6,7 +6,7 @@
 #    By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/04 13:36:09 by alfgarci          #+#    #+#              #
-#    Updated: 2023/11/04 18:06:39 by vicgarci         ###   ########.fr        #
+#    Updated: 2023/11/09 13:47:51 by vicgarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ NAME 	=	cub3d
 FILES_STARTUP =	init_cam \
 				init_cube \
 				init_map \
+				init_mlx_img \
 				store_map_line \
 				increase_map_size \
 				store_map\
@@ -45,9 +46,18 @@ FILES_PARSE =	parse \
 PARSE_DIR = ./parse/
 SRCS_PARSE = $(addprefix $(PARSE_DIR), $(addsuffix .c, $(FILES_PARSE)))
 
+FILES_MLX =	mlx_open_win \
+			mlx_start \
+			init_img \
+			put_img \
+
+MLX_DIR = ./mlx/
+SRCS_MLX = $(addprefix $(MLX_DIR), $(addsuffix .c, $(FILES_MLX)))
+
 SRC 	=	$(SRCS_STARTUP) \
 			$(SRCS_EXTRAS) \
 			$(SRCS_PARSE) \
+			$(SRCS_MLX) \
 			main.c \
 
 #---OBJ
@@ -66,9 +76,10 @@ MATH_NAME	=	m
 
 CC			=	cc
 C_FLAGS		=	-Werror -Wextra -Wall
+MLXFLAGS = -I /usr/local/include -L /usr/local/lib -l mlx -framework OpenGL -framework Appkit
 LIB_FLAGS	=	-L${LIBFT_DIR} -l${LIBFT_NAME} -l${MATH_NAME}
 H_FLAGS		=	-I${INC} -I${LIBFT_INC}
-FLAGS		=	${C_FLAGS} ${LIB_FLAGS}
+FLAGS		=	${C_FLAGS} ${LIB_FLAGS} $(MLXFLAGS)
 
 #---RECIPES------------------------------
 %.o : %.c
@@ -94,6 +105,5 @@ fclean:		clean
 		@echo "${YELLOW}${NAME} REMOVED!${NC}"
 
 re:		fclean all
-		@make re -s -C ${MLX_DIR}
 
 .PHONY:	all clean fclean re
