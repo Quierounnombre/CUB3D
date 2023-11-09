@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 13:35:38 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/11/09 13:31:45 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/11/09 15:05:24 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,9 @@ t_cube	*init(t_path file)
 	local_cube->map = init_map(local_cube);
 	local_cube->cam = init_cam(local_cube);
 	local_cube->mlx_img = init_mlx_img(local_cube);
+	mlx_start(local_cube);
+	init_img(local_cube);
+	mlx_open_win(local_cube);
+	put_img(local_cube, local_cube->mlx_img->img, 0, 0);
 	return (local_cube);
 }
