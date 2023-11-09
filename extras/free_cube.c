@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   free_cube.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 14:40:45 by vicgarci          #+#    #+#             */
 /*   Updated: 2023/11/09 13:32:49 by vicgarci         ###   ########.fr       */

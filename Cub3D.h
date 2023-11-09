@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   Cub3D.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:19:38 by vicgarci          #+#    #+#             */
 /*   Updated: 2023/11/09 15:51:45 by vicgarci         ###   ########.fr       */
@@ -22,9 +22,11 @@
 //EXTRAS
 //---------------------------------------------------------------------------
 
-void		exit_error(char *s, int code, t_cube *cube);
-void		free_cube(t_cube	*cube);
-t_fd		open_fd(t_path file, t_cube *cube);
+void	exit_error(char *s, int code, t_cube *cube);
+void	free_cube(t_cube *cube);
+t_fd	open_fd(t_path file, t_cube *cube);
+void	free_split(char **split);
+void	matrix_dimension(char **arr, int *rows, int *cols);
 //---------------------------------------------------------------------------
 
 //STARTUP
@@ -45,6 +47,17 @@ t_point		**store_map(char **raw_map, t_cube *cube);
 
 t_bool		check_argv(const char *s);
 t_bool		parse(int argc, char **argv);
+//---------------------------------------------------------------------------
+
+//CHECKER
+//---------------------------------------------------------------------------
+
+t_bool	check_color(char **dump, int lines, t_cube *cube);
+t_bool	check_texture(char **dump, int lines, t_cube *cube);
+t_bool	check_map(char **dump);
+t_bool	check_walls(char **map);
+char	**get_map(char **dump, int n_lines, t_cube *cube);
+char	**check_file(t_cube *cube, t_path path);
 //---------------------------------------------------------------------------
 
 //MLX
