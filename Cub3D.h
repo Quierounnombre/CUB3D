@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cub3D.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:19:38 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/11/04 16:39:37 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/11/09 12:06:58 by alfgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@
 //---------------------------------------------------------------------------
 
 void	exit_error(char *s, int code, t_cube *cube);
-void	free_cube(t_cube	*cube);
+void	free_cube(t_cube *cube);
 t_fd	open_fd(t_path file, t_cube *cube);
+void	free_split(char **split);
 //---------------------------------------------------------------------------
 
 //STARTUP
@@ -32,8 +33,8 @@ t_fd	open_fd(t_path file, t_cube *cube);
 
 t_cube	*init(t_path file);
 t_cube	*init_cube(t_cube *cube, t_path file);
-t_map	*init_map(t_cube	*cube);
-t_cam	*init_cam(t_cube	*cube);
+t_map	*init_map(t_cube *cube);
+t_cam	*init_cam(t_cube *cube);
 //---------------------------------------------------------------------------
 
 //PARSE
@@ -41,5 +42,15 @@ t_cam	*init_cam(t_cube	*cube);
 
 t_bool	check_argv(const char *s);
 t_bool	parse(int argc, char **argv);
+//---------------------------------------------------------------------------
+
+//CHECKER
+//---------------------------------------------------------------------------
+
+t_bool	check_color(char **dump, int lines, t_cube *cube);
+t_bool	check_texture(char **dump, int lines, t_cube *cube);
+t_bool	check_map(char **dump, int n_lines, t_cube *cube);
+t_bool	is_map_closed(char **map, int rows, int cols);
+char	**get_map(char **dump, int n_lines);
 //---------------------------------------------------------------------------
 #endif

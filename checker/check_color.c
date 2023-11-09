@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_color.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alfgarci <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 17:52:23 by alfgarci          #+#    #+#             */
-/*   Updated: 2023/11/04 17:52:24 by alfgarci         ###   ########.fr       */
+/*   Updated: 2023/11/08 02:13:49 by alfgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 t_bool	check_color_floor(char **dump, int lines, t_cube *cube)
 {
 	char	**split;
-    char	**split_color;
+	char	**split_color;
 	int		found;
 	int		i;
 
@@ -44,7 +44,7 @@ t_bool	check_color_floor(char **dump, int lines, t_cube *cube)
 t_bool	check_color_ceiller(char **dump, int lines, t_cube *cube)
 {
 	char	**split;
-    char	**split_color;
+	char	**split_color;
 	int		found;
 	int		i;
 
@@ -66,6 +66,17 @@ t_bool	check_color_ceiller(char **dump, int lines, t_cube *cube)
 	}
 	if (found == 1)
 		return TRUE;
+	else
+		return FALSE;
+}
+
+t_bool	check_color(char **dump, int lines, t_cube *cube)
+{
+	if (check_color_floor(dump, lines, cube) == TRUE
+		&& check_color_ceiller(dump, lines, cube) == TRUE)
+	{
+		return TRUE;
+	}
 	else
 		return FALSE;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_file.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alfgarci <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 14:43:30 by alfgarci          #+#    #+#             */
-/*   Updated: 2023/11/04 14:43:32 by alfgarci         ###   ########.fr       */
+/*   Updated: 2023/11/09 00:42:46 by alfgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,13 +55,25 @@ char	**fill_dump(int n_lines, t_path *path)
 	return dump;
 }
 
-check_file(t_cube *cube, t_path *path)
+char	**check_file(t_cube *cube, t_path *path)
 {
 	char	*line;
 	int		n_lines;
 	char	**dump;
+	char	**map;
 
 	n_lines = count_lines(path);
 	dump = fill_dump(n_lines, path);
-	if (check_texture(dump, n_lines, cube))
+	if (!check_texture(dump, n_lines, cube) || !check_color(dump, n_lines, cube)
+		|| !check_map(dump, n_lines, cube))
+	{
+		free_split(dump);
+		exit_error(ERROR_PARSE, 2, cube);
+	}
+	else
+	{
+		map = get_map(dump, n_lines);
+		free_split(dump);
+	}
+	return (map);
 }
