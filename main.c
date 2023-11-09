@@ -15,11 +15,16 @@
 int	main(int argc, char **argv)
 {
 	t_cube	*cube;
+	char	**map;
+	int i = -1;
 
 	cube = NULL;
 	if (parse(argc, argv))
 	{
 		cube = init(*argv);
+		map = check_file(cube, argv[1]);
+		while (map[++i])
+			ft_printf("%s\n", map[i]);
 		free(cube);
 	}
 	else

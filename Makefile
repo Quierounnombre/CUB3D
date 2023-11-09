@@ -29,9 +29,19 @@ FILES_STARTUP =	init_cam \
 STARTUP_DIR = ./startup/
 SRCS_STARTUP = $(addprefix $(STARTUP_DIR), $(addsuffix .c, $(FILES_STARTUP)))
 
+FILES_CHECKER =	check_color\
+				check_file \
+				check_map \
+				check_textures \
+				check_walls \
+
+CHECKER_DIR = ./checker/
+SRCS_CHECKER = $(addprefix $(CHECKER_DIR), $(addsuffix .c, $(FILES_CHECKER)))
+
 FILES_EXTRAS =	exit_error \
 				free_cube \
 				open_fd \
+				utils \
 
 EXTRAS_DIR = ./extras/
 SRCS_EXTRAS = $(addprefix $(EXTRAS_DIR), $(addsuffix .c, $(FILES_EXTRAS)))
@@ -45,6 +55,7 @@ SRCS_PARSE = $(addprefix $(PARSE_DIR), $(addsuffix .c, $(FILES_PARSE)))
 SRC 	=	$(SRCS_STARTUP) \
 			$(SRCS_EXTRAS) \
 			$(SRCS_PARSE) \
+			$(SRCS_CHECKER) \
 			main.c \
 
 #---OBJ

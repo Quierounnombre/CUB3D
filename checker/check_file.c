@@ -12,22 +12,23 @@
 
 #include "../Cub3D.h"
 
-int count_lines(t_path *path)
+int count_lines(t_path path, t_cube *cube)
 {
 	t_fd	fd;
 	int		count;
 	char	*line;
 
 	count = 0;
-	fd = open_fd(path);
-	line = get_next_line(fd);
+	fd = open_fd(path, cube);
+	line = ft_get_next_line(fd);
 	while (line)
 	{
 		count++;
 		free(line);
-		line = get_next_line(fd);
+		line = ft_get_next_line(fd);
 	}
 	free(line);
+	close(fd);
 	return (count);
 }
 
@@ -39,41 +40,49 @@ int	is_empty_line(char *line)
 		return 0;
 }
 
-char	**fill_dump(int n_lines, t_path *path)
+char	**fill_dump(int n_lines, t_path path, t_cube *cube)
 {
 	char	*line;
 	char	**dump;
 	t_fd	fd;
 	int		i;
 
-	fd = open_fd(path);
-	dump = (char **)malloc(n_lines * sizeof(char *));
-	line = get_next_line(fd);
+	fd = open_fd(path, cube);
+	dump = (char **)malloc((n_lines + 1) * sizeof(char *));
+	line = ft_get_next_line(fd);
 	i = -1;
 	while (line)
+	{
 		dump[++i] = line;
+		line = ft_get_next_line(fd);
+	}
+	dump[++i] = NULL;
+	close (fd);
 	return dump;
 }
 
-char	**check_file(t_cube *cube, t_path *path)
+char	**check_file(t_cube *cube, t_path path)
 {
-	char	*line;
 	int		n_lines;
 	char	**dump;
 	char	**map;
 
-	n_lines = count_lines(path);
-	dump = fill_dump(n_lines, path);
+	n_lines = count_lines(path, cube);
+	dump = fill_dump(n_lines, path, cube);
 	if (!check_texture(dump, n_lines, cube) || !check_color(dump, n_lines, cube)
-		|| !check_map(dump, n_lines, cube))
+		|| !check_map(dump))
 	{
 		free_split(dump);
-		exit_error(ERROR_PARSE, 2, cube);
+		exit_error("Fallo Texturas, Color o Mapa", errno, cube);
 	}
-	else
+	map = get_map(dump, n_lines, cube);
+	/*
+	if (check_walls(map))
 	{
-		map = get_map(dump, n_lines);
-		free_split(dump);
+		free_split(map);
+		exit_error("Fallo Paredes", errno, cube);
 	}
+	*/
+	free_split(dump);
 	return (map);
 }

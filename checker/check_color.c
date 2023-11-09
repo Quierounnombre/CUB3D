@@ -28,17 +28,17 @@ t_bool	check_color_floor(char **dump, int lines, t_cube *cube)
 		{
 			found++;
 			split_color = ft_split(split[1], ',');
-			cube->map->texture->floor->r = ft_wrap(ft_atoi(split_color[0]));
-			cube->map->texture->floor->g = ft_wrap(ft_atoi(split_color[1]));
-			cube->map->texture->floor->b = ft_wrap(ft_atoi(split_color[2]));
+			cube->map->texture.floor.r = ft_wrap(ft_atoi(split_color[0]), 0, 255);
+			cube->map->texture.floor.g = ft_wrap(ft_atoi(split_color[1]), 0, 255);
+			cube->map->texture.floor.b = ft_wrap(ft_atoi(split_color[2]), 0, 255);
 			free_split(split_color);
 		}
 		free_split(split);
 	}
 	if (found == 1)
-		return TRUE;
+		return true;
 	else
-		return FALSE;
+		return false;
 }
 
 t_bool	check_color_ceiller(char **dump, int lines, t_cube *cube)
@@ -57,26 +57,26 @@ t_bool	check_color_ceiller(char **dump, int lines, t_cube *cube)
 		{
 			found++;
 			split_color = ft_split(split[1], ',');
-			cube->map->texture->floor->r = ft_wrap(ft_atoi(split_color[0]));
-			cube->map->texture->floor->g = ft_wrap(ft_atoi(split_color[1]));
-			cube->map->texture->floor->b = ft_wrap(ft_atoi(split_color[2]));
+			cube->map->texture.floor.r = ft_wrap(ft_atoi(split_color[0]), 0, 255);
+			cube->map->texture.floor.g = ft_wrap(ft_atoi(split_color[1]), 0, 255);
+			cube->map->texture.floor.b = ft_wrap(ft_atoi(split_color[2]), 0, 255);
 			free_split(split_color);
 		}
 		free_split(split);
 	}
 	if (found == 1)
-		return TRUE;
+		return true;
 	else
-		return FALSE;
+		return false;
 }
 
 t_bool	check_color(char **dump, int lines, t_cube *cube)
 {
-	if (check_color_floor(dump, lines, cube) == TRUE
-		&& check_color_ceiller(dump, lines, cube) == TRUE)
+	if (check_color_floor(dump, lines, cube) == true
+		&& check_color_ceiller(dump, lines, cube) == true)
 	{
-		return TRUE;
+		return true;
 	}
 	else
-		return FALSE;
+		return true;
 }

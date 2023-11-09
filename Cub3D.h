@@ -26,6 +26,7 @@ void	exit_error(char *s, int code, t_cube *cube);
 void	free_cube(t_cube *cube);
 t_fd	open_fd(t_path file, t_cube *cube);
 void	free_split(char **split);
+void	matrix_dimension(char **arr, int *rows, int *cols);
 //---------------------------------------------------------------------------
 
 //STARTUP
@@ -49,8 +50,9 @@ t_bool	parse(int argc, char **argv);
 
 t_bool	check_color(char **dump, int lines, t_cube *cube);
 t_bool	check_texture(char **dump, int lines, t_cube *cube);
-t_bool	check_map(char **dump, int n_lines, t_cube *cube);
-t_bool	is_map_closed(char **map, int rows, int cols);
-char	**get_map(char **dump, int n_lines);
+t_bool	check_map(char **dump);
+t_bool	check_walls(char **map);
+char	**get_map(char **dump, int n_lines, t_cube *cube);
+char	**check_file(t_cube *cube, t_path path);
 //---------------------------------------------------------------------------
 #endif

@@ -1,34 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   open_texture.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alfgarci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/09 12:48:03 by alfgarci          #+#    #+#             */
-/*   Updated: 2023/11/09 12:48:13 by alfgarci         ###   ########.fr       */
+/*   Created: 2023/11/09 13:40:43 by alfgarci          #+#    #+#             */
+/*   Updated: 2023/11/09 13:40:47 by alfgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Cub3D.h"
 
-void	free_split(char **split)
+t_image	*open_texture(t_path path, t_cube *cube)
 {
-	int	aux;
+	t_image	img;
 
-	aux = -1;
-	while (*(split + ++aux))
-		free(*(split + aux));
-	free(split);
-}
-
-void	matrix_dimension(char **arr,int *rows,int *cols)
-{
-	int	i;
-
-	i = 0;
-	while (arr[i])
-		i++;
-	*rows = i;
-	*cols = ft_strlen(arr[0]);
+	img = mlx_xpm_file_to_image(cube->mlx, path, WIDTH, HEIGHT);
+	if (img == 0)
+		exit_error("Fallo Textura, errno, cube");
+	return (img);
 }

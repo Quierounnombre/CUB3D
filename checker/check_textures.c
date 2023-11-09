@@ -14,6 +14,7 @@
 
 t_bool  check_north(char **dump, int lines, t_cube *cube)
 {
+	(void)cube;
     char	**split;
 	int		found;
 	int		i;
@@ -26,18 +27,19 @@ t_bool  check_north(char **dump, int lines, t_cube *cube)
 		if (ft_strncmp(split[0], "NO", ft_strlen(split[0])) == 0)
 		{
 			found++;
-			cube->map->texture->north = open_texture(split[1]);
+			//cube->map->texture->north = open_texture(split[1]);
 		}
 		free_split(split);
     }
 	if (found == 1)
-		return TRUE;
+		return true;
 	else
-		return FALSE;
+		return false;
 }
 
 t_bool  check_south(char **dump, int lines, t_cube *cube)
 {
+	(void)cube;
     char	**split;
 	int		found;
 	int		i;
@@ -50,18 +52,19 @@ t_bool  check_south(char **dump, int lines, t_cube *cube)
 		if (ft_strncmp(split[0], "SO", ft_strlen(split[0])) == 0)
 		{
 			found++;
-			cube->map->texture->south = open_texture(split[1]);
+			//cube->map->texture->south = open_texture(split[1]);
 		}
 		free_split(split);
     }
 	if (found == 1)
-		return TRUE;
+		return true;
 	else
-		return FALSE;
+		return false;
 }
 
 t_bool  check_west(char **dump, int lines, t_cube *cube)
 {
+	(void)cube;
     char	**split;
 	int		found;
 	int		i;
@@ -74,18 +77,19 @@ t_bool  check_west(char **dump, int lines, t_cube *cube)
 		if (ft_strncmp(split[0], "WE", ft_strlen(split[0])) == 0)
 		{
 			found++;
-			cube->map->texture->west = open_texture(split[1]);
+			//cube->map->texture->west = open_texture(split[1]);
 		}
 		free_split(split);
     }
 	if (found == 1)
-		return TRUE;
+		return true;
 	else
-		return FALSE;
+		return false;
 }
 
 t_bool	check_east(char **dump, int lines, t_cube *cube)
 {
+	(void)cube;
 	char	**split;
 	int		found;
 	int		i;
@@ -98,25 +102,25 @@ t_bool	check_east(char **dump, int lines, t_cube *cube)
 		if (ft_strncmp(split[0], "EA", ft_strlen(split[0])) == 0)
 		{
 			found++;
-			cube->map->texture->east = open_texture(split[1]);
+			//cube->map->texture->east = open_texture(split[1]);
 		}
 		free_split(split);
 	}
 	if (found == 1)
-		return TRUE;
+		return true;
 	else
-		return FALSE;
+		return false;
 }
 
 t_bool	check_texture(char **dump, int lines, t_cube *cube)
 {
-	if (check_north(dump, lines, cube) == TRUE
-		&& check_south(dump, lines, cube) == TRUE
-		&& check_west(dump, lines, cube) == TRUE
-		&& check_east(dump, lines, cube) == TRUE)
+	if (check_north(dump, lines, cube) == true
+		&& check_south(dump, lines, cube) == true
+		&& check_west(dump, lines, cube) == true
+		&& check_east(dump, lines, cube) == true)
 	{
-		return TRUE;
+		return true;
 	}
 	else
-		return FALSE;
+		return false;
 }
