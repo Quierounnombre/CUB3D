@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:22:29 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/11/04 16:38:14 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/11/09 13:26:10 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ typedef int		t_point;
 typedef void	*t_img;
 typedef int		t_fd;
 typedef char	*t_path;
+typedef void	*t_win;
+typedef void	*t_mlx;
 
 typedef struct s_color
 {
@@ -43,16 +45,28 @@ typedef struct t_map
 
 typedef struct s_cam
 {
-	int			angel;
+	int			angle;
 	int			fov;
 	t_vector2D	pos;
 }	t_cam;
 
+typedef struct s_mlx_img
+{
+	t_img	*img;
+	char	*adres;
+	int		bits_per_pixel;
+	int		line;
+	int		endian;
+}	t_mlx_img;
+
 typedef struct s_cube
 {
-	t_path	file;
-	t_map	*map;
-	t_cam	*cam;
+	t_path		file;
+	t_map		*map;
+	t_cam		*cam;
+	t_win		win;
+	t_mlx		mlx;
+	t_mlx_img	*mlx_img;
 }	t_cube;
 
 

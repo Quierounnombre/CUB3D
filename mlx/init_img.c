@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   init_img.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/04 13:36:16 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/11/09 15:52:12 by vicgarci         ###   ########.fr       */
+/*   Created: 2023/11/09 13:26:37 by vicgarci          #+#    #+#             */
+/*   Updated: 2023/11/09 14:00:59 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cub3D.h"
+#include "../Cub3D.h"
 
-int	main(int argc, char **argv)
+void	init_img(t_cube *cube)
 {
-	t_cube	*cube;
-	char	**map;
-	int i = -1;
 
-	cube = NULL;
-	if (parse(argc, argv))
-	{
-		cube = init(*argv);
-		map = check_file(cube, argv[1]);
-		while (map[++i])
-			ft_printf("%s\n", map[i]);
-		draw(cube);
-		mlx_loop(cube->mlx);
-		free_cube(cube);
-	}
-	else
-		exit_error(ERROR_PARSE, errno, cube);
+	cube->mlx_img->img = mlx_new_image(cube->mlx, WIDTH, HEIGHT);
+	if (!cube->mlx_img->img)
+		exit_error(ERROR_MLX_IMG, errno, cube);
+	cube->mlx_img->adres = mlx_get_data_addr(cube->mlx_img,
+			&cube->mlx_img->bits_per_pixel,
+			&cube->mlx_img->line,
+			&cube->mlx_img->endian);
 }
-
-
