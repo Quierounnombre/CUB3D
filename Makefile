@@ -6,7 +6,7 @@
 #    By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/04 13:36:09 by alfgarci          #+#    #+#              #
-#    Updated: 2023/11/09 13:47:51 by vicgarci         ###   ########.fr        #
+#    Updated: 2023/11/09 15:51:52 by vicgarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,6 +49,8 @@ SRCS_PARSE = $(addprefix $(PARSE_DIR), $(addsuffix .c, $(FILES_PARSE)))
 FILES_MLX =	mlx_open_win \
 			mlx_start \
 			init_img \
+			mlx_point_draw \
+			draw \
 			put_img \
 
 MLX_DIR = ./mlx/
