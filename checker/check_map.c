@@ -59,7 +59,7 @@ char	**reserve_map(int map_lines, int max_char_in_map, t_cube *cube)
 		exit_error(ERROR_MALLOC, errno, cube);
 	while (++i < map_lines)
 	{
-		map[i] = (char *)malloc((max_char_in_map) * sizeof(char));
+		map[i] = (char *)malloc((max_char_in_map + 1) * sizeof(char));
 		if (!map[i])
 		{
 			//free rest
@@ -73,24 +73,26 @@ char	**reserve_map(int map_lines, int max_char_in_map, t_cube *cube)
 char	**get_map(char **dump, int n_lines, t_cube *cube)
 {
 	int		map_lines;
+	int		start_map;
 	size_t	max_char_in_map;
 	int		i;
 	size_t	j;
 	char	**map;
 
+	start_map = map_line(dump);
 	map_lines = n_lines - map_line(dump);
-	max_char_in_map = get_max_char(dump, map_lines);
+	max_char_in_map = get_max_char(dump, start_map);
 	map = reserve_map(map_lines, max_char_in_map, cube);
 	i = 0;
-	while (dump[map_lines - 1])
+	while (dump[start_map])
 	{
 		j = 0;
-		while (j < ft_strlen(dump[map_lines -1]))
+		while (j < ft_strlen(dump[start_map]))
 		{
-			if (dump[map_lines -1][j] == ' ')
+			if (dump[start_map][j] == ' ')
 				map[i][j] = 'v';
 			else
-				map[i][j] = dump[map_lines-1][j];
+				map[i][j] = dump[start_map][j];
 			j++;
 		}
 		while (j < max_char_in_map)
@@ -100,62 +102,12 @@ char	**get_map(char **dump, int n_lines, t_cube *cube)
 		}
 		map[i][j-1] = '\0';
 		i++;
-		map_lines++;
+		start_map++;
 	}
 	map[i] = NULL;
 	return map;
 }
-/*
-char **get_map(char **dump, int n_lines)
-{
-	size_t	max_char_in_map;
-	char	**map;
-	int		map_lines;
-	int		i;
-	size_t	j;
 
-	map_lines = map_line(dump);
-	i = map_lines;
-	max_char_in_map = get_max_char(dump, map_lines);
-	
-	map = (char **)malloc((n_lines - map_lines + 1) * sizeof(char *));
-	while (++i < n_lines)
-		map[i] = (char *)malloc((max_char_in_map + 1) * sizeof(char));
-
-	map = (char **)malloc((max_char_in_map + 1) * sizeof(char *));
-	while (i < n_lines)
-	{
-		map[i] = (char *)malloc((n_lines - map_lines + 1) * sizeof(char));
-		i++;
-	}
-
-	i = map_lines;
-	while (i < ft_strlen(dump[i]) - 1)
-	{
-		j = 0;
-		while (j < n_lines)
-		{
-			if (dump[i][j] == ' ')
-				map[i][j] = 'v';
-			else
-				map[i][j] = dump[i][j];
-			ft_printf("%c", map[i][j]);
-			j++;
-		}
-		while (j < max_char_in_map)
-		{
-			map[i][j] = 'v';
-			j++;
-		}
-		map[i][j] = '\0';
-		i++;
-		ft_printf("\n");
-	}
-	ft_printf("fallo2\n");
-	map[i] = NULL;
-	return (map);
-}
-*/
 t_bool	check_map(char **dump)
 {
 	int		start_map;

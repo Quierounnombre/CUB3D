@@ -21,45 +21,45 @@ t_bool  check_north(char **dump, int lines, t_cube *cube)
 
 	found = 0;
 	i = -1;
-    while (++i < lines)
-    {
-        split = ft_split(dump[i], ' ');
+	while (++i < lines)
+	{
+		split = ft_split(dump[i], ' ');
 		if (ft_strncmp(split[0], "NO", ft_strlen(split[0])) == 0)
 		{
 			found++;
 			//cube->map->texture->north = open_texture(split[1]);
 		}
 		free_split(split);
-    }
+	}
 	if (found == 1)
-		return true;
+		return (true);
 	else
-		return false;
+		return (false);
 }
 
 t_bool  check_south(char **dump, int lines, t_cube *cube)
 {
 	(void)cube;
-    char	**split;
+	char	**split;
 	int		found;
 	int		i;
 
 	found = 0;
 	i = -1;
-    while (++i < lines)
-    {
-        split = ft_split(dump[i], ' ');
+	while (++i < lines)
+	{
+		split = ft_split(dump[i], ' ');
 		if (ft_strncmp(split[0], "SO", ft_strlen(split[0])) == 0)
 		{
 			found++;
 			//cube->map->texture->south = open_texture(split[1]);
 		}
 		free_split(split);
-    }
+	}
 	if (found == 1)
-		return true;
+		return (true);
 	else
-		return false;
+		return (false);
 }
 
 t_bool  check_west(char **dump, int lines, t_cube *cube)
@@ -71,20 +71,20 @@ t_bool  check_west(char **dump, int lines, t_cube *cube)
 
 	found = 0;
 	i = -1;
-    while (++i < lines)
-    {
-        split = ft_split(dump[i], ' ');
+	while (++i < lines)
+	{
+		split = ft_split(dump[i], ' ');
 		if (ft_strncmp(split[0], "WE", ft_strlen(split[0])) == 0)
 		{
 			found++;
 			//cube->map->texture->west = open_texture(split[1]);
 		}
 		free_split(split);
-    }
+	}
 	if (found == 1)
-		return true;
+		return (true);
 	else
-		return false;
+		return (false);
 }
 
 t_bool	check_east(char **dump, int lines, t_cube *cube)
@@ -107,9 +107,9 @@ t_bool	check_east(char **dump, int lines, t_cube *cube)
 		free_split(split);
 	}
 	if (found == 1)
-		return true;
+		return (true);
 	else
-		return false;
+		return (false);
 }
 
 t_bool	check_texture(char **dump, int lines, t_cube *cube)
@@ -119,8 +119,8 @@ t_bool	check_texture(char **dump, int lines, t_cube *cube)
 		&& check_west(dump, lines, cube) == true
 		&& check_east(dump, lines, cube) == true)
 	{
-		return true;
+		return (true);
 	}
 	else
-		return false;
+		return (false);
 }

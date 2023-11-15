@@ -57,6 +57,7 @@ char	**fill_dump(int n_lines, t_path path, t_cube *cube)
 		line = ft_get_next_line(fd);
 	}
 	dump[++i] = NULL;
+	i = -1;
 	close (fd);
 	return dump;
 }
