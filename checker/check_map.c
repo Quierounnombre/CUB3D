@@ -81,7 +81,7 @@ char	**get_map(char **dump, int n_lines, t_cube *cube)
 
 	start_map = map_line(dump);
 	map_lines = n_lines - map_line(dump);
-	max_char_in_map = get_max_char(dump, map_lines);
+	max_char_in_map = get_max_char(dump, start_map);
 	map = reserve_map(map_lines, max_char_in_map, cube);
 	i = 0;
 	while (dump[start_map])
@@ -89,7 +89,7 @@ char	**get_map(char **dump, int n_lines, t_cube *cube)
 		j = 0;
 		while (j < ft_strlen(dump[start_map]))
 		{
-			if (dump[start_map -1][j] == ' ')
+			if (dump[start_map][j] == ' ')
 				map[i][j] = 'v';
 			else
 				map[i][j] = dump[start_map][j];
