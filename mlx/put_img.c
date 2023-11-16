@@ -1,36 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   put_img.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/04 13:36:16 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/11/09 15:52:12 by vicgarci         ###   ########.fr       */
+/*   Created: 2023/11/09 13:43:46 by vicgarci          #+#    #+#             */
+/*   Updated: 2023/11/09 13:59:36 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cub3D.h"
+#include "../Cub3D.h"
 
-int	main(int argc, char **argv)
+void	put_img(t_cube *cube, t_img img, int x, int y)
 {
-	t_cube	*cube;
-	char	**map;
-	int i = -1;
-
-	cube = NULL;
-	if (parse(argc, argv))
-	{
-		cube = init(*argv);
-		map = check_file(cube, argv[1]);
-		while (map[++i])
-			ft_printf("%s\n", map[i]);
-		draw(cube);
-		mlx_loop(cube->mlx);
-		free_cube(cube);
-	}
-	else
-		exit_error(ERROR_PARSE, errno, cube);
+	if (mlx_put_image_to_window(cube->mlx, cube->win, img, x, y) <= 0)
+		exit_error(ERROR_MLX_PUT_IMG, errno, cube);
 }
-
-

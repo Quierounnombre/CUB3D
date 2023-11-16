@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   increase_map_size.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/04 13:36:16 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/11/09 15:52:12 by vicgarci         ###   ########.fr       */
+/*   Created: 2023/11/04 17:42:54 by vicgarci          #+#    #+#             */
+/*   Updated: 2023/11/04 17:54:45 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cub3D.h"
+#include "../Cub3D.h"
 
-int	main(int argc, char **argv)
+t_point	**increase_map_size(int size, t_point **map, t_cube *cube)
 {
-	t_cube	*cube;
-	char	**map;
-	int i = -1;
+	t_point	**local_map;
+	int		i;
 
-	cube = NULL;
-	if (parse(argc, argv))
+	i = 0;
+	local_map = (t_point **)malloc(sizeof(t_point *) * (size + 1));
+	if (!local_map)
+		exit_error(ERROR_MALLOC, errno, cube);
+	if (!map)
+		return (local_map);
+	while (map[i])
 	{
-		cube = init(*argv);
-		map = check_file(cube, argv[1]);
-		while (map[++i])
-			ft_printf("%s\n", map[i]);
-		draw(cube);
-		mlx_loop(cube->mlx);
-		free_cube(cube);
+		local_map[i] = map[i];
+		i++;
 	}
-	else
-		exit_error(ERROR_PARSE, errno, cube);
+	free(map);
+	return (local_map);
 }
-
-

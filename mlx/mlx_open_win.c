@@ -1,36 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   mlx_open_win.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/04 13:36:16 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/11/09 15:52:12 by vicgarci         ###   ########.fr       */
+/*   Created: 2023/11/09 12:59:49 by vicgarci          #+#    #+#             */
+/*   Updated: 2023/11/09 13:10:02 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cub3D.h"
+#include "../Cub3D.h"
 
-int	main(int argc, char **argv)
+void	mlx_open_win(t_cube *cube)
 {
-	t_cube	*cube;
-	char	**map;
-	int i = -1;
-
-	cube = NULL;
-	if (parse(argc, argv))
-	{
-		cube = init(*argv);
-		map = check_file(cube, argv[1]);
-		while (map[++i])
-			ft_printf("%s\n", map[i]);
-		draw(cube);
-		mlx_loop(cube->mlx);
-		free_cube(cube);
-	}
-	else
-		exit_error(ERROR_PARSE, errno, cube);
+	cube->win = mlx_new_window(cube->mlx, HEIGHT, WIDTH, NAME);
+	if (!cube->mlx)
+		exit_error(ERROR_MLX_WIN, errno, cube);
 }
-
-
