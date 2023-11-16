@@ -6,7 +6,7 @@
 /*   By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:19:38 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/11/09 12:06:58 by alfgarci         ###   ########.fr       */
+/*   Updated: 2023/11/17 00:31:53 by alfgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ t_bool	parse(int argc, char **argv);
 t_bool	check_color(char **dump, int lines, t_cube *cube);
 t_bool	check_texture(char **dump, int lines, t_cube *cube);
 t_bool	check_map(char **dump);
-t_bool	check_walls(char **map);
+t_bool	is_map_closed(char **map);
 char	**get_map(char **dump, int n_lines, t_cube *cube);
 char	**check_file(t_cube *cube, t_path path);
 //---------------------------------------------------------------------------

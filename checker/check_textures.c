@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   check_textures.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alfgarci <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 16:48:44 by alfgarci          #+#    #+#             */
-/*   Updated: 2023/11/04 16:48:55 by alfgarci         ###   ########.fr       */
+/*   Updated: 2023/11/17 00:21:46 by alfgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Cub3D.h"
 
-t_bool  check_north(char **dump, int lines, t_cube *cube)
+t_bool	check_north(char **dump, int lines, t_cube *cube)
 {
 	(void)cube;
-    char	**split;
+	char	**split;
 	int		found;
 	int		i;
 
@@ -37,7 +37,7 @@ t_bool  check_north(char **dump, int lines, t_cube *cube)
 		return (false);
 }
 
-t_bool  check_south(char **dump, int lines, t_cube *cube)
+t_bool	check_south(char **dump, int lines, t_cube *cube)
 {
 	(void)cube;
 	char	**split;
@@ -62,10 +62,10 @@ t_bool  check_south(char **dump, int lines, t_cube *cube)
 		return (false);
 }
 
-t_bool  check_west(char **dump, int lines, t_cube *cube)
+t_bool	check_west(char **dump, int lines, t_cube *cube)
 {
 	(void)cube;
-    char	**split;
+	char	**split;
 	int		found;
 	int		i;
 

@@ -6,13 +6,13 @@
 /*   By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 14:43:30 by alfgarci          #+#    #+#             */
-/*   Updated: 2023/11/09 00:42:46 by alfgarci         ###   ########.fr       */
+/*   Updated: 2023/11/17 00:31:06 by alfgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Cub3D.h"
 
-int count_lines(t_path path, t_cube *cube)
+int	count_lines(t_path path, t_cube *cube)
 {
 	t_fd	fd;
 	int		count;
@@ -35,9 +35,9 @@ int count_lines(t_path path, t_cube *cube)
 int	is_empty_line(char *line)
 {
 	if (ft_split(line, ' ') == NULL)
-		return 1;
+		return (1);
 	else
-		return 0;
+		return (0);
 }
 
 char	**fill_dump(int n_lines, t_path path, t_cube *cube)
@@ -57,9 +57,8 @@ char	**fill_dump(int n_lines, t_path path, t_cube *cube)
 		line = ft_get_next_line(fd);
 	}
 	dump[++i] = NULL;
-	i = -1;
 	close (fd);
-	return dump;
+	return (dump);
 }
 
 char	**check_file(t_cube *cube, t_path path)
@@ -74,16 +73,14 @@ char	**check_file(t_cube *cube, t_path path)
 		|| !check_map(dump))
 	{
 		free_split(dump);
-		exit_error("Fallo Texturas, Color o Mapa", errno, cube);
+		exit_error(ERROR_FORMAT, errno, cube);
 	}
 	map = get_map(dump, n_lines, cube);
-	/*
-	if (check_walls(map))
+	free_split(dump);
+	if (is_map_closed(map) == false)
 	{
 		free_split(map);
-		exit_error("Fallo Paredes", errno, cube);
+		exit_error(ERROR_WALLS, errno, cube);
 	}
-	*/
-	free_split(dump);
 	return (map);
 }

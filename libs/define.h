@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   define.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:22:25 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/11/04 16:37:27 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/11/17 00:30:52 by alfgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@
 # define ERROR_PARSE "There are numerous reasons why this error message could \
 apear but mainly, the user has submited a wrong formated file or didnt submit \
 the right number of files in the first place (ONLY 1, NOT 0, NOT 2).\n"
+# define ERROR_FORMAT ".cub file format error :(\n"
+# define ERROR_WALLS "The map walls are not closed :(\n)"
 
 //Size of a piece of wall
 
