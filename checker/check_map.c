@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alfgarci <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 12:47:17 by alfgarci          #+#    #+#             */
-/*   Updated: 2023/11/09 12:47:21 by alfgarci         ###   ########.fr       */
+/*   Updated: 2023/11/17 00:27:04 by alfgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ int	map_line(char **dump)
 	while (dump[++i])
 	{
 		tmp = ft_split(dump[i], ' ');
-		if (dump[i][0] == '\n' || !ft_strncmp(tmp[0], "NO", 2) 
-			|| !ft_strncmp(tmp[0], "SO", 2) || !ft_strncmp(tmp[0], "WE", 2) 
+		if (dump[i][0] == '\n' || !ft_strncmp(tmp[0], "NO", 2)
+			|| !ft_strncmp(tmp[0], "SO", 2) || !ft_strncmp(tmp[0], "WE", 2)
 			|| !ft_strncmp(tmp[0], "EA", 2) || !ft_strncmp(tmp[0], "F", 2)
 			|| !ft_strncmp(tmp[0], "C", 2))
 		{
@@ -54,7 +54,7 @@ char	**reserve_map(int map_lines, int max_char_in_map, t_cube *cube)
 	int		i;
 
 	i = -1;
-	map = (char **)malloc( (map_lines + 1)* sizeof(char *));
+	map = (char **)malloc((map_lines + 1) * sizeof(char *));
 	if (!map)
 		exit_error(ERROR_MALLOC, errno, cube);
 	while (++i < map_lines)
@@ -66,8 +66,7 @@ char	**reserve_map(int map_lines, int max_char_in_map, t_cube *cube)
 			exit_error(ERROR_MALLOC, errno, cube);
 		}
 	}
-
-	return(map);
+	return (map);
 }
 
 char	**get_map(char **dump, int n_lines, t_cube *cube)
@@ -91,6 +90,8 @@ char	**get_map(char **dump, int n_lines, t_cube *cube)
 		{
 			if (dump[start_map][j] == ' ')
 				map[i][j] = 'v';
+			else if (dump[start_map][j] == '\n')
+				break ;
 			else
 				map[i][j] = dump[start_map][j];
 			j++;
@@ -100,12 +101,12 @@ char	**get_map(char **dump, int n_lines, t_cube *cube)
 			map[i][j] = 'v';
 			j++;
 		}
-		map[i][j-1] = '\0';
+		map[i][j - 1] = '\0';
 		i++;
 		start_map++;
 	}
 	map[i] = NULL;
-	return map;
+	return (map);
 }
 
 t_bool	check_map(char **dump)
@@ -121,7 +122,7 @@ t_bool	check_map(char **dump)
 		while (dump[start_map][j])
 		{
 			tmp = dump[start_map][j];
-			if ( tmp != '0' && tmp != '1' && tmp != ' ' && tmp != 'N'
+			if (tmp != '0' && tmp != '1' && tmp != ' ' && tmp != 'N'
 				&& tmp != 'S' && tmp != 'E' && tmp != 'W' && tmp != '\n')
 			{
 				return (false);
@@ -132,4 +133,3 @@ t_bool	check_map(char **dump)
 	}
 	return (true);
 }
-
