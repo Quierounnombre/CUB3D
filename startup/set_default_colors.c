@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   increase_map_size.c                                :+:      :+:    :+:   */
+/*   set_default_colors.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/04 17:42:54 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/11/04 17:54:45 by vicgarci         ###   ########.fr       */
+/*   Created: 2023/11/30 14:41:57 by vicgarci          #+#    #+#             */
+/*   Updated: 2023/11/30 14:45:46 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Cub3D.h"
 
-t_point	**increase_map_size(int size, t_point **map, t_cube *cube)
+void	set_default_colors(t_map *map)
 {
-	t_point	**local_map;
-	int		i;
+	t_color		tmp_color;
 
-	i = 0;
-	local_map = (t_point **)malloc(sizeof(t_point *) * (size + 1));
-	if (!local_map)
-		exit_error(ERROR_MALLOC, errno, cube);
-	if (!map)
-		return (local_map);
-	while (map[i])
-	{
-		local_map[i] = map[i];
-		i++;
-	}
-	free(map);
-	return (local_map);
+	tmp_color.b = DEFAULT_CEILING_B;
+	tmp_color.g = DEFAULT_CEILING_G;
+	tmp_color.r = DEFAULT_CEILING_R;
+	map->texture.celing = tmp_color;
+	tmp_color.b = DEFAULT_FLOOR_B;
+	tmp_color.g = DEFAULT_FLOOR_G;
+	tmp_color.r = DEFAULT_FLOOR_R;
+	map->texture.floor = tmp_color;
 }
