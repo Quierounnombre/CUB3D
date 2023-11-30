@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   define.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:22:25 by vicgarci          #+#    #+#             */
 /*   Updated: 2023/11/30 12:34:08 by vicgarci         ###   ########.fr       */
@@ -31,6 +31,8 @@
 # define ERROR_PARSE "There are numerous reasons why this error message could \
 apear but mainly, the user has submited a wrong formated file or didnt submit \
 the right number of files in the first place (ONLY 1, NOT 0, NOT 2).\n"
+# define ERROR_FORMAT ".cub file format error :(\n"
+# define ERROR_WALLS "The map walls are not closed :(\n)"
 # define ERROR_MLX_INIT "Can't start MLX\n"
 # define ERROR_MLX_WIN "Can't start a new windows\n"
 # define ERROR_MLX_IMG "Can't create a new img\n"

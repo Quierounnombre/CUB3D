@@ -3,113 +3,97 @@
 /*                                                        :::      ::::::::   */
 /*   check_walls.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alfgarci <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 12:47:36 by alfgarci          #+#    #+#             */
-/*   Updated: 2023/11/09 12:47:40 by alfgarci         ###   ########.fr       */
+/*   Updated: 2023/11/17 00:15:21 by alfgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Cub3D.h"
 
-static t_bool	check_north_wall(char **map, int rows, int colums)
+static t_bool	check_east(char **map, int i, int j)
 {
-	int	i;
-	int	j;
-	t_bool	res;
-
-	i = -1;
-	j = -1;
-	res = false;
-	while (++j < colums - 1)
-	{
-		i = -1;
-		while (++i < rows - 1)
-			if (map[i][j] == '1')
-				res = true;
-	}
-	return (res);
-}
-
-static t_bool	check_west_wall(char **map, int rows, int colums)
-{
-	int	i;
-	int	j;
-	t_bool	res;
-
-	i = -1;
-	res = false;
-	while (++i < rows - 1)
-	{
-		j = -1;
-		while (++j < colums - 1)
-			if (map[i][j] == '1')
-				res = true;
-	}
-	return (res);
-}
-
-static t_bool	check_east_wall(char **map, int rows, int colums)
-{
-	int	i;
-	int	j;
-	t_bool	res;
-
-	i = rows - 1;
-	j = colums - 1;
-	res = false;
-	while (i > 0)
-	{
-		j = rows - 1;
-		while (j > 0)
-		{
-			if (map[i][j] == '1')
-				res = true;
-			j--;
-		}
-		i--;
-	}
-	return (res);
-}
-
-static t_bool	check_south_wall(char **map, int rows, int colums)
-{
-	int	i;
-	int	j;
-	t_bool	res;
-
-	i = colums - 1;
-	j = rows - 1;
-	res = false;
-	while (j > 0)
-	{
-		i = rows - 1;
-		while (i > 0)
-		{
-			if (map[i][j] == '1')
-				res = true;
-			i--;
-		}
-		j--;
-	}
-	return (res);
-}
-
-t_bool	check_walls(char **map)
-{
-	int	rows;
-	int	cols;
+	int		rows;
+	int		cols;
 
 	matrix_dimension(map, &rows, &cols);
-	if (check_north_wall(map, rows, cols) == true
-		&& check_west_wall(map, rows, cols) == true
-		&& check_south_wall(map, rows, cols) == true
-		&& check_east_wall(map, rows, cols) == true)
+	while (j < cols)
 	{
-		return true;
+		if (map[i][j] == '1')
+			return (true);
+		j++;
 	}
-	else
+	return (false);
+}
+
+static t_bool	check_south(char **map, int i, int j)
+{
+	int		rows;
+	int		cols;
+
+	matrix_dimension(map, &rows, &cols);
+	while (i < rows)
 	{
-		return true;
+		if (map[i][j] == '1')
+			return (true);
+		i++;
 	}
+	return (false);
+}
+
+static t_bool	check_north(char **map, int i, int j)
+{
+	int		rows;
+	int		cols;
+
+	matrix_dimension(map, &rows, &cols);
+	while (i >= 0)
+	{
+		if (map[i][j] == '1')
+			return (true);
+		i--;
+	}
+	return (false);
+}
+
+static t_bool	check_west(char **map, int i, int j)
+{
+	int		rows;
+	int		cols;
+
+	matrix_dimension(map, &rows, &cols);
+	while (j >= 0)
+	{
+		if (map[i][j] == '1')
+			return (true);
+		j--;
+	}
+	return (false);
+}
+
+t_bool	is_map_closed(char **map)
+{
+	int	i;
+	int	j;
+
+	i = -1;
+	while (map[++i])
+	{
+		j = -1;
+		while (map[i][++j])
+		{
+			if (map[i][j] == '0')
+			{
+				if (check_north(map, i, j) == false
+					|| check_south(map, i, j) == false
+					|| check_west(map, i, j) == false
+					|| check_east(map, i, j) == false)
+				{
+					return (false);
+				}
+			}
+		}
+	}
+	return (true);
 }
