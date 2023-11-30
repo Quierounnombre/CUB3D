@@ -22,9 +22,9 @@ int	main(int argc, char **argv)
 	if (parse(argc, argv))
 	{
 		cube = init(*argv);
-		map = check_file(cube, argv[1]);
-		while (map[++i])
-			ft_printf("%s\n", map[i]);
+		cube->map->map = check_file(cube, argv[1]);
+		while (cube->map->map[++i])
+			ft_printf("%s\n", cube->map->map[i]);
 		draw(cube);
 		mlx_loop(cube->mlx);
 		free_cube(cube);

@@ -12,12 +12,12 @@
 
 #include "../Cub3D.h"
 
-t_image	*open_texture(t_path path, t_cube *cube)
+t_img	*open_texture(t_path path, t_cube *cube)
 {
-	t_image	img;
+	t_img	img;
 
-	img = mlx_xpm_file_to_image(cube->mlx, path, WIDTH, HEIGHT);
+	img = mlx_xpm_file_to_image(cube->mlx, path, WIDTH_TEXTURE, HEIGHT_TEXTURE);
 	if (img == 0)
-		exit_error("Fallo Textura, errno, cube");
+		exit_error(ERROR_OPEN_TEXTURE, errno, cube);
 	return (img);
 }

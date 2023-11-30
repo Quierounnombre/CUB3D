@@ -40,15 +40,15 @@ typedef struct s_texture
 typedef struct t_map
 {
 	t_texture	texture;
-	t_point		**map;
+	char		**map;
 }	t_map;
 
-typedef struct s_cam
+typedef struct s_player
 {
-	int			angle;
+	double		angle;
 	int			fov;
 	t_vector2D	pos;
-}	t_cam;
+}	t_player;
 
 typedef struct s_mlx_img
 {
@@ -63,7 +63,7 @@ typedef struct s_cube
 {
 	t_path		file;
 	t_map		*map;
-	t_cam		*cam;
+	t_player	*player; 
 	t_win		win;
 	t_mlx		mlx;
 	t_mlx_img	*mlx_img;
