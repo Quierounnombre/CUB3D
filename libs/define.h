@@ -37,7 +37,8 @@ the right number of files in the first place (ONLY 1, NOT 0, NOT 2).\n"
 # define ERROR_MLX_INIT "Can't start MLX\n"
 # define ERROR_MLX_WIN "Can't start a new windows\n"
 # define ERROR_MLX_IMG "Can't create a new img\n"
-# define ERROR_MLX_PUT_IMG "Can't put img to win"
+# define ERROR_MLX_PUT_IMG "Can't put img to win\n"
+# define ERROR_OPEN_TEXTURE "Can't open texture\n"
 
 //Size of a piece of wall
 
@@ -52,6 +53,8 @@ the right number of files in the first place (ONLY 1, NOT 0, NOT 2).\n"
 
 # define WIDTH 1000
 # define HEIGHT 1000
+# define WIDTH_TEXTURE 64
+# define HEIGHT_TEXTURE 64
 # define NAME "cub3D"
 # define ENDIAN_CONVERSION 8
 

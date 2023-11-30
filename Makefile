@@ -21,7 +21,7 @@ NAME 	=	cub3d
 
 #---SRC
 
-FILES_STARTUP =	init_cam \
+FILES_STARTUP =	init_player \
 				init_cube \
 				init_map \
 				init_mlx_img \
@@ -62,15 +62,22 @@ FILES_MLX =	mlx_open_win \
 			mlx_point_draw \
 			draw \
 			put_img \
+			open_texture \
 
 MLX_DIR = ./mlx/
 SRCS_MLX = $(addprefix $(MLX_DIR), $(addsuffix .c, $(FILES_MLX)))
+
+FILES_PLAYER = init_player_pos \
+
+PLAYER_DIR = ./player/
+SRCS_PLAYER = $(addprefix $(PLAYER_DIR), $(addsuffix .c, $(FILES_PLAYER)))
 
 SRC 	=	$(SRCS_STARTUP) \
 			$(SRCS_EXTRAS) \
 			$(SRCS_PARSE) \
 			$(SRCS_CHECKER) \
 			$(SRCS_MLX) \
+			$(SRCS_PLAYER) \
 			main.c \
 
 #---OBJ
