@@ -148,6 +148,7 @@ char		*take_rest(char *buffer);
 
 int			ft_wrap(int input, int min, int max);
 t_vector3D	load_vector3d(int i, int j, int k);
+int			ft_pythagoras(size_t side_1, size_t side_2, size_t hypotenuse);
 
 /*-----TESTING-----*/
 
