@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 13:36:16 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/11/09 15:52:12 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/11/30 17:04:08 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 int	main(int argc, char **argv)
 {
 	t_cube	*cube;
-	char	**map;
 	int i = -1;
 
 	cube = NULL;
