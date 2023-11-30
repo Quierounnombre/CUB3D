@@ -3,27 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   init_player_pos.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alfgarci <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 15:04:40 by alfgarci          #+#    #+#             */
-/*   Updated: 2023/11/30 15:04:42 by alfgarci         ###   ########.fr       */
+/*   Updated: 2023/11/30 17:03:52 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../Cub3D.h"
+
 void	init_player_pos(t_cube *cube)
 {
+	int		i;
+	int		j;
+
+	i = 0;
+	j = 0;
 	while (cube->map->map[++i])
 	{
 		while (cube->map->map[i][++j])
 		{
 			if (cube->map->map[i][++j] == 'N')
-				cube->plyer->angle = 0;
+				cube->player->angle = 0;
 			else if (cube->map->map[i][++j] == 'O')
-				cube->plyer->angle = (PI/2);
+				cube->player->angle = (PI / 2);
 			else if (cube->map->map[i][++j] == 'S')
-				cube->plyer->angle = (PI);
+				cube->player->angle = (PI);
 			else if (cube->map->map[i][++j] == 'E')
-				cube->plyer->angle = (3/2) * PI;
+				cube->player->angle = (3 / 2) * PI;
 			//meto la pos
 		}
 	}

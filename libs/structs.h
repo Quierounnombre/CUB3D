@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:22:29 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/11/09 13:26:10 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/11/30 17:00:40 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ typedef struct s_cube
 {
 	t_path		file;
 	t_map		*map;
-	t_player	*player; 
+	t_player	*player;
 	t_win		win;
 	t_mlx		mlx;
 	t_mlx_img	*mlx_img;

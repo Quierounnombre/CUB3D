@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:19:38 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/11/30 15:09:11 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/11/30 17:00:01 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void		matrix_dimension(char **arr, int *rows, int *cols);
 t_cube		*init(t_path file);
 t_cube		*init_cube(t_cube *cube, t_path file);
 t_map		*init_map(t_cube	*cube);
-t_cam		*init_cam(t_cube	*cube);
+t_player	*init_player(t_cube	*cube);
 t_mlx_img	*init_mlx_img(t_cube *cube);
 t_point		*store_map_line(char *s, t_cube *cube);
 t_point		**increase_map_size(int size, t_point **map, t_cube *cube);
