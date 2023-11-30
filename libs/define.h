@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:22:25 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/11/09 15:38:22 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/11/30 12:34:08 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,13 @@
 
 //Parse info
 
-# define WALL 1
-# define EMPTY 0
-# define WEST 2
-# define SOUTH 3
-# define NORTH 4
-# define EAST 5
-# define VOID_IN_MAP 6
-# define END_OF_MAP 7
+# define WALL '1'
+# define EMPTY '0'
+# define WEST 'W'
+# define SOUTH 'S'
+# define NORTH 'N'
+# define EAST 'E'
+# define VOID_IN_MAP 'v'
 
 //Error msg
 
