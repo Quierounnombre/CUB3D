@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 13:12:52 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/11/30 14:28:02 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/11/30 17:07:50 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,15 @@
 #define ERROR_PYTHAGORAS "Either Hypotenuse is '0' and a side is '0', or both \
 sides are '0'.\n"
 
-static void	check_params(size_t side_1, size_t side_2, size_t hypotenuse)
+#define ERROR_NEG_VALUES "Negatives values arent allowed.\n"
+
+static void	check_params(double side_1, double side_2, double hypotenuse)
 {
+	if ((side_1 < 0) || (side_2 < 0) || (hypotenuse < 0))
+	{
+		ft_printf(ERROR_NEG_VALUES);
+		exit(0);
+	}
 	if (side_1 == 0 && hypotenuse == 0)
 	{
 		ft_printf(ERROR_PYTHAGORAS);
@@ -41,10 +48,10 @@ static void	check_params(size_t side_1, size_t side_2, size_t hypotenuse)
 @brief Return the unknow side of the triangle, leave that parameter at 0,
 if you let 2 params or more at 0 it would exit.
 */
-int	ft_pythagoras(size_t side_1, size_t side_2, size_t hypotenuse)
+double	ft_pythagoras(double side_1, double side_2, double hypotenuse)
 {
-	int		res;
-	int		tmp;
+	double	res;
+	double	tmp;
 
 	res = 0;
 	tmp = 0;
