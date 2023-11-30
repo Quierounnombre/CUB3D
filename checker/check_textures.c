@@ -27,7 +27,7 @@ t_bool	check_north(char **dump, int lines, t_cube *cube)
 		if (ft_strncmp(split[0], "NO", ft_strlen(split[0])) == 0)
 		{
 			found++;
-			//cube->map->texture->north = open_texture(split[1]);
+			cube->map->texture.north = open_texture(split[1], cube);
 		}
 		free_split(split);
 	}
@@ -52,7 +52,7 @@ t_bool	check_south(char **dump, int lines, t_cube *cube)
 		if (ft_strncmp(split[0], "SO", ft_strlen(split[0])) == 0)
 		{
 			found++;
-			//cube->map->texture->south = open_texture(split[1]);
+			cube->map->texture.south = open_texture(split[1], cube);
 		}
 		free_split(split);
 	}
@@ -77,7 +77,7 @@ t_bool	check_west(char **dump, int lines, t_cube *cube)
 		if (ft_strncmp(split[0], "WE", ft_strlen(split[0])) == 0)
 		{
 			found++;
-			//cube->map->texture->west = open_texture(split[1]);
+			cube->map->texture.west = open_texture(split[1], cube);
 		}
 		free_split(split);
 	}
@@ -102,7 +102,7 @@ t_bool	check_east(char **dump, int lines, t_cube *cube)
 		if (ft_strncmp(split[0], "EA", ft_strlen(split[0])) == 0)
 		{
 			found++;
-			//cube->map->texture->east = open_texture(split[1]);
+			cube->map->texture.east = open_texture(split[1], cube);
 		}
 		free_split(split);
 	}

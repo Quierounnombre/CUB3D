@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_cam.c                                         :+:      :+:    :+:   */
+/*   init_player.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,12 +12,12 @@
 
 #include "../Cub3D.h"
 
-t_cam	*init_cam(t_cube *cube)
+t_player	*init_player(t_cube *cube)
 {
-	t_cam	*local_cam;
+	t_player	*local_player;
 
-	local_cam = (t_cam *)malloc(sizeof(t_cam));
-	if (!local_cam)
+	local_player = (t_player *)malloc(sizeof(t_player));
+	if (!local_player)
 		exit_error(ERROR_MALLOC, errno, cube);
-	return (local_cam);
+	return (local_player);
 }
