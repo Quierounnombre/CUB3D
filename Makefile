@@ -6,7 +6,7 @@
 #    By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/04 13:36:09 by alfgarci          #+#    #+#              #
-#    Updated: 2023/11/09 15:51:52 by vicgarci         ###   ########.fr        #
+#    Updated: 2023/11/30 15:09:31 by vicgarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,9 +25,7 @@ FILES_STARTUP =	init_player \
 				init_cube \
 				init_map \
 				init_mlx_img \
-				store_map_line \
-				increase_map_size \
-				store_map\
+				set_default_colors \
 				init \
 
 STARTUP_DIR = ./startup/
@@ -63,6 +61,7 @@ FILES_MLX =	mlx_open_win \
 			draw \
 			put_img \
 			open_texture \
+			fill_window \
 
 MLX_DIR = ./mlx/
 SRCS_MLX = $(addprefix $(MLX_DIR), $(addsuffix .c, $(FILES_MLX)))
