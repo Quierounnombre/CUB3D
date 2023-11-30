@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   set_default_colors.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/04 13:35:38 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/11/30 14:52:11 by vicgarci         ###   ########.fr       */
+/*   Created: 2023/11/30 14:41:57 by vicgarci          #+#    #+#             */
+/*   Updated: 2023/11/30 14:45:46 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Cub3D.h"
 
-t_cube	*init(t_path file)
+void	set_default_colors(t_map *map)
 {
-	t_cube	*local_cube;
+	t_color		tmp_color;
 
-	local_cube = NULL;
-	local_cube = init_cube(local_cube, file);
-	local_cube->map = init_map(local_cube);
-	set_default_colors(local_cube->map);
-	local_cube->cam = init_cam(local_cube);
-	local_cube->mlx_img = init_mlx_img(local_cube);
-	mlx_start(local_cube);
-	init_img(local_cube);
-	mlx_open_win(local_cube);
-	put_img(local_cube, local_cube->mlx_img->img, 0, 0);
-	return (local_cube);
+	tmp_color.b = DEFAULT_CEILING_B;
+	tmp_color.g = DEFAULT_CEILING_G;
+	tmp_color.r = DEFAULT_CEILING_R;
+	map->texture.celing = tmp_color;
+	tmp_color.b = DEFAULT_FLOOR_B;
+	tmp_color.g = DEFAULT_FLOOR_G;
+	tmp_color.r = DEFAULT_FLOOR_R;
+	map->texture.floor = tmp_color;
 }

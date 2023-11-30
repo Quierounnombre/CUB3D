@@ -106,6 +106,7 @@ OBJS_LST = $(addprefix $(LST_DIR), $(addsuffix .o, $(FILES_LST)))
 FILES_MATHFUNS = load_vector3D \
 				ft_wrap \
 				ft_pythagoras \
+				load_vector2D \
 
 MATHFUNS_DIR = ./mathfuns/
 SRCS_MATHFUNS = $(addprefix $(MATHFUNS_DIR), $(addsuffix .c, $(FILES_MATHFUNS)))

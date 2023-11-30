@@ -6,7 +6,7 @@
 #    By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/04 13:36:09 by alfgarci          #+#    #+#              #
-#    Updated: 2023/11/30 12:53:06 by vicgarci         ###   ########.fr        #
+#    Updated: 2023/11/30 15:09:31 by vicgarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ FILES_STARTUP =	init_cam \
 				init_cube \
 				init_map \
 				init_mlx_img \
+				set_default_colors \
 				init \
 
 STARTUP_DIR = ./startup/
@@ -59,6 +60,7 @@ FILES_MLX =	mlx_open_win \
 			mlx_point_draw \
 			draw \
 			put_img \
+			fill_window \
 
 MLX_DIR = ./mlx/
 SRCS_MLX = $(addprefix $(MLX_DIR), $(addsuffix .c, $(FILES_MLX)))

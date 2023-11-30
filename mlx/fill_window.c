@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   fill_window.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/04 13:35:38 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/11/30 14:52:11 by vicgarci         ###   ########.fr       */
+/*   Created: 2023/11/30 14:54:19 by vicgarci          #+#    #+#             */
+/*   Updated: 2023/11/30 15:13:08 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Cub3D.h"
 
-t_cube	*init(t_path file)
+void	fill_window(t_color color, t_vector2D start, t_vector2D end,
+		t_cube *cube)
 {
-	t_cube	*local_cube;
+	t_vector2D	v;
 
-	local_cube = NULL;
-	local_cube = init_cube(local_cube, file);
-	local_cube->map = init_map(local_cube);
-	set_default_colors(local_cube->map);
-	local_cube->cam = init_cam(local_cube);
-	local_cube->mlx_img = init_mlx_img(local_cube);
-	mlx_start(local_cube);
-	init_img(local_cube);
-	mlx_open_win(local_cube);
-	put_img(local_cube, local_cube->mlx_img->img, 0, 0);
-	return (local_cube);
+	v.x = start.x;
+	v.y = start.y;
+	while (v.x <= end.x)
+	{
+		while (v.y < end.y)
+		{
+			v.y++;
+			mlx_point_draw(cube, v.x, v.y, color);
+		}
+		v.x++;
+		v.y = start.y;
+	}
 }

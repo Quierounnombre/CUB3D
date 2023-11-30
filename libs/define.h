@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:22:25 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/11/30 12:50:27 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/11/30 14:49:35 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,19 @@ the right number of files in the first place (ONLY 1, NOT 0, NOT 2).\n"
 # define HEIGHT 1000
 # define NAME "cub3D"
 # define ENDIAN_CONVERSION 8
+
+//Colors
+
+# define DEFAULT_CEILING_B 255
+# define DEFAULT_CEILING_G 0
+# define DEFAULT_CEILING_R 0
+
+# define DEFAULT_FLOOR_B 0
+# define DEFAULT_FLOOR_G 255
+# define DEFAULT_FLOOR_R 0
+
+# define DEFAULT_WALL_B 0
+# define DEFAULT_WALL_G 0
+# define DEFAULT_WALL_R 255 
 
 #endif
