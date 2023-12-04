@@ -35,8 +35,8 @@ void	free_cube(t_cube	*cube)
 	{
 		if (cube->file)
 			free(cube->file);
-		if (cube->cam)
-			free(cube->cam);
+		if (cube->player)
+			free(cube->player);
 		if (cube->map)
 			free_map(cube->map);
 		if (cube->mlx_img)
