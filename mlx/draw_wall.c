@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 17:00:19 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/12/04 17:23:19 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/12/04 17:50:46 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,16 @@
 void	draw_wall(double wall_height, int column, t_cube *cube)
 {
 	double	window_dimension;
-	int		i;
+	int		start_of_draw;
+	int		end_of_draw;
 
 	window_dimension = (HEIGHT - wall_height) / SPLIT_THE_WIN;
-	i = window_dimension;
-	window_dimension += wall_height;
-	while (i < window_dimension)
+	start_of_draw = window_dimension;
+	end_of_draw = window_dimension + wall_height;
+	while (start_of_draw <= end_of_draw)
 	{
-		mlx_point_draw(cube, column, i, cube->map->texture.wall_color);
-		i++;
+		mlx_point_draw(cube, column, start_of_draw,
+			cube->map->texture.wall_color);
+		start_of_draw++;
 	}
 }

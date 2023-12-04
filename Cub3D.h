@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:19:38 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/12/04 17:11:02 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/12/04 17:46:34 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ char		**check_file(t_cube *cube, t_path path);
 //---------------------------------------------------------------------------
 
 void		mlx_open_win(t_cube *cube);
+void		draw_background(t_cube *cube);
 void		mlx_start(t_cube *cube);
 void		init_img(t_cube *cube);
 void		put_img(t_cube *cube, t_img img, int x, int y);

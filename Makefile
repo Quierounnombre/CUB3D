@@ -6,7 +6,7 @@
 #    By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/04 13:36:09 by alfgarci          #+#    #+#              #
-#    Updated: 2023/12/04 17:16:56 by vicgarci         ###   ########.fr        #
+#    Updated: 2023/12/04 17:47:25 by vicgarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,6 +70,7 @@ FILES_MLX =	mlx_open_win \
 			put_img \
 			fill_window \
 			draw_wall \
+			draw_background \
 			#open_texture \
 
 MLX_DIR = ./mlx/
