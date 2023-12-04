@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:19:38 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/12/04 15:39:32 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/12/04 16:50:26 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,15 @@ void		setup_hooks(t_cube *cube);
 //PLAYER
 //---------------------------------------------------------------------------
 
-void	init_player_pos(t_cube *cube);
+void		init_player_pos(t_cube *cube);
+//---------------------------------------------------------------------------
+
+//RAYCASTING
+//---------------------------------------------------------------------------
+
+double		calc_distance_to_wall(t_vector2D p_of_colision, double dist,
+				t_cube *cube);
+double		calc_wall_height(double side_dist);
 //---------------------------------------------------------------------------
 
 #endif
