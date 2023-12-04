@@ -6,7 +6,7 @@
 #    By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/04 13:36:09 by alfgarci          #+#    #+#              #
-#    Updated: 2023/11/30 17:04:23 by vicgarci         ###   ########.fr        #
+#    Updated: 2023/12/04 15:25:49 by vicgarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,6 +48,14 @@ FILES_EXTRAS =	exit_error \
 EXTRAS_DIR = ./extras/
 SRCS_EXTRAS = $(addprefix $(EXTRAS_DIR), $(addsuffix .c, $(FILES_EXTRAS)))
 
+FILES_HOOKS = 	setup_hooks \
+				movement_hook \
+				rotate_hook \
+				close_hook \
+
+HOOKS_DIR = ./player/hooks/
+SRCS_HOOKS = $(addprefix $(HOOKS_DIR), $(addsuffix .c, $(FILES_HOOKS)))
+
 FILES_PARSE =	parse \
 				check_argv \
 
@@ -61,7 +69,7 @@ FILES_MLX =	mlx_open_win \
 			draw \
 			put_img \
 			fill_window \
-			open_texture \
+			#open_texture \
 
 MLX_DIR = ./mlx/
 SRCS_MLX = $(addprefix $(MLX_DIR), $(addsuffix .c, $(FILES_MLX)))
@@ -82,6 +90,7 @@ SRC 	=	$(SRCS_STARTUP) \
 			$(SRCS_CHECKER) \
 			$(SRCS_MLX) \
 			$(SRCS_PLAYER) \
+			$(SRCS_HOOKS) \
 			$(SRCS_RAYCASTING) \
 			main.c \
 
