@@ -79,6 +79,11 @@ FILES_PLAYER = init_player_pos \
 PLAYER_DIR = ./player/
 SRCS_PLAYER = $(addprefix $(PLAYER_DIR), $(addsuffix .c, $(FILES_PLAYER)))
 
+FILES_RAYCASTING = init_player_pos \
+
+RAYCASTING_DIR = ./raycasting/
+SRCS_RAYCASTING = $(addprefix $(RAYCASTING_DIR), $(addsuffix .c, $(FILES_RAYCASTING)))
+
 SRC 	=	$(SRCS_STARTUP) \
 			$(SRCS_EXTRAS) \
 			$(SRCS_PARSE) \
@@ -86,6 +91,7 @@ SRC 	=	$(SRCS_STARTUP) \
 			$(SRCS_MLX) \
 			$(SRCS_PLAYER) \
 			$(SRCS_HOOKS) \
+			$(SRCS_RAYCASTING) \
 			main.c \
 
 #---OBJ
