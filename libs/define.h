@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:22:25 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/12/04 15:10:26 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/12/04 15:31:10 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,5 +86,6 @@ the right number of files in the first place (ONLY 1, NOT 0, NOT 2).\n"
 # define KEY_BACKWARD 1 //s
 # define KEY_ROTATE_RIGHT 2 //d
 # define KEY_ROTATE_LEFT 0 //a
+# define KEY_ESCAPE 53 //esc
 
 #endif
