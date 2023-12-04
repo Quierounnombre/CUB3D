@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:19:38 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/12/04 16:50:26 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/12/04 17:11:02 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,7 @@ void		init_player_pos(t_cube *cube);
 double		calc_distance_to_wall(t_vector2D p_of_colision, double dist,
 				t_cube *cube);
 double		calc_wall_height(double side_dist);
+void		draw_wall(double wall_height, int column, t_cube *cube);
 //---------------------------------------------------------------------------
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 14:41:57 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/11/30 14:45:46 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/12/04 17:06:32 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,8 @@ void	set_default_colors(t_map *map)
 	tmp_color.g = DEFAULT_FLOOR_G;
 	tmp_color.r = DEFAULT_FLOOR_R;
 	map->texture.floor = tmp_color;
+	tmp_color.b = DEFAULT_WALL_B;
+	tmp_color.g = DEFAULT_WALL_G;
+	tmp_color.r = DEFAULT_WALL_R;
+	map->texture.wall_color = tmp_color;
 }
