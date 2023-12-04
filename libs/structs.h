@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:22:29 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/11/30 17:00:40 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/12/04 13:40:09 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ typedef int		t_fd;
 typedef char	*t_path;
 typedef void	*t_win;
 typedef void	*t_mlx;
+typedef int		t_key;
 
 typedef struct s_color
 {

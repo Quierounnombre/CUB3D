@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_player.c                                      :+:      :+:    :+:   */
+/*   movement_hook.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/04 14:18:45 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/12/04 13:28:30 by vicgarci         ###   ########.fr       */
+/*   Created: 2023/12/04 12:52:42 by vicgarci          #+#    #+#             */
+/*   Updated: 2023/12/04 14:50:41 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Cub3D.h"
+#include "../../Cub3D.h"
 
-t_player	*init_player(t_cube *cube)
+void	movement_hook(t_cube *cube, t_bool	is_forward)
 {
-	t_player	*local_player;
+	int		dir;
 
-	local_player = (t_player *)malloc(sizeof(t_player));
-	if (!local_player)
-		exit_error(ERROR_MALLOC, errno, cube);
-	local_player->angle = PLAYER_DEFAULT_ANGLE;
-	local_player->fov = PLAYER_FOV;
-	local_player->pos = load_vector2d(PLAYER_DEFAULT_POS_X,
-			PLAYER_DEFAULT_POS_Y);
-	return (local_player);
+	dir = 1;
+	if (!is_forward)
+		dir = -1;
+	cube->player->pos.x += \
+	sin(cube->player->angle) * PLAYER_SPEED * dir;
+	cube->player->pos.y += \
+	cos(cube->player->angle) * PLAYER_SPEED * dir;
+	draw(cube);
 }

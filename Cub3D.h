@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:19:38 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/11/30 17:00:01 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/12/04 13:42:37 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,13 @@ void		draw(t_cube *cube);
 t_img		*open_texture(t_path path, t_cube *cube);
 void		fill_window(t_color color, t_vector2D start, t_vector2D end,
 				t_cube *cube);
+//---------------------------------------------------------------------------
+
+//HOOKS
+//---------------------------------------------------------------------------
+
+void		movement_hook(t_cube *cube, t_bool	is_forward);
+int			setup_hooks(t_key keycode, void *param);
 //---------------------------------------------------------------------------
 
 #endif
