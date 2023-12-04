@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   setup_hooks.c                                      :+:      :+:    :+:   */
+/*   rotate_hook.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/04 12:49:18 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/12/04 15:11:23 by vicgarci         ###   ########.fr       */
+/*   Created: 2023/12/04 14:51:42 by vicgarci          #+#    #+#             */
+/*   Updated: 2023/12/04 15:14:09 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Cub3D.h"
 
-int	setup_hooks(t_key keycode, void *param)
+void	rotate_hook(t_cube *cube, t_bool is_right)
 {
-	t_cube	*cube;
+	int		dir;
+	double	r_angle;
 
-	cube = param;
-	if (keycode == KEY_FORWARD)
-		movement_hook(cube, true);
-	if (keycode == KEY_BACKWARD)
-		movement_hook(cube, false);
-	if (keycode == KEY_ROTATE_RIGHT)
-		rotate_hook(cube, true);
-	if (keycode == KEY_ROTATE_LEFT)
-		rotate_hook(cube, false);
-	return (0);
+	dir = 1;
+	if (!is_right)
+		dir = -1;
+	r_angle = \
+	(dir * GRADES_TO_RAD) * PLAYER_ROTATE_SPEED;
+	r_angle += cube->player->angle;
+	if (r_angle < 0)
+		r_angle += (2 * M_PI);
+	if (r_angle > (2 * M_PI))
+		r_angle -= (2 * M_PI);
+	cube->player->angle = r_angle;
+	draw(cube);
 }

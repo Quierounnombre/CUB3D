@@ -6,7 +6,7 @@
 #    By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/04 13:36:09 by alfgarci          #+#    #+#              #
-#    Updated: 2023/12/04 13:43:01 by vicgarci         ###   ########.fr        #
+#    Updated: 2023/12/04 15:11:44 by vicgarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,6 +50,7 @@ SRCS_EXTRAS = $(addprefix $(EXTRAS_DIR), $(addsuffix .c, $(FILES_EXTRAS)))
 
 FILES_HOOKS = 	setup_hooks \
 				movement_hook \
+				rotate_hook \
 
 HOOKS_DIR = ./player/hooks/
 SRCS_HOOKS = $(addprefix $(HOOKS_DIR), $(addsuffix .c, $(FILES_HOOKS)))

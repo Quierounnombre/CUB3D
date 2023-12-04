@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:22:25 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/12/04 13:28:20 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/12/04 15:10:26 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,6 @@ the right number of files in the first place (ONLY 1, NOT 0, NOT 2).\n"
 
 # define GRADES_TO_RAD 0.0174533
 
-//PI
-
-# define PI 3.14
-
 //MLX
 
 # define WIDTH 1000
@@ -78,6 +74,7 @@ the right number of files in the first place (ONLY 1, NOT 0, NOT 2).\n"
 //Player
 
 # define PLAYER_SPEED 1
+# define PLAYER_ROTATE_SPEED 1
 # define PLAYER_FOV 90
 # define PLAYER_DEFAULT_ANGLE 0
 # define PLAYER_DEFAULT_POS_X 0
@@ -87,5 +84,7 @@ the right number of files in the first place (ONLY 1, NOT 0, NOT 2).\n"
 
 # define KEY_FORWARD 13 //w
 # define KEY_BACKWARD 1 //s
+# define KEY_ROTATE_RIGHT 2 //d
+# define KEY_ROTATE_LEFT 0 //a
 
 #endif
