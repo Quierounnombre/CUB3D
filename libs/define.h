@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:22:25 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/11/30 14:49:35 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/11/30 17:03:27 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,10 @@ the right number of files in the first place (ONLY 1, NOT 0, NOT 2).\n"
 //Conversion from º to rad
 
 # define GRADES_TO_RAD 0.0174533
+
+//PI
+
+# define PI 3.14
 
 //MLX
 
