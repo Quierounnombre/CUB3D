@@ -35,7 +35,7 @@ void	matrix_dimension(char **arr, int *rows, int *cols);
 t_cube		*init(t_path file);
 t_cube		*init_cube(t_cube *cube, t_path file);
 t_map		*init_map(t_cube	*cube);
-t_cam		*init_cam(t_cube	*cube);
+t_player	*init_player(t_cube	*cube);
 t_mlx_img	*init_mlx_img(t_cube *cube);
 t_point		*store_map_line(char *s, t_cube *cube);
 t_point		**increase_map_size(int size, t_point **map, t_cube *cube);
@@ -70,6 +70,12 @@ void		put_img(t_cube *cube, t_img img, int x, int y);
 void		mlx_point_draw(t_cube *cube, int x, int y, t_color input_color);
 void		draw(t_cube *cube);
 t_img		*open_texture(t_path path, t_cube *cube);
+//---------------------------------------------------------------------------
+
+//PLAYER
+//---------------------------------------------------------------------------
+
+void	init_player_pos(t_cube *cube);
 //---------------------------------------------------------------------------
 
 #endif

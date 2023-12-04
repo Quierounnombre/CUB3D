@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "../Cub3D.h"
-
+/*
 t_img	*open_texture(t_path path, t_cube *cube)
 {
 	t_img	img;
@@ -21,3 +21,4 @@ t_img	*open_texture(t_path path, t_cube *cube)
 		exit_error(ERROR_OPEN_TEXTURE, errno, cube);
 	return (img);
 }
+*/
