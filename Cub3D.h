@@ -82,6 +82,11 @@ void		movement_hook(t_cube *cube, t_bool	is_forward);
 void		rotate_hook(t_cube *cube, t_bool is_right);
 int			close_hook(t_cube *cube);
 void		setup_hooks(t_cube *cube);
+
+//PLAYER
+//---------------------------------------------------------------------------
+
+void	init_player_pos(t_cube *cube);
 //---------------------------------------------------------------------------
 
 #endif

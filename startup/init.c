@@ -19,8 +19,8 @@ t_cube	*init(t_path file)
 	local_cube = NULL;
 	local_cube = init_cube(local_cube, file);
 	local_cube->map = init_map(local_cube);
-	set_default_colors(local_cube->map);
 	local_cube->player = init_player(local_cube);
+	set_default_colors(local_cube->map);
 	local_cube->mlx_img = init_mlx_img(local_cube);
 	mlx_start(local_cube);
 	init_img(local_cube);

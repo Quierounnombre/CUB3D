@@ -22,8 +22,13 @@ int	main(int argc, char **argv)
 	{
 		cube = init(*argv);
 		cube->map->map = check_file(cube, argv[1]);
+		init_player_pos(cube);
+		/*
 		while (cube->map->map[++i])
 			ft_printf("%s\n", cube->map->map[i]);
+		printf("Angulo Player: %f\n", cube->player->angle);
+		printf("Pos Player x: %f  y: %f\n", cube->player->pos.x, cube->player->pos.y);
+		*/
 		draw(cube);
 		mlx_loop(cube->mlx);
 		free_cube(cube);
