@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:19:38 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/12/04 15:39:32 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/12/04 17:46:34 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ char		**check_file(t_cube *cube, t_path path);
 //---------------------------------------------------------------------------
 
 void		mlx_open_win(t_cube *cube);
+void		draw_background(t_cube *cube);
 void		mlx_start(t_cube *cube);
 void		init_img(t_cube *cube);
 void		put_img(t_cube *cube, t_img img, int x, int y);
@@ -86,7 +87,16 @@ void		setup_hooks(t_cube *cube);
 //PLAYER
 //---------------------------------------------------------------------------
 
-void	init_player_pos(t_cube *cube);
+void		init_player_pos(t_cube *cube);
+//---------------------------------------------------------------------------
+
+//RAYCASTING
+//---------------------------------------------------------------------------
+
+double		calc_distance_to_wall(t_vector2D p_of_colision, double dist,
+				t_cube *cube);
+double		calc_wall_height(double side_dist);
+void		draw_wall(double wall_height, int column, t_cube *cube);
 //---------------------------------------------------------------------------
 
 #endif
