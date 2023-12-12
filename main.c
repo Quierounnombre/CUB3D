@@ -20,9 +20,18 @@ int	main(int argc, char **argv)
 	if (parse(argc, argv))
 	{
 		cube = init(*argv);
-		cube->map->map = check_file(cube, argv[1]);
+		check_fill_file(cube, argv[1]);
+		printf("Altura Mapa: %d\n", cube->map->height);
+		printf("Anchura Mapa: %d\n", cube->map->width);
 		init_player_pos(cube);
+		printf("Altura Mapa: %d\n", cube->map->height);
+		printf("Anchura Mapa: %d\n", cube->map->width);
+		while (cube->map->map[++i])
+			ft_printf("%s\n", cube->map->map[i]);
+		printf("Angulo Player: %f\n", cube->player->angle);
+		printf("Pos Player x: %f  y: %f\n", cube->player->pos.x, cube->player->pos.y);
 		draw(cube);
+		cast_ray(cube);
 		mlx_loop(cube->mlx);
 		free_cube(cube);
 	}

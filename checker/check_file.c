@@ -12,6 +12,26 @@
 
 #include "../Cub3D.h"
 
+void	dimensions_map(t_cube *cube)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (cube->map->map[i])
+	{
+		j = 0;
+		while (cube->map->map[i][j])
+			j++;
+		i++;
+	}
+	cube->map->height = i;
+	cube->map->width = j;
+	printf("Altura Mapa: %d\n", i);
+	printf("Anchura Mapa: %d\n", j);
+}
+
 int	count_lines(t_path path, t_cube *cube)
 {
 	t_fd	fd;
@@ -61,7 +81,7 @@ char	**fill_dump(int n_lines, t_path path, t_cube *cube)
 	return (dump);
 }
 
-char	**check_file(t_cube *cube, t_path path)
+void check_fill_file(t_cube *cube, t_path path)
 {
 	int		n_lines;
 	char	**dump;
@@ -82,5 +102,6 @@ char	**check_file(t_cube *cube, t_path path)
 		free_split(map);
 		exit_error(ERROR_WALLS, errno, cube);
 	}
-	return (map);
+	cube->map->map = map;
+	dimensions_map(cube);
 }
