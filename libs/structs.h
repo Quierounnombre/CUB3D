@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:22:29 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/12/04 13:40:09 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/12/04 17:05:19 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef struct s_texture
 	t_img	east;
 	t_color	celing;
 	t_color	floor;
+	t_color	wall_color;
 }	t_texture;
 
 typedef struct t_map

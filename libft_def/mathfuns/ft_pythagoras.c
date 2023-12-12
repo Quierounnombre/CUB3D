@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 13:12:52 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/11/30 17:07:50 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/12/04 16:42:01 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #define ERROR_PYTHAGORAS "Either Hypotenuse is '0' and a side is '0', or both \
 sides are '0'.\n"
 
-#define ERROR_NEG_VALUES "Negatives values arent allowed.\n"
+#define ERROR_NEG_VALUES "Negatives values aren't allowed.\n"
 
 static void	check_params(double side_1, double side_2, double hypotenuse)
 {
@@ -62,7 +62,7 @@ double	ft_pythagoras(double side_1, double side_2, double hypotenuse)
 			tmp = side_1;
 		else
 			tmp = side_2;
-		res = sqrt(pow(tmp, 2) + pow(hypotenuse, 2));
+		res = sqrt(pow(hypotenuse, 2) - pow(tmp, 2));
 	}
 	else
 		res = sqrt(pow(side_1, 2) + pow(side_2, 2));
