@@ -58,7 +58,7 @@ t_bool		check_texture(char **dump, int lines, t_cube *cube);
 t_bool		check_map(char **dump);
 t_bool		is_map_closed(char **map);
 char		**get_map(char **dump, int n_lines, t_cube *cube);
-char		**check_file(t_cube *cube, t_path path);
+void		check_fill_file(t_cube *cube, t_path path);
 //---------------------------------------------------------------------------
 
 //MLX
@@ -87,6 +87,9 @@ void		setup_hooks(t_cube *cube);
 //---------------------------------------------------------------------------
 
 void	init_player_pos(t_cube *cube);
+
+
+void	cast_ray(t_cube *cube);
 //---------------------------------------------------------------------------
 
 #endif

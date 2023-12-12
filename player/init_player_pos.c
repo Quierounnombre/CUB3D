@@ -33,11 +33,11 @@ void	init_player_pos(t_cube *cube)
 		{
 			if (cube->map->map[i][j] == 'N')
 				set_coor_player(cube, i, j, 0);
-			else if (cube->map->map[i][j] == 'E')
+			else if (cube->map->map[i][j] == 'W')
 				set_coor_player(cube, i, j, (M_PI / 2));
 			else if (cube->map->map[i][j] == 'S')
 				set_coor_player(cube, i, j, M_PI);
-			else if (cube->map->map[i][j] == 'W')
+			else if (cube->map->map[i][j] == 'E')
 				set_coor_player(cube, i, j, ((3.0 / 2.0) * M_PI));
 		}
 	}

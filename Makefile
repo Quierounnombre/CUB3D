@@ -79,7 +79,7 @@ FILES_PLAYER = init_player_pos \
 PLAYER_DIR = ./player/
 SRCS_PLAYER = $(addprefix $(PLAYER_DIR), $(addsuffix .c, $(FILES_PLAYER)))
 
-FILES_RAYCASTING = init_player_pos \
+FILES_RAYCASTING = cal_hit_ray \
 
 RAYCASTING_DIR = ./raycasting/
 SRCS_RAYCASTING = $(addprefix $(RAYCASTING_DIR), $(addsuffix .c, $(FILES_RAYCASTING)))

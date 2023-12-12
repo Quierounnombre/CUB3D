@@ -42,6 +42,8 @@ typedef struct t_map
 {
 	t_texture	texture;
 	char		**map;
+	int			height;
+	int			width;
 }	t_map;
 
 typedef struct s_player
