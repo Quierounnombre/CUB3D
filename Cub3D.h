@@ -58,7 +58,7 @@ t_bool		check_texture(char **dump, int lines, t_cube *cube);
 t_bool		check_map(char **dump);
 t_bool		is_map_closed(char **map);
 char		**get_map(char **dump, int n_lines, t_cube *cube);
-char		**check_file(t_cube *cube, t_path path);
+void		check_fill_file(t_cube *cube, t_path path);
 //---------------------------------------------------------------------------
 
 //MLX
@@ -87,6 +87,10 @@ void		setup_hooks(t_cube *cube);
 //PLAYER
 //---------------------------------------------------------------------------
 
+void	init_player_pos(t_cube *cube);
+
+
+void	cast_ray(t_cube *cube);
 void		init_player_pos(t_cube *cube);
 //---------------------------------------------------------------------------
 
@@ -96,7 +100,7 @@ void		init_player_pos(t_cube *cube);
 double		calc_distance_to_wall(t_vector2D p_of_colision, double dist,
 				t_cube *cube);
 double		calc_wall_height(double side_dist);
-void		draw_wall(double wall_height, int column, t_cube *cube);
+void		  draw_wall(double wall_height, int column, t_cube *cube);
 //---------------------------------------------------------------------------
 
 #endif
