@@ -14,7 +14,6 @@
 
 void	init_img(t_cube *cube)
 {
-
 	cube->mlx_img->img = mlx_new_image(cube->mlx, WIDTH, HEIGHT);
 	if (!cube->mlx_img->img)
 		exit_error(ERROR_MLX_IMG, errno, cube);

@@ -52,6 +52,7 @@ char	**reserve_map(int map_lines, int max_char_in_map, t_cube *cube)
 {
 	char	**map;
 	int		i;
+	int		k;
 
 	i = -1;
 	map = (char **)malloc((map_lines + 1) * sizeof(char *));
@@ -62,7 +63,10 @@ char	**reserve_map(int map_lines, int max_char_in_map, t_cube *cube)
 		map[i] = (char *)malloc((max_char_in_map + 1) * sizeof(char));
 		if (!map[i])
 		{
-			//free rest
+			k = -1;
+			while (++k < i)
+				free(map[k]);
+			free(map);
 			exit_error(ERROR_MALLOC, errno, cube);
 		}
 	}
