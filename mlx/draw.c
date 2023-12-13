@@ -15,4 +15,5 @@
 void	draw(t_cube *cube)
 {
 	draw_background(cube);
+	raycasting(cube);
 }

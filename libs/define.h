@@ -71,9 +71,9 @@ the right number of files in the first place (ONLY 1, NOT 0, NOT 2).\n"
 
 //Player
 
-# define PLAYER_SPEED 1
-# define PLAYER_ROTATE_SPEED 1
-# define PLAYER_FOV 90
+# define PLAYER_SPEED 0.2
+# define PLAYER_ROTATE_SPEED 0.1
+# define PLAYER_FOV 60
 # define PLAYER_DEFAULT_ANGLE 0
 # define PLAYER_DEFAULT_POS_X 0
 # define PLAYER_DEFAULT_POS_Y 0

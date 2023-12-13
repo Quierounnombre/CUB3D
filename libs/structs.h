@@ -42,7 +42,7 @@ typedef struct s_texture
 typedef struct t_map
 {
 	t_texture	texture;
-	char		**map;
+	int			**map;
 	int			height;
 	int			width;
 }	t_map;
@@ -50,6 +50,8 @@ typedef struct t_map
 typedef struct s_player
 {
 	double		angle;
+	t_vector2D	dir;
+	t_vector2D	plane;
 	int			fov;
 	t_vector2D	pos;
 }	t_player;
@@ -73,5 +75,22 @@ typedef struct s_cube
 	t_mlx_img	*mlx_img;
 }	t_cube;
 
+typedef struct s_ray
+{
+	double	ray_dir_x;
+	double	ray_dir_y;
+	int		map_x;
+	int		map_y;
+	double	delta_x;
+	double	delta_y;
+	double	step_x;
+	double	step_y;
+	int		hit;
+	int		side;
+	double	side_x;
+	double	side_y;
+	double	perp_wall_dist;
+	int		line_height;
+}	t_ray;
 
 #endif

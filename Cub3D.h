@@ -27,6 +27,7 @@ void		free_cube(t_cube *cube);
 t_fd		open_fd(t_path file, t_cube *cube);
 void		free_split(char **split);
 void		matrix_dimension(char **arr, int *rows, int *cols);
+int			**to_int_ar(char **map, int rows, int cols, t_cube *cube);
 //---------------------------------------------------------------------------
 
 //STARTUP
@@ -74,6 +75,7 @@ void		draw(t_cube *cube);
 t_img		*open_texture(t_path path, t_cube *cube);
 void		fill_window(t_color color, t_vector2D start, t_vector2D end,
 				t_cube *cube);
+
 //---------------------------------------------------------------------------
 
 //HOOKS
@@ -87,20 +89,18 @@ void		setup_hooks(t_cube *cube);
 //PLAYER
 //---------------------------------------------------------------------------
 
-void	init_player_pos(t_cube *cube);
-
-
-void	cast_ray(t_cube *cube);
-void		init_player_pos(t_cube *cube);
+void		init_player_pos(t_cube *cube, char **map);
 //---------------------------------------------------------------------------
 
 //RAYCASTING
 //---------------------------------------------------------------------------
 
+//void		cast_ray(t_cube *cube);
+void		raycasting(t_cube *cube);
 double		calc_distance_to_wall(t_vector2D p_of_colision, double dist,
 				t_cube *cube);
 double		calc_wall_height(double side_dist);
-void		  draw_wall(double wall_height, int column, t_cube *cube);
+void		draw_wall(double wall_height, int column, t_cube *cube);
 //---------------------------------------------------------------------------
 
 #endif

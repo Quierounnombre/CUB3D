@@ -14,19 +14,28 @@
 
 void	rotate_hook(t_cube *cube, t_bool is_right)
 {
-	int		dir;
-	double	r_angle;
+	double	dirX = cube->player->dir.x;
+	double	dirY = cube->player->dir.y;
+	double	planeX = cube->player->plane.x;
+	double	planeY = cube->player->plane.y;
 
-	dir = 1;
+	if (is_right)
+	{
+		double oldDirX = dirX;
+		cube->player->dir.x = dirX * cos(-PLAYER_ROTATE_SPEED) - dirY * sin(-PLAYER_ROTATE_SPEED);
+		cube->player->dir.y = oldDirX * sin(-PLAYER_ROTATE_SPEED) + dirY * cos(-PLAYER_ROTATE_SPEED);
+		double oldPlaneX = planeX;
+		cube->player->plane.x = planeX * cos(-PLAYER_ROTATE_SPEED) - planeY * sin(-PLAYER_ROTATE_SPEED);
+		cube->player->plane.y = oldPlaneX * sin(-PLAYER_ROTATE_SPEED) + planeY * cos(-PLAYER_ROTATE_SPEED);
+	}
 	if (!is_right)
-		dir = -1;
-	r_angle = \
-	(dir * GRADES_TO_RAD) * PLAYER_ROTATE_SPEED;
-	r_angle += cube->player->angle;
-	if (r_angle < 0)
-		r_angle += (2 * M_PI);
-	if (r_angle > (2 * M_PI))
-		r_angle -= (2 * M_PI);
-	cube->player->angle = r_angle;
+	{
+		double oldDirX = dirX;
+		cube->player->dir.x = dirX * cos(PLAYER_ROTATE_SPEED) - dirY * sin(PLAYER_ROTATE_SPEED);
+		cube->player->dir.y = oldDirX * sin(PLAYER_ROTATE_SPEED) + dirY * cos(PLAYER_ROTATE_SPEED);
+		double oldPlaneX = planeX;
+		cube->player->plane.x = planeX * cos(PLAYER_ROTATE_SPEED) - planeY * sin(PLAYER_ROTATE_SPEED);
+		cube->player->plane.y = oldPlaneX * sin(PLAYER_ROTATE_SPEED) + planeY * cos(PLAYER_ROTATE_SPEED);
+	}
 	draw(cube);
 }
