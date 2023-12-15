@@ -30,18 +30,19 @@ typedef struct s_color
 
 typedef struct s_texture
 {
-	t_img	north;
-	t_img	south;
-	t_img	west;
-	t_img	east;
-	t_color	celing;
-	t_color	floor;
-	t_color	wall_color;
+	t_img	img;
+	int		width;
+	int		height;
 }	t_texture;
 
 typedef struct t_map
 {
-	t_texture	texture;
+	t_texture	north;
+	t_texture	south;
+	t_texture	west;
+	t_texture	east;
+	t_color		celing;
+	t_color		floor;
 	int			**map;
 	int			height;
 	int			width;

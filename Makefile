@@ -71,7 +71,7 @@ FILES_MLX =	mlx_open_win \
 			fill_window \
 			draw_wall \
 			draw_background \
-			#open_texture \
+			open_texture \
 
 MLX_DIR = ./mlx/
 SRCS_MLX = $(addprefix $(MLX_DIR), $(addsuffix .c, $(FILES_MLX)))

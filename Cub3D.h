@@ -72,7 +72,7 @@ void		init_img(t_cube *cube);
 void		put_img(t_cube *cube, t_img img, int x, int y);
 void		mlx_point_draw(t_cube *cube, int x, int y, t_color input_color);
 void		draw(t_cube *cube);
-t_img		*open_texture(t_path path, t_cube *cube);
+t_img		open_texture(t_path path, t_cube *cube, char dir);
 void		fill_window(t_color color, t_vector2D start, t_vector2D end,
 				t_cube *cube);
 
