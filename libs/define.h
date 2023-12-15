@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:22:25 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/12/04 15:31:10 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/12/15 17:43:33 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ the right number of files in the first place (ONLY 1, NOT 0, NOT 2).\n"
 # define HEIGHT 1000
 # define NAME "cub3D"
 # define ENDIAN_CONVERSION 8
+# define BITE_SIZE 8
 
 //Colors
 
