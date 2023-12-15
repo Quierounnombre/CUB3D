@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 14:54:19 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/12/15 16:58:41 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/12/15 18:34:54 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ void	fill_window(t_color color, t_vector2D start, t_vector2D end,
 	{
 		while (v.y < end.y)
 		{
-			v.y++;
 			mlx_point_draw(cube, v.x, v.y, color);
+			v.y++;
 		}
 		v.x++;
 		v.y = start.y;

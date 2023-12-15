@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 13:36:16 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/12/15 16:01:52 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/12/15 18:04:07 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void	tmp_ver_caracteristicas(t_cube *cube)
 
 	i = -1;
 	j = -1;
-	printf("Altura Mapa: %d\n", cube->map->height);
-	printf("Anchura Mapa: %d\n", cube->map->width);
+	printf("Height Map: %d\n", cube->map->height);
+	printf("Widht Map: %d\n", cube->map->width);
 	while (++i < cube->map->height)
 	{
 		j = -1;
@@ -31,7 +31,7 @@ void	tmp_ver_caracteristicas(t_cube *cube)
 		ft_printf("\n");
 	}
 
-	printf("Angulo Player: %f\n", cube->player->angle);
+	printf("Angle Player: %f\n", cube->player->angle);
 	printf("Pos Player  x: %f  y: %f\n",
 		cube->player->pos.x, cube->player->pos.y);
 	printf("DIR VEC     x: %f  y: %f\n",
