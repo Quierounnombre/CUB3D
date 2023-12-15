@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mlx_point_draw.c                                   :+:      :+:    :+:   */
+/*   ft_pixel_put.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/09 15:32:21 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/12/15 15:55:33 by vicgarci         ###   ########.fr       */
+/*   Created: 2023/03/07 11:52:41 by vicgarci          #+#    #+#             */
+/*   Updated: 2023/12/15 15:54:29 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Cub3D.h"
 
-static int	endian_conversion(t_color color)
+void	ft_pixel_put(t_mlx_img *img, int x, int y, int color)
 {
-	return ((color.b)
-		+ (color.g << ENDIAN_CONVERSION)
-		+ (color.r << (2 * ENDIAN_CONVERSION)));
-}
+	char	*dst;
 
-void	mlx_point_draw(t_cube *cube, int x, int y, t_color input_color)
-{
-	int	color;
-
-	color = endian_conversion(input_color);
-	ft_pixel_put(cube->mlx_img, x, y, color);
+	dst = img->adres + (y * img->line + x * (img->bits_per_pixel / 8));
+	*(unsigned int *)dst = color;
 }
