@@ -14,14 +14,28 @@
 
 void	movement_hook(t_cube *cube, t_bool	is_forward)
 {
-	int		dir;
+	double	pos_x;
+	double	pos_y;
+	double	dir_x;
+	double	dir_y;
 
-	dir = 1;
+	pos_x = cube->player->pos.x;
+	pos_y = cube->player->pos.y;
+	dir_x = cube->player->dir.x;
+	dir_y = cube->player->dir.y;
+	if (is_forward)
+	{
+		if (!cube->map->map[(int)(pos_x + dir_x * PLAYER_SPEED)][(int)(pos_y)])
+			cube->player->pos.x += dir_x * PLAYER_SPEED;
+		if (!cube->map->map[(int)(pos_x)][(int)(pos_y + dir_y * PLAYER_SPEED)])
+			cube->player->pos.y += dir_y * PLAYER_SPEED;
+	}
 	if (!is_forward)
-		dir = -1;
-	cube->player->pos.x += \
-	sin(cube->player->angle) * PLAYER_SPEED * dir;
-	cube->player->pos.y += \
-	cos(cube->player->angle) * PLAYER_SPEED * dir;
+	{
+		if (!cube->map->map[(int)(pos_x - dir_x * PLAYER_SPEED)][(int)(pos_y)])
+			cube->player->pos.x -= dir_x * PLAYER_SPEED;
+		if (!cube->map->map[(int)(pos_x)][(int)(pos_y - dir_y * PLAYER_SPEED)])
+			cube->player->pos.y -= dir_y * PLAYER_SPEED;
+	}
 	draw(cube);
 }

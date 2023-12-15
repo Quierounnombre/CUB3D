@@ -19,7 +19,7 @@ static void	free_map(t_map	*map)
 	i = 0;
 	if (map->map)
 	{
-		while (map->map[i])
+		while (i < map->height)
 		{
 			free(map->map[i]);
 			i++;

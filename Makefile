@@ -84,7 +84,7 @@ SRCS_PLAYER = $(addprefix $(PLAYER_DIR), $(addsuffix .c, $(FILES_PLAYER)))
 
 FILES_RAYCASTING =	calc_wall_height \
 					calc_distance_to_wall \
-					cal_hit_ray \
+					calc_rays \
           
 RAYCASTING_DIR = ./raycasting/
 SRCS_RAYCASTING = $(addprefix $(RAYCASTING_DIR), $(addsuffix .c, $(FILES_RAYCASTING)))
