@@ -26,7 +26,7 @@ void	draw_wall(double wall_height, int column, t_cube *cube)
 	while (start_of_draw <= end_of_draw)
 	{
 		mlx_point_draw(cube, column, start_of_draw,
-			cube->map->texture.wall_color);
+			cube->map->wall_color);
 		start_of_draw++;
 	}
 }

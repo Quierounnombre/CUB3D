@@ -1,7 +1,7 @@
-NO ./assets/textures/N_ANIM.xpm
-SO ./assets/textures/S_ANIM.xpm
-WE ./assets/textures/W_ANIM.xpm
-EA ./assets/textures/E_ANIM.xpm
+NO ./textures/N.xpm
+SO ./textures/S.xpm
+WE ./textures/W.xpm
+EA ./textures/E.xpm
 
 F 50,100,10
 C 100,100,255
