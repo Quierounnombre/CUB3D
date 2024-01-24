@@ -19,8 +19,8 @@ void	draw_background(t_cube *cube)
 
 	v1 = load_vector2d(0, 0);
 	v2 = load_vector2d(HEIGHT, WIDTH / 2);
-	fill_window(cube->map->texture.celing, v1, v2, cube);
+	fill_window(cube->map->celing, v1, v2, cube);
 	v2.x = 0;
 	v1 = load_vector2d(HEIGHT, WIDTH);
-	fill_window(cube->map->texture.floor, v2, v1, cube);
+	fill_window(cube->map->floor, v2, v1, cube);
 }

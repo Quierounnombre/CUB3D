@@ -28,7 +28,7 @@ t_bool	check_north(char **dump, int lines, t_cube *cube)
 		{
 			found++;
 			ft_printf("%s\n", split[1]);
-			cube->map->north.img = open_texture(split[1], cube, 'N');
+			//cube->map->north.img = open_texture(split[1], cube, 'N');
 		}
 		free_split(split);
 	}
@@ -53,7 +53,7 @@ t_bool	check_south(char **dump, int lines, t_cube *cube)
 		if (ft_strncmp(split[0], "SO", ft_strlen(split[0])) == 0)
 		{
 			found++;
-			cube->map->south.img = open_texture(split[1], cube, 'S');
+			//cube->map->south.img = open_texture(split[1], cube, 'S');
 		}
 		free_split(split);
 	}
@@ -78,7 +78,7 @@ t_bool	check_west(char **dump, int lines, t_cube *cube)
 		if (ft_strncmp(split[0], "WE", ft_strlen(split[0])) == 0)
 		{
 			found++;
-			cube->map->west.img = open_texture(split[1], cube, 'W');
+			//cube->map->west.img = open_texture(split[1], cube, 'W');
 		}
 		free_split(split);
 	}
@@ -103,7 +103,7 @@ t_bool	check_east(char **dump, int lines, t_cube *cube)
 		if (ft_strncmp(split[0], "EA", ft_strlen(split[0])) == 0)
 		{
 			found++;
-			cube->map->east.img = open_texture(split[1], cube, 'E');
+			//cube->map->east.img = open_texture(split[1], cube, 'E');
 		}
 		free_split(split);
 	}

@@ -19,13 +19,13 @@ void	set_default_colors(t_map *map)
 	tmp_color.b = DEFAULT_CEILING_B;
 	tmp_color.g = DEFAULT_CEILING_G;
 	tmp_color.r = DEFAULT_CEILING_R;
-	map->texture.celing = tmp_color;
+	map->celing = tmp_color;
 	tmp_color.b = DEFAULT_FLOOR_B;
 	tmp_color.g = DEFAULT_FLOOR_G;
 	tmp_color.r = DEFAULT_FLOOR_R;
-	map->texture.floor = tmp_color;
+	map->floor = tmp_color;
 	tmp_color.b = DEFAULT_WALL_B;
 	tmp_color.g = DEFAULT_WALL_G;
 	tmp_color.r = DEFAULT_WALL_R;
-	map->texture.wall_color = tmp_color;
+	map->wall_color = tmp_color;
 }

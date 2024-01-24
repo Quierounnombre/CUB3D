@@ -19,8 +19,8 @@ t_img	open_texture(t_path path, t_cube *cube, char dir)
 	img = NULL;
 	if (dir == 'N')
 	{
-		img = mlx_xpm_file_to_image(cube->mlx, path, &cube->map->north.width ,
-			&cube->map->north.height);
+		img = mlx_xpm_file_to_image(cube->mlx, path, &(cube->map->north.width) ,
+			&(cube->map->north.height));
 	}
 	else if (dir == 'S')
 	{
@@ -37,7 +37,9 @@ t_img	open_texture(t_path path, t_cube *cube, char dir)
 		img = mlx_xpm_file_to_image(cube->mlx, path, &cube->map->east.width ,
 			&cube->map->east.height);
 	}
-	printf("%p\n", img);
+	printf("%s\n", path);
+	printf("%p\n%p\n", &cube->map->east.width, &cube->map->east.height);
+	printf("%p\n", cube->mlx);
 	if (img == NULL)
 		exit_error(ERROR_OPEN_TEXTURE, errno, cube);
 	return (img);

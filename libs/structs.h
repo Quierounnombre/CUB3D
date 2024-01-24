@@ -43,6 +43,7 @@ typedef struct t_map
 	t_texture	east;
 	t_color		celing;
 	t_color		floor;
+	t_color		wall_color;
 	int			**map;
 	int			height;
 	int			width;
