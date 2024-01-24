@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 12:49:18 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/12/04 15:40:59 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/12/15 18:27:16 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ static int	movement_hooks(t_key keycode, void *param)
 
 void	setup_hooks(t_cube *cube)
 {
-	mlx_key_hook(cube->win, movement_hooks, cube);
+	mlx_hook(cube->win, 2, 0, movement_hooks, cube);
+	mlx_do_key_autorepeaton(cube->mlx);
 	mlx_hook(cube->win, 17, 0, close_hook, cube);
 }

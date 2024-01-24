@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:22:29 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/12/04 17:05:19 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/12/15 16:33:51 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ typedef struct s_player
 
 typedef struct s_mlx_img
 {
-	t_img	*img;
+	t_img	img;
 	char	*adres;
 	int		bits_per_pixel;
 	int		line;

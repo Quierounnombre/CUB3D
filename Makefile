@@ -6,7 +6,7 @@
 #    By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/04 13:36:09 by alfgarci          #+#    #+#              #
-#    Updated: 2023/12/04 17:47:25 by vicgarci         ###   ########.fr        #
+#    Updated: 2023/12/15 15:56:38 by vicgarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,7 +71,8 @@ FILES_MLX =	mlx_open_win \
 			fill_window \
 			draw_wall \
 			draw_background \
-			open_texture \
+			ft_pixel_put \
+			#open_texture \
 
 MLX_DIR = ./mlx/
 SRCS_MLX = $(addprefix $(MLX_DIR), $(addsuffix .c, $(FILES_MLX)))

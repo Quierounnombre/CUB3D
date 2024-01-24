@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   draw_background.c                                  :+:      :+:    :+:   */
+/*   ft_pixel_put.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/04 17:45:14 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/01/24 15:20:15 by vicgarci         ###   ########.fr       */
+/*   Created: 2023/03/07 11:52:41 by vicgarci          #+#    #+#             */
+/*   Updated: 2023/12/15 17:38:33 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Cub3D.h"
 
-void	draw_background(t_cube *cube)
+void	ft_pixel_put(t_mlx_img *img, int x, int y, unsigned int color)
 {
-	t_vector2D	v1;
-	t_vector2D	v2;
+	char	*dst;
 
-	v1 = load_vector2d(0, 0);
-	v2 = load_vector2d(HEIGHT, WIDTH / 2);
-	fill_window(cube->map->celing, v1, v2, cube);
-	v2.x = 0;
-	v1 = load_vector2d(HEIGHT, WIDTH);
-	fill_window(cube->map->floor, v2, v1, cube);
+	dst = img->adres + (y * img->line + x * (img->bits_per_pixel / BITE_SIZE));
+	*(unsigned int *)dst = color;
 }
