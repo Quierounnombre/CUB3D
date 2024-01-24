@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cal_hit_ray.c                                      :+:      :+:    :+:   */
+/*   calc_rays.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alfgarci <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:26:08 by alfgarci          #+#    #+#             */
-/*   Updated: 2023/12/04 16:26:10 by alfgarci         ###   ########.fr       */
+/*   Updated: 2023/12/15 18:07:42 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,8 +86,6 @@ void	raycasting(t_cube *cube)
 {
 	int		x;
 	t_ray	*ray;
-	int		draw_start;
-	int		draw_end;
 
 	x = -1;
 	while (++x < WIDTH)
@@ -100,13 +98,7 @@ void	raycasting(t_cube *cube)
 		else
 			ray->perp_wall_dist = (ray->side_y - ray->delta_y);
 		ray->line_height = (int)calc_wall_height(ray->perp_wall_dist);
-		draw_start = (((-1) * (ray->line_height)) / 2) + (HEIGHT / 2);
-		if (draw_start < 0)
-			draw_start = 0;
-		draw_end = ray->line_height / 2 + HEIGHT / 2;
-		if (draw_end >= HEIGHT)
-			draw_end = HEIGHT - 1;
-		draw_wall(draw_end - draw_start, x, cube);
+		draw_wall(ray->line_height, x, cube);
 		free(ray);
 	}
 }

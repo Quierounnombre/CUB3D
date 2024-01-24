@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:22:25 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/12/04 15:31:10 by vicgarci         ###   ########.fr       */
+/*   Updated: 2023/12/15 18:15:28 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ the right number of files in the first place (ONLY 1, NOT 0, NOT 2).\n"
 # define HEIGHT 1000
 # define NAME "cub3D"
 # define ENDIAN_CONVERSION 8
+# define BITE_SIZE 8
 
 //Colors
 
@@ -73,7 +74,7 @@ the right number of files in the first place (ONLY 1, NOT 0, NOT 2).\n"
 
 # define PLAYER_SPEED 0.2
 # define PLAYER_ROTATE_SPEED 0.1
-# define PLAYER_FOV 60
+# define PLAYER_FOV 50
 # define PLAYER_DEFAULT_ANGLE 0
 # define PLAYER_DEFAULT_POS_X 0
 # define PLAYER_DEFAULT_POS_Y 0
