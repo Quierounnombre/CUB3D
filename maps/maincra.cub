@@ -1,7 +1,7 @@
-NO ./assets/textures/grass.xpm
-SO ./assets/textures/snow.xpm
-WE ./assets/textures/red.xpm
-EA ./assets/textures/blue.xpm
+NO ./textures/north_texture.xpm
+SO ./textures/S.xpm
+WE ./textures/W.xpm
+EA ./textures/E.xpm
 
 F 50,100,10
 C 100,100,255

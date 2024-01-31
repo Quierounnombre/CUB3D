@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 17:45:14 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/12/15 16:02:31 by vicgarci         ###   ########.fr       */
+/*   Updated: 2024/01/24 15:20:15 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void	draw_background(t_cube *cube)
 
 	v1 = load_vector2d(0, 0);
 	v2 = load_vector2d(HEIGHT, WIDTH / 2);
-	fill_window(cube->map->texture.celing, v1, v2, cube);
+	fill_window(cube->map->celing, v1, v2, cube);
 	v2.x = 0;
 	v1 = load_vector2d(HEIGHT, WIDTH);
-	fill_window(cube->map->texture.floor, v2, v1, cube);
+	fill_window(cube->map->floor, v2, v1, cube);
 }

@@ -61,8 +61,8 @@ typedef struct s_vector3D
 
 typedef struct s_vector2D
 {
-	float	x;
-	float	y;
+	double	x;
+	double	y;
 }			t_vector2D;
 
 /*-----LstFuns-----*/

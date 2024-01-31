@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:19:38 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/12/15 17:32:11 by vicgarci         ###   ########.fr       */
+/*   Updated: 2024/01/24 15:48:41 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int			**to_int_ar(char **map, int rows, int cols, t_cube *cube);
 t_cube		*init(t_path file);
 t_cube		*init_cube(t_cube *cube, t_path file);
 t_map		*init_map(t_cube	*cube);
+void		init_texture(t_texture *texture);
 t_player	*init_player(t_cube	*cube);
 t_mlx_img	*init_mlx_img(t_cube *cube);
 t_point		*store_map_line(char *s, t_cube *cube);
@@ -72,7 +73,7 @@ void		init_img(t_cube *cube);
 void		put_img(t_cube *cube, t_img img, int x, int y);
 void		mlx_point_draw(t_cube *cube, int x, int y, t_color input_color);
 void		draw(t_cube *cube);
-t_img		*open_texture(t_path path, t_cube *cube);
+t_img		open_texture(t_path path, t_cube *cube, char dir);
 void		fill_window(t_color color, t_vector2D start, t_vector2D end,
 				t_cube *cube);
 void		ft_pixel_put(t_mlx_img	*img, int x, int y, unsigned int color);
