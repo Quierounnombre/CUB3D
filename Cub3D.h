@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:19:38 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/01/24 15:48:41 by vicgarci         ###   ########.fr       */
+/*   Updated: 2024/01/31 20:18:43 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,10 +73,16 @@ void		init_img(t_cube *cube);
 void		put_img(t_cube *cube, t_img img, int x, int y);
 void		mlx_point_draw(t_cube *cube, int x, int y, t_color input_color);
 void		draw(t_cube *cube);
-t_img		open_texture(t_path path, t_cube *cube, char dir);
 void		fill_window(t_color color, t_vector2D start, t_vector2D end,
 				t_cube *cube);
 void		ft_pixel_put(t_mlx_img	*img, int x, int y, unsigned int color);
+
+//TEXTURE_PROCESSING
+//---------------------------------------------------------------------------
+
+void		load_texture(t_cube *cube, t_texture *texture);
+char		*look_for_line(t_fd fd, t_cube *cube, int advance_n_lines);
+void		set_texture_dimentions(char *s, t_texture *texture, t_cube *cube);
 //---------------------------------------------------------------------------
 
 //HOOKS

@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:22:29 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/12/15 16:33:51 by vicgarci         ###   ########.fr       */
+/*   Updated: 2024/01/31 20:19:18 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,18 @@ typedef int		t_key;
 
 typedef struct s_color
 {
-	int	r;
-	int	g;
-	int	b;
+	uint8_t	r;
+	uint8_t	g;
+	uint8_t	b;
 }	t_color;
 
 typedef struct s_texture
 {
-	t_img	img;
+	t_path	file;
+	t_color	**raw;
 	int		width;
 	int		height;
+	int		n_colors;
 }	t_texture;
 
 typedef struct t_map

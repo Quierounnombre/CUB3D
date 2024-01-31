@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_map.c                                         :+:      :+:    :+:   */
+/*   load_texture.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/04 14:08:03 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/01/31 18:52:31 by vicgarci         ###   ########.fr       */
+/*   Created: 2024/01/31 18:55:19 by vicgarci          #+#    #+#             */
+/*   Updated: 2024/01/31 20:36:52 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Cub3D.h"
 
-t_map	*init_map(t_cube *cube)
+void	load_texture(t_cube *cube, t_texture *texture)
 {
-	t_map	*local_map;
+	t_fd	fd;
+	char	*s;
 
-	local_map = (t_map *)malloc(sizeof(t_map));
-	if (!local_map)
-		exit_error(ERROR_MALLOC, errno, cube);
-	init_texture(&local_map->north);
-	init_texture(&local_map->south);
-	init_texture(&local_map->west);
-	init_texture(&local_map->east);
-	return (local_map);
+	fd = open_fd(texture->file, cube);
+	s = look_for_line(fd, cube, ADVANCE_TO_DIMENSIONS_IN_XPM);
+	set_texture_dimentions(s, texture, cube);
+	free(s);
 }

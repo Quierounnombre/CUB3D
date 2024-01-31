@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 13:36:16 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/01/24 16:15:22 by vicgarci         ###   ########.fr       */
+/*   Updated: 2024/01/31 19:55:58 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ int	main(int argc, char **argv)
 	if (parse(argc, argv))
 	{
 		cube = init(*argv);
+		load_texture(cube, &cube->map->north);
 		check_fill_file(cube, argv[1]);
 		tmp_ver_caracteristicas(cube);
 		draw(cube);

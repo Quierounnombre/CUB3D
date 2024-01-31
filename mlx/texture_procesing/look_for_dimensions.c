@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_map.c                                         :+:      :+:    :+:   */
+/*   look_for_dimensions.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/04 14:08:03 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/01/31 18:52:31 by vicgarci         ###   ########.fr       */
+/*   Created: 2024/01/31 19:10:58 by vicgarci          #+#    #+#             */
+/*   Updated: 2024/01/31 20:05:13 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Cub3D.h"
+#include "../../Cub3D.h"
 
-t_map	*init_map(t_cube *cube)
+char	*look_for_line(t_fd fd, t_cube *cube, int advance_n_lines)
 {
-	t_map	*local_map;
+	char	*s;
 
-	local_map = (t_map *)malloc(sizeof(t_map));
-	if (!local_map)
-		exit_error(ERROR_MALLOC, errno, cube);
-	init_texture(&local_map->north);
-	init_texture(&local_map->south);
-	init_texture(&local_map->west);
-	init_texture(&local_map->east);
-	return (local_map);
+	while (advance_n_lines)
+	{
+		s = ft_get_next_line(fd);
+		if (!s)
+			exit_error(ERROR_OPEN_TEXTURE, errno, cube);
+		free(s);
+		advance_n_lines--;
+	}
+	return (s);
 }

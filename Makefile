@@ -6,7 +6,7 @@
 #    By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/04 13:36:09 by alfgarci          #+#    #+#              #
-#    Updated: 2024/01/24 16:13:58 by vicgarci         ###   ########.fr        #
+#    Updated: 2024/01/31 20:21:35 by vicgarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,10 +73,17 @@ FILES_MLX =	mlx_open_win \
 			draw_wall \
 			draw_background \
 			ft_pixel_put \
-			open_texture \
 
 MLX_DIR = ./mlx/
 SRCS_MLX = $(addprefix $(MLX_DIR), $(addsuffix .c, $(FILES_MLX)))
+
+FILES_TEXTURE_PROCESING =	load_texture \
+							look_for_dimensions \
+							set_texture_dimentions \
+
+TEXTURE_PROCESING_DIR = ./mlx/texture_procesing/
+SRCS_TEXTURE_PROCESING = $(addprefix $(TEXTURE_PROCESING_DIR), \
+$(addsuffix .c, $(FILES_TEXTURE_PROCESING)))
 
 FILES_PLAYER = init_player_pos \
 
@@ -98,6 +105,7 @@ SRC 	=	$(SRCS_STARTUP) \
 			$(SRCS_PLAYER) \
 			$(SRCS_HOOKS) \
 			$(SRCS_RAYCASTING) \
+			$(SRCS_TEXTURE_PROCESING) \
 			main.c \
 
 #---OBJ

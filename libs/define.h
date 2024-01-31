@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:22:25 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/01/24 15:32:58 by vicgarci         ###   ########.fr       */
+/*   Updated: 2024/01/31 20:17:17 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,9 @@ the right number of files in the first place (ONLY 1, NOT 0, NOT 2).\n"
 # define ERROR_MLX_IMG "Can't create a new img\n"
 # define ERROR_MLX_PUT_IMG "Can't put img to win\n"
 # define ERROR_OPEN_TEXTURE "Can't open texture\n"
+# define ERROR_BAD_XPM "Xpm file have some errors, we follow this \
+guide:\n\nhttps://www.xfree86.org/current/xpm.pdf \n\nPlease make sure your \
+files are up to standard"
 
 //Size of a piece of wall
 
@@ -86,5 +89,13 @@ the right number of files in the first place (ONLY 1, NOT 0, NOT 2).\n"
 # define KEY_ROTATE_RIGHT 2 //d
 # define KEY_ROTATE_LEFT 0 //a
 # define KEY_ESCAPE 53 //esc
+
+/*
+Note, according to XPM manual,
+the dimentions of the texture will always be in the 4 line of the file */
+
+//TEXTURES
+
+# define ADVANCE_TO_DIMENSIONS_IN_XPM 4
 
 #endif
