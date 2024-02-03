@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:22:29 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/01/31 20:19:18 by vicgarci         ###   ########.fr       */
+/*   Updated: 2024/02/03 11:29:44 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,20 @@ typedef struct s_color
 
 typedef struct s_texture
 {
-	t_path	file;
-	t_color	**raw;
-	int		width;
-	int		height;
-	int		n_colors;
+	t_path		file;
+	t_lstmng	*color_dictionary;
+	t_color		**raw;
+	int			width;
+	int			height;
+	int			n_colors;
+	int			color_per_pixel;
 }	t_texture;
+
+typedef struct s_color_key
+{
+	t_color		value;
+	char		key;
+}	t_color_key;
 
 typedef struct t_map
 {

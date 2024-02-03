@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:22:25 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/01/31 20:17:17 by vicgarci         ###   ########.fr       */
+/*   Updated: 2024/02/03 16:57:57 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,10 @@ the right number of files in the first place (ONLY 1, NOT 0, NOT 2).\n"
 # define ERROR_BAD_XPM "Xpm file have some errors, we follow this \
 guide:\n\nhttps://www.xfree86.org/current/xpm.pdf \n\nPlease make sure your \
 files are up to standard"
+# define ERROR_TEXTURE_DIMENTIONS "Texture dimentions and/or colors\
+ are impossible\n"
+
+# define DEFAULT_ERROR_CODE 1
 
 //Size of a piece of wall
 
@@ -97,5 +101,11 @@ the dimentions of the texture will always be in the 4 line of the file */
 //TEXTURES
 
 # define ADVANCE_TO_DIMENSIONS_IN_XPM 4
+# define ADVANCE_TO_NEXT_COLOR 1
+# define ADVANCE_TO_COLOR_STRING 5
+# define MIN_TEXTURE_WIDTH 1
+# define MIN_TEXTURE_HEIGHT 1
+# define MIN_COLORS_PER_PIXEL 1
+# define MIN_NUMBER_OF_COLORS 1
 
 #endif

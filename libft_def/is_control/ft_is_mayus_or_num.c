@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   load_texture.c                                     :+:      :+:    :+:   */
+/*   ft_is_mayus_or_num.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/31 18:55:19 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/01/31 20:36:52 by vicgarci         ###   ########.fr       */
+/*   Created: 2024/02/03 17:03:24 by vicgarci          #+#    #+#             */
+/*   Updated: 2024/02/03 17:05:34 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Cub3D.h"
+#include "../libft.h"
 
-void	load_texture(t_cube *cube, t_texture *texture)
+t_bool	ft_is_mayus_or_num(char c)
 {
-	t_fd	fd;
-	char	*s;
-
-	fd = open_fd(texture->file, cube);
-	s = look_for_line(fd, cube, ADVANCE_TO_DIMENSIONS_IN_XPM);
-	set_texture_dimentions(s, texture, cube);
-	free(s);
+	if (ft_ismayus(c) || ft_isdigit(c))
+		return (true);
+	return (false);
 }

@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_texture.c                                     :+:      :+:    :+:   */
+/*   remove_quotes.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 15:43:25 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/02/03 10:24:55 by vicgarci         ###   ########.fr       */
+/*   Created: 2024/02/03 17:32:04 by vicgarci          #+#    #+#             */
+/*   Updated: 2024/02/03 17:32:23 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Cub3D.h"
+#include "../../Cub3D.h"
 
-void	init_texture(t_texture *texture)
+void	remove_quotes(char *s)
 {
-	texture->height = 0;
-	texture->width = 0;
-	texture->n_colors = 0;
-	texture->color_per_pixel = 0;
-	texture->color_dictionary = NULL;
-	texture->raw = NULL;
-	texture->file = "./textures/N.xpm";
+	while (*s)
+	{
+		if (*s == '"')
+			*s = ' ';
+		s++;
+	}
 }

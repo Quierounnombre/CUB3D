@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_texture.c                                     :+:      :+:    :+:   */
+/*   load_xpm.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 15:43:25 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/02/03 10:24:55 by vicgarci         ###   ########.fr       */
+/*   Created: 2024/01/31 18:55:19 by vicgarci          #+#    #+#             */
+/*   Updated: 2024/02/03 17:46:14 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Cub3D.h"
 
-void	init_texture(t_texture *texture)
+void	load_xpm(t_cube *cube, t_texture *texture)
 {
-	texture->height = 0;
-	texture->width = 0;
-	texture->n_colors = 0;
-	texture->color_per_pixel = 0;
-	texture->color_dictionary = NULL;
-	texture->raw = NULL;
-	texture->file = "./textures/N.xpm";
+	t_fd	fd;
+	char	*s;
+
+	fd = open_fd(texture->file, cube);
+	s = look_for_line(fd, cube, ADVANCE_TO_DIMENSIONS_IN_XPM);
+	set_xpm_dimentions(s, texture, cube);
+	free(s);
+	check_errors_in_dimentions(texture, cube);
+	load_xpm_colors_in_dictionary(fd, cube, texture);
 }

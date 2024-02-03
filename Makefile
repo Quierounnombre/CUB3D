@@ -6,7 +6,7 @@
 #    By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/04 13:36:09 by alfgarci          #+#    #+#              #
-#    Updated: 2024/01/31 20:21:35 by vicgarci         ###   ########.fr        #
+#    Updated: 2024/02/03 17:32:45 by vicgarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,13 +77,19 @@ FILES_MLX =	mlx_open_win \
 MLX_DIR = ./mlx/
 SRCS_MLX = $(addprefix $(MLX_DIR), $(addsuffix .c, $(FILES_MLX)))
 
-FILES_TEXTURE_PROCESING =	load_texture \
-							look_for_dimensions \
-							set_texture_dimentions \
+FILES_XPM_PROCESING =	load_xpm \
+						add_new_key_to_dic \
+						check_errors_in_dimentions \
+						load_xpm_colors_in_dictionary \
+						set_xpm_dimentions \
+						look_for_line \
+						make_new_dictionary \
+						parse_pair \
+						remove_quotes \
 
-TEXTURE_PROCESING_DIR = ./mlx/texture_procesing/
-SRCS_TEXTURE_PROCESING = $(addprefix $(TEXTURE_PROCESING_DIR), \
-$(addsuffix .c, $(FILES_TEXTURE_PROCESING)))
+XPM_PROCESING_DIR = ./mlx/xpm_procesing/
+SRCS_XPM_PROCESING = $(addprefix $(XPM_PROCESING_DIR), \
+$(addsuffix .c, $(FILES_XPM_PROCESING)))
 
 FILES_PLAYER = init_player_pos \
 
@@ -105,7 +111,7 @@ SRC 	=	$(SRCS_STARTUP) \
 			$(SRCS_PLAYER) \
 			$(SRCS_HOOKS) \
 			$(SRCS_RAYCASTING) \
-			$(SRCS_TEXTURE_PROCESING) \
+			$(SRCS_XPM_PROCESING) \
 			main.c \
 
 #---OBJ
