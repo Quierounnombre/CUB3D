@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 16:42:27 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/02/03 17:46:48 by vicgarci         ###   ########.fr       */
+/*   Updated: 2024/02/09 10:56:33 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,13 @@ static int	extract_color_from_string(t_cube *cube, char *s)
 		exit_error(ERROR_BAD_XPM, DEFAULT_ERROR_CODE, cube);
 	}
 	i = 0;
-	while (s[i])
+	while (s[i] && s[i] != ',')
 	{
 		if (!ft_is_mayus_or_num(s[i]))
 		{
+			ft_printf("%s\n", s);
 			free(s);
+			ft_printf("hey\n");
 			exit_error(ERROR_BAD_XPM, DEFAULT_ERROR_CODE, cube);
 		}
 		i++;

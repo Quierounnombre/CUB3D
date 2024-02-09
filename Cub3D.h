@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:19:38 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/02/03 17:38:00 by vicgarci         ###   ########.fr       */
+/*   Updated: 2024/02/09 10:58:01 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,19 +77,7 @@ void		fill_window(t_color color, t_vector2D start, t_vector2D end,
 				t_cube *cube);
 void		ft_pixel_put(t_mlx_img	*img, int x, int y, unsigned int color);
 
-//XPM_PROCESSING
-//---------------------------------------------------------------------------
 
-void		load_xpm(t_cube *cube, t_texture *texture);
-char		*look_for_line(t_fd fd, t_cube *cube, int advance_n_lines);
-void		set_xpm_dimentions(char *s, t_texture *texture, t_cube *cube);
-void		make_new_dictionary(t_cube *cube, t_texture *texture);
-void		check_errors_in_dimentions(t_texture *texture, t_cube *cube);
-void		remove_quotes(char *s);
-void		parse_pair(t_cube *cube, char *s, t_list *lst);
-void		load_xpm_colors_in_dictionary(t_fd fd, t_cube *cube,
-				t_texture *texture);
-void		add_new_key_to_dic(t_cube *cube, t_texture *texture, char *s);
 //---------------------------------------------------------------------------
 
 //HOOKS

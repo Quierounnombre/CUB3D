@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 20:05:54 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/02/03 17:33:33 by vicgarci         ###   ########.fr       */
+/*   Updated: 2024/02/04 16:42:11 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,5 @@ void	set_xpm_dimentions(char *s, t_texture *texture, t_cube *cube)
 	s = advance_to_next_number(s, cube);
 	texture->n_colors = ft_atoi(s);
 	s = advance_to_next_number(s, cube);
-	texture->n_colors = ft_atoi(s);
+	texture->color_per_pixel = ft_atoi(s);
 }
