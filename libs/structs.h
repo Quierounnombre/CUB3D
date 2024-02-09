@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:22:29 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/02/03 11:29:44 by vicgarci         ###   ########.fr       */
+/*   Updated: 2024/02/09 11:41:36 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ typedef char	*t_path;
 typedef void	*t_win;
 typedef void	*t_mlx;
 typedef int		t_key;
+typedef char	t_direction;
 
 typedef struct s_color
 {
@@ -28,7 +29,7 @@ typedef struct s_color
 	uint8_t	b;
 }	t_color;
 
-typedef struct s_texture
+typedef struct s_xml_texture
 {
 	t_path		file;
 	t_lstmng	*color_dictionary;
@@ -37,13 +38,20 @@ typedef struct s_texture
 	int			height;
 	int			n_colors;
 	int			color_per_pixel;
-}	t_texture;
+}	t_xml_texture;
 
 typedef struct s_color_key
 {
 	t_color		value;
 	char		key;
 }	t_color_key;
+
+typedef struct s_texture
+{
+	t_mlx_img	*img;
+	int			width;
+	int			height;
+}	t_texture;
 
 typedef struct t_map
 {

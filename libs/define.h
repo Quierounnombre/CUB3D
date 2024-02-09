@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:22:25 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/02/03 16:57:57 by vicgarci         ###   ########.fr       */
+/*   Updated: 2024/02/09 11:29:17 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 # define NORTH 'N'
 # define EAST 'E'
 # define VOID_IN_MAP 'v'
-
 //Error msg
 
 # define ERROR_MSG "Error\n"
@@ -63,6 +62,8 @@ files are up to standard"
 # define ENDIAN_CONVERSION 8
 # define BITE_SIZE 8
 
+# define SPLIT_THE_WIN 2
+
 //Colors
 
 # define DEFAULT_CEILING_B 255
@@ -100,12 +101,6 @@ the dimentions of the texture will always be in the 4 line of the file */
 
 //TEXTURES
 
-# define ADVANCE_TO_DIMENSIONS_IN_XPM 4
-# define ADVANCE_TO_NEXT_COLOR 1
-# define ADVANCE_TO_COLOR_STRING 5
-# define MIN_TEXTURE_WIDTH 1
-# define MIN_TEXTURE_HEIGHT 1
-# define MIN_COLORS_PER_PIXEL 1
-# define MIN_NUMBER_OF_COLORS 1
+# define UNDEFINE_DIR 0
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:19:38 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/02/09 10:58:01 by vicgarci         ###   ########.fr       */
+/*   Updated: 2024/02/09 12:05:03 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int			**to_int_ar(char **map, int rows, int cols, t_cube *cube);
 t_cube		*init(t_path file);
 t_cube		*init_cube(t_cube *cube, t_path file);
 t_map		*init_map(t_cube	*cube);
-void		init_texture(t_texture *texture);
+void		init_texture(t_texture *texture, t_cube *cube);
 t_player	*init_player(t_cube	*cube);
 t_mlx_img	*init_mlx_img(t_cube *cube);
 t_point		*store_map_line(char *s, t_cube *cube);
@@ -76,7 +76,8 @@ void		draw(t_cube *cube);
 void		fill_window(t_color color, t_vector2D start, t_vector2D end,
 				t_cube *cube);
 void		ft_pixel_put(t_mlx_img	*img, int x, int y, unsigned int color);
-
+void		open_texture(t_path path, t_cube *cube, t_direction dir,
+				t_texture *texture);
 
 //---------------------------------------------------------------------------
 
@@ -102,7 +103,9 @@ void		raycasting(t_cube *cube);
 double		calc_distance_to_wall(t_vector2D p_of_colision, double dist,
 				t_cube *cube);
 double		calc_wall_height(double side_dist);
-void		draw_wall(double wall_height, int column, t_cube *cube);
+void		draw_wall(double wall_height, int column, t_cube *cube,
+				t_direction dir);
+void		draw_simple_wall(t_cube *cube, int column, double wall_height);
 //---------------------------------------------------------------------------
 
 #endif

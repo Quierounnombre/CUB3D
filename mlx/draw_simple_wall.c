@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   load_xpm.c                                         :+:      :+:    :+:   */
+/*   draw_simple_wall.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/31 18:55:19 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/02/04 16:43:08 by vicgarci         ###   ########.fr       */
+/*   Created: 2024/02/09 11:09:11 by vicgarci          #+#    #+#             */
+/*   Updated: 2024/02/09 11:14:57 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Cub3D.h"
 
-void	load_xpm(t_cube *cube, t_texture *texture)
+void	draw_simple_wall(t_cube *cube, int column, double wall_height)
 {
-	t_fd	fd;
-	char	*s;
+	double	window_dimension;
+	int		start_of_draw;
+	int		end_of_draw;
 
-	fd = open_fd(texture->file, cube);
-	s = look_for_line(fd, cube, ADVANCE_TO_DIMENSIONS_IN_XPM);
-	set_xpm_dimentions(s, texture, cube);
-	free(s);
-	check_errors_in_dimentions(texture, cube);
-	load_xpm_colors_in_dictionary(fd, cube, texture);
+	window_dimension = (HEIGHT - wall_height) / SPLIT_THE_WIN;
+	start_of_draw = window_dimension;
+	end_of_draw = window_dimension + wall_height;
+	while (start_of_draw <= end_of_draw)
+	{
+		mlx_point_draw(cube, column, start_of_draw,
+			cube->map->wall_color);
+		start_of_draw++;
+	}
 }

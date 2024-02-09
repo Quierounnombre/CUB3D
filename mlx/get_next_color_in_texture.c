@@ -1,30 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   load_xpm_colors_in_dictionary.c                    :+:      :+:    :+:   */
+/*   get_next_color_in_texture.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/03 10:30:05 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/02/04 16:44:46 by vicgarci         ###   ########.fr       */
+/*   Created: 2024/02/09 11:31:20 by vicgarci          #+#    #+#             */
+/*   Updated: 2024/02/09 11:42:57 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../Cub3D.h"
+#include "../Cub3D.h"
 
-void	load_xpm_colors_in_dictionary(t_fd fd, t_cube *cube,
-			t_texture *texture)
+t_color	get_next_color_in_texture(t_texture *texture, int i, int j)
 {
-	int		remaining_keys_in_xpm;
-	char	*s;
-
-	make_new_dictionary(cube, texture);
-	remaining_keys_in_xpm = texture->n_colors;
-	while (remaining_keys_in_xpm)
-	{
-		s = look_for_line(fd, cube, ADVANCE_TO_NEXT_COLOR);
-		add_new_key_to_dic(cube, texture, s);
-		free(s);
-		remaining_keys_in_xpm--;
-	}
+	
 }
