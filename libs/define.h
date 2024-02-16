@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   define.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:22:25 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/01/24 15:32:58 by vicgarci         ###   ########.fr       */
+/*   Updated: 2024/02/16 12:15:18 by alfgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,5 +86,9 @@ the right number of files in the first place (ONLY 1, NOT 0, NOT 2).\n"
 # define KEY_ROTATE_RIGHT 2 //d
 # define KEY_ROTATE_LEFT 0 //a
 # define KEY_ESCAPE 53 //esc
+
+//Nums
+
+# define BIG_NUM 1e30
 
 #endif
