@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   open_texture.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alfgarci <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 13:40:43 by alfgarci          #+#    #+#             */
-/*   Updated: 2023/11/09 13:40:47 by alfgarci         ###   ########.fr       */
+/*   Updated: 2024/01/24 16:25:32 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,25 +17,25 @@ t_img	open_texture(t_path path, t_cube *cube, char dir)
 	t_img	img;
 
 	img = NULL;
-	if (dir == 'N')
+	if (dir == NORTH)
 	{
-		img = mlx_xpm_file_to_image(cube->mlx, path, &(cube->map->north.width) ,
-			&(cube->map->north.height));
+		img = mlx_xpm_file_to_image(cube->mlx, path, &cube->map->north.width,
+				&(cube->map->north.height));
 	}
-	else if (dir == 'S')
+	else if (dir == SOUTH)
 	{
-		img = mlx_xpm_file_to_image(cube->mlx, path, &cube->map->south.width ,
-			&cube->map->south.height);
+		img = mlx_xpm_file_to_image(cube->mlx, path, &cube->map->south.width,
+				&cube->map->south.height);
 	}
-	else if (dir == 'W')
+	else if (dir == WEST)
 	{
-		img = mlx_xpm_file_to_image(cube->mlx, path, &cube->map->west.width ,
-			&cube->map->west.height);
+		img = mlx_xpm_file_to_image(cube->mlx, path, &cube->map->west.width,
+				&cube->map->west.height);
 	}
-	else if (dir == 'E')
+	else if (dir == EAST)
 	{
-		img = mlx_xpm_file_to_image(cube->mlx, path, &cube->map->east.width ,
-			&cube->map->east.height);
+		img = mlx_xpm_file_to_image(cube->mlx, path, &cube->map->east.width,
+				&cube->map->east.height);
 	}
 	printf("%s\n", path);
 	printf("%p\n%p\n", &cube->map->east.width, &cube->map->east.height);

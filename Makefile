@@ -26,6 +26,7 @@ FILES_STARTUP =	init_player \
 				init_map \
 				init_mlx_img \
 				set_default_colors \
+				init_texture \
 				init \
 
 STARTUP_DIR = ./startup/
@@ -72,7 +73,7 @@ FILES_MLX =	mlx_open_win \
 			draw_wall \
 			draw_background \
 			ft_pixel_put \
-			#open_texture \
+			open_texture \
 
 MLX_DIR = ./mlx/
 SRCS_MLX = $(addprefix $(MLX_DIR), $(addsuffix .c, $(FILES_MLX)))
