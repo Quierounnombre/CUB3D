@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cub3D.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:19:38 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/12/15 17:32:11 by vicgarci         ###   ########.fr       */
+/*   Updated: 2024/02/16 13:33:14 by alfgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int			**to_int_ar(char **map, int rows, int cols, t_cube *cube);
 t_cube		*init(t_path file);
 t_cube		*init_cube(t_cube *cube, t_path file);
 t_map		*init_map(t_cube	*cube);
+void		init_texture(t_texture *texture);
 t_player	*init_player(t_cube	*cube);
 t_mlx_img	*init_mlx_img(t_cube *cube);
 t_point		*store_map_line(char *s, t_cube *cube);
@@ -96,10 +97,13 @@ void		init_player_pos(t_cube *cube, char **map);
 //---------------------------------------------------------------------------
 
 //void		cast_ray(t_cube *cube);
+t_ray		*init_ray(t_cube *cube, int x);
 void		raycasting(t_cube *cube);
 double		calc_distance_to_wall(t_vector2D p_of_colision, double dist,
 				t_cube *cube);
 double		calc_wall_height(double side_dist);
+double		calc_perp_wall_dist(t_ray *ray);
+void		dda(t_cube *cube, t_ray *ray);
 void		draw_wall(double wall_height, int column, t_cube *cube);
 //---------------------------------------------------------------------------
 

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+         #
+#    By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/04 13:36:09 by alfgarci          #+#    #+#              #
-#    Updated: 2023/12/15 15:56:38 by vicgarci         ###   ########.fr        #
+#    Updated: 2024/02/16 13:31:19 by alfgarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -84,8 +84,11 @@ SRCS_PLAYER = $(addprefix $(PLAYER_DIR), $(addsuffix .c, $(FILES_PLAYER)))
 
 FILES_RAYCASTING =	calc_wall_height \
 					calc_distance_to_wall \
-					calc_rays \
-          
+					calc_perp_wall_dist \
+					dda \
+					init_ray \
+					raycasting \
+
 RAYCASTING_DIR = ./raycasting/
 SRCS_RAYCASTING = $(addprefix $(RAYCASTING_DIR), $(addsuffix .c, $(FILES_RAYCASTING)))
 
