@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 14:16:01 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/11/04 16:52:41 by vicgarci         ###   ########.fr       */
+/*   Updated: 2024/01/31 19:51:28 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 static void	remove_dot_slash(t_path *file)
 {
-	(*file) += 2;
+	if (**file == '.')
+		(*file)++;
+	if (**file == '/')
+		(*file)++;
 }
 
 t_cube	*init_cube(t_cube *cube, t_path file)

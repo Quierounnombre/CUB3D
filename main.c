@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 13:36:16 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/01/24 16:15:22 by vicgarci         ###   ########.fr       */
+/*   Updated: 2024/02/17 16:42:56 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,3 @@ int	main(int argc, char **argv)
 	else
 		exit_error(ERROR_PARSE, errno, cube);
 }
-
-

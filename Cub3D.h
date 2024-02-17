@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cub3D.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:19:38 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/02/16 13:33:14 by alfgarci         ###   ########.fr       */
+/*   Updated: 2024/02/17 17:14:18 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int			**to_int_ar(char **map, int rows, int cols, t_cube *cube);
 t_cube		*init(t_path file);
 t_cube		*init_cube(t_cube *cube, t_path file);
 t_map		*init_map(t_cube	*cube);
-void		init_texture(t_texture *texture);
+void		init_texture(t_texture *texture, t_cube *cube);
 t_player	*init_player(t_cube	*cube);
 t_mlx_img	*init_mlx_img(t_cube *cube);
 t_point		*store_map_line(char *s, t_cube *cube);
@@ -73,10 +73,15 @@ void		init_img(t_cube *cube);
 void		put_img(t_cube *cube, t_img img, int x, int y);
 void		mlx_point_draw(t_cube *cube, int x, int y, t_color input_color);
 void		draw(t_cube *cube);
-t_img		open_texture(t_path path, t_cube *cube, char dir);
 void		fill_window(t_color color, t_vector2D start, t_vector2D end,
 				t_cube *cube);
 void		ft_pixel_put(t_mlx_img	*img, int x, int y, unsigned int color);
+void		open_texture(t_path path, t_cube *cube, t_direction dir,
+				t_texture *texture);
+t_color		int_to_t_color(int color);
+void		put_texture_pixel(t_cube *cube, t_texture *texture,
+				double pos_to_draw, t_vector2D pos);
+
 //---------------------------------------------------------------------------
 
 //HOOKS
@@ -102,9 +107,16 @@ void		raycasting(t_cube *cube);
 double		calc_distance_to_wall(t_vector2D p_of_colision, double dist,
 				t_cube *cube);
 double		calc_wall_height(double side_dist);
-double		calc_perp_wall_dist(t_ray *ray);
+void		draw_wall(double wall_height, t_vector2D pos_in_txt, t_cube *cube,
+				t_direction dir);
+void		draw_texture(double wall_height, t_cube *cube, t_texture *texture,
+				t_vector2D pos_in_txt);
+t_color		get_color_in_texture(t_texture *texture, t_vector2D wall_ratios,
+				t_vector2D pos);
+void		draw_simple_wall(t_cube *cube, int column, double wall_height);
+t_vector2D	calc_wall_ratios(t_texture *texture, t_vector2D pos);
 void		dda(t_cube *cube, t_ray *ray);
-void		draw_wall(double wall_height, int column, t_cube *cube);
+double		calc_perp_wall_dist(t_ray *ray);
 //---------------------------------------------------------------------------
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   define.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:22:25 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/02/16 12:15:18 by alfgarci         ###   ########.fr       */
+/*   Updated: 2024/02/17 17:13:07 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 # define NORTH 'N'
 # define EAST 'E'
 # define VOID_IN_MAP 'v'
-
 //Error msg
 
 # define ERROR_MSG "Error\n"
@@ -38,6 +37,13 @@ the right number of files in the first place (ONLY 1, NOT 0, NOT 2).\n"
 # define ERROR_MLX_IMG "Can't create a new img\n"
 # define ERROR_MLX_PUT_IMG "Can't put img to win\n"
 # define ERROR_OPEN_TEXTURE "Can't open texture\n"
+# define ERROR_BAD_XPM "Xpm file have some errors, we follow this \
+guide:\n\nhttps://www.xfree86.org/current/xpm.pdf \n\nPlease make sure your \
+files are up to standard"
+# define ERROR_TEXTURE_DIMENTIONS "Texture dimentions and/or colors\
+ are impossible\n"
+
+# define DEFAULT_ERROR_CODE 1
 
 //Size of a piece of wall
 
@@ -55,6 +61,8 @@ the right number of files in the first place (ONLY 1, NOT 0, NOT 2).\n"
 # define NAME "cub3D"
 # define ENDIAN_CONVERSION 8
 # define BITE_SIZE 8
+
+# define SPLIT_THE_WIN 2
 
 //Colors
 
@@ -86,6 +94,10 @@ the right number of files in the first place (ONLY 1, NOT 0, NOT 2).\n"
 # define KEY_ROTATE_RIGHT 2 //d
 # define KEY_ROTATE_LEFT 0 //a
 # define KEY_ESCAPE 53 //esc
+
+//TEXTURES
+
+# define UNDEFINE_DIR 0
 
 //Nums
 

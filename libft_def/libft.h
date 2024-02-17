@@ -27,6 +27,8 @@
 #  define BUFFER_SIZE 32
 # endif
 
+# define HEXA_MAYUS_BASE "0123456789ABCDEF"
+
 typedef enum KXA_BFAL
 {
 	Bug = 0
@@ -90,6 +92,7 @@ t_bool		ft_isprint(int c);
 t_bool		ft_isspace(int c);
 t_bool		ft_ishexa(int c);
 t_bool		ft_ismayus(char c);
+t_bool		ft_is_mayus_or_num(char c);
 
 /*-----StrFuns-----*/
 

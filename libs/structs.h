@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:22:29 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/02/15 18:40:50 by alfgarci         ###   ########.fr       */
+/*   Updated: 2024/02/17 17:13:37 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ typedef char	*t_path;
 typedef void	*t_win;
 typedef void	*t_mlx;
 typedef int		t_key;
+typedef char	t_direction;
 
 typedef struct s_vector2Dint
 {
@@ -29,31 +30,16 @@ typedef struct s_vector2Dint
 
 typedef struct s_color
 {
-	int	r;
-	int	g;
-	int	b;
+	uint8_t	r;
+	uint8_t	g;
+	uint8_t	b;
 }	t_color;
 
-typedef struct s_texture
+typedef struct s_color_key
 {
-	t_img	img;
-	int		width;
-	int		height;
-}	t_texture;
-
-typedef struct t_map
-{
-	t_texture	north;
-	t_texture	south;
-	t_texture	west;
-	t_texture	east;
-	t_color		celing;
-	t_color		floor;
-	t_color		wall_color;
-	int			**map;
-	int			height;
-	int			width;
-}	t_map;
+	t_color		value;
+	char		key;
+}	t_color_key;
 
 typedef struct s_player
 {
@@ -72,6 +58,27 @@ typedef struct s_mlx_img
 	int		line;
 	int		endian;
 }	t_mlx_img;
+
+typedef struct s_texture
+{
+	t_mlx_img	*img;
+	int			width;
+	int			height;
+}	t_texture;
+
+typedef struct t_map
+{
+	t_texture	north;
+	t_texture	south;
+	t_texture	west;
+	t_texture	east;
+	t_color		celing;
+	t_color		floor;
+	t_color		wall_color;
+	int			**map;
+	int			height;
+	int			width;
+}	t_map;
 
 typedef struct s_cube
 {
