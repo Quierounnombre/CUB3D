@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:26:08 by alfgarci          #+#    #+#             */
-/*   Updated: 2023/12/15 18:07:42 by vicgarci         ###   ########.fr       */
+/*   Updated: 2024/02/17 16:42:45 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,6 @@ void	raycasting(t_cube *cube)
 		else
 			ray->perp_wall_dist = (ray->side_y - ray->delta_y);
 		ray->line_height = (int)calc_wall_height(ray->perp_wall_dist);
-		draw_wall(ray->line_height, x, cube);
 		free(ray);
 	}
 }

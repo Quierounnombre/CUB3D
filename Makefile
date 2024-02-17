@@ -6,7 +6,7 @@
 #    By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/04 13:36:09 by alfgarci          #+#    #+#              #
-#    Updated: 2024/02/09 11:28:43 by vicgarci         ###   ########.fr        #
+#    Updated: 2024/02/17 16:55:31 by vicgarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,9 +70,13 @@ FILES_MLX =	mlx_open_win \
 			draw \
 			put_img \
 			fill_window \
-			draw_wall \
 			draw_background \
 			ft_pixel_put \
+			int_to_t_color \
+			put_texture_pixel \
+			draw_texture \
+			get_color_in_texture \
+			open_texture \
 
 MLX_DIR = ./mlx/
 SRCS_MLX = $(addprefix $(MLX_DIR), $(addsuffix .c, $(FILES_MLX)))
@@ -85,6 +89,9 @@ SRCS_PLAYER = $(addprefix $(PLAYER_DIR), $(addsuffix .c, $(FILES_PLAYER)))
 FILES_RAYCASTING =	calc_wall_height \
 					calc_distance_to_wall \
 					calc_rays \
+					draw_wall \
+					draw_simple_wall \
+					calc_wall_ratios \
           
 RAYCASTING_DIR = ./raycasting/
 SRCS_RAYCASTING = $(addprefix $(RAYCASTING_DIR), $(addsuffix .c, $(FILES_RAYCASTING)))

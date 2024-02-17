@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:19:38 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/02/09 12:05:03 by vicgarci         ###   ########.fr       */
+/*   Updated: 2024/02/17 16:55:18 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,9 @@ void		fill_window(t_color color, t_vector2D start, t_vector2D end,
 void		ft_pixel_put(t_mlx_img	*img, int x, int y, unsigned int color);
 void		open_texture(t_path path, t_cube *cube, t_direction dir,
 				t_texture *texture);
+t_color		int_to_t_color(int color);
+void		put_texture_pixel(t_cube *cube, t_texture *texture,
+				double pos_to_draw, t_vector2D pos);
 
 //---------------------------------------------------------------------------
 
@@ -103,9 +106,14 @@ void		raycasting(t_cube *cube);
 double		calc_distance_to_wall(t_vector2D p_of_colision, double dist,
 				t_cube *cube);
 double		calc_wall_height(double side_dist);
-void		draw_wall(double wall_height, int column, t_cube *cube,
+void		draw_wall(double wall_height, t_vector2D pos_in_txt, t_cube *cube,
 				t_direction dir);
+void		draw_texture(double wall_height, t_cube *cube, t_texture *texture,
+				t_vector2D pos_in_txt);
+t_color		get_color_in_texture(t_texture *texture, t_vector2D wall_ratios,
+				t_vector2D pos);
 void		draw_simple_wall(t_cube *cube, int column, double wall_height);
+t_vector2D	calc_wall_ratios(t_texture *texture, t_vector2D pos);
 //---------------------------------------------------------------------------
 
 #endif
