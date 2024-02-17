@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:22:25 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/02/09 11:29:17 by vicgarci         ###   ########.fr       */
+/*   Updated: 2024/02/17 17:13:07 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,12 +95,12 @@ files are up to standard"
 # define KEY_ROTATE_LEFT 0 //a
 # define KEY_ESCAPE 53 //esc
 
-/*
-Note, according to XPM manual,
-the dimentions of the texture will always be in the 4 line of the file */
-
 //TEXTURES
 
 # define UNDEFINE_DIR 0
+
+//Nums
+
+# define BIG_NUM 1e30
 
 #endif

@@ -6,10 +6,9 @@
 #    By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/04 13:36:09 by alfgarci          #+#    #+#              #
-#    Updated: 2024/02/17 16:55:31 by vicgarci         ###   ########.fr        #
+#    Updated: 2024/02/17 17:13:58 by vicgarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
 
 ED		=\033[1;31m
 GREEN	=\033[1;32m
@@ -92,7 +91,11 @@ FILES_RAYCASTING =	calc_wall_height \
 					draw_wall \
 					draw_simple_wall \
 					calc_wall_ratios \
-          
+					calc_perp_wall_dist \
+					dda \
+					init_ray \
+					raycasting \
+
 RAYCASTING_DIR = ./raycasting/
 SRCS_RAYCASTING = $(addprefix $(RAYCASTING_DIR), $(addsuffix .c, $(FILES_RAYCASTING)))
 

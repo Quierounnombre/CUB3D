@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:22:29 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/02/15 17:17:27 by vicgarci         ###   ########.fr       */
+/*   Updated: 2024/02/17 17:13:37 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,12 @@ typedef void	*t_win;
 typedef void	*t_mlx;
 typedef int		t_key;
 typedef char	t_direction;
+
+typedef struct s_vector2Dint
+{
+	int	x;
+	int	y;
+}	t_vector2Dint;
 
 typedef struct s_color
 {
@@ -86,20 +92,16 @@ typedef struct s_cube
 
 typedef struct s_ray
 {
-	double	ray_dir_x;
-	double	ray_dir_y;
-	int		map_x;
-	int		map_y;
-	double	delta_x;
-	double	delta_y;
-	double	step_x;
-	double	step_y;
-	int		hit;
-	int		side;
-	double	side_x;
-	double	side_y;
-	double	perp_wall_dist;
-	int		line_height;
+	t_vector2D		ray_dir;
+	t_vector2D		delta;
+	t_vector2D		step;
+	t_vector2D		side;
+	t_vector2Dint	map_cor;
+	int				hit;
+	int				side_hit;
+	double			perp_wall_dist;
+	int				line_height;
+	char			wall_hit;
 }	t_ray;
 
 #endif
