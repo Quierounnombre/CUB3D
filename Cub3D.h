@@ -6,7 +6,7 @@
 /*   By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:19:38 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/02/16 13:33:14 by alfgarci         ###   ########.fr       */
+/*   Updated: 2024/02/17 17:34:02 by alfgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,7 @@ double		calc_wall_height(double side_dist);
 double		calc_perp_wall_dist(t_ray *ray);
 void		dda(t_cube *cube, t_ray *ray);
 void		draw_wall(double wall_height, int column, t_cube *cube);
+double		determine_impact_point(t_ray *ray, t_cube *cube);
 //---------------------------------------------------------------------------
 
 #endif

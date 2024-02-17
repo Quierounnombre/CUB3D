@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_textures.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 16:48:44 by alfgarci          #+#    #+#             */
-/*   Updated: 2023/12/04 13:45:50 by vicgarci         ###   ########.fr       */
+/*   Updated: 2024/02/17 17:50:00 by alfgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 t_bool	check_north(char **dump, int lines, t_cube *cube)
 {
-	(void)cube;
 	char	**split;
 	int		found;
+	char	*texture;
 	int		i;
 
 	found = 0;
@@ -27,8 +27,9 @@ t_bool	check_north(char **dump, int lines, t_cube *cube)
 		if (ft_strncmp(split[0], "NO", ft_strlen(split[0])) == 0)
 		{
 			found++;
-			ft_printf("%s\n", split[1]);
-			//cube->map->north.img = open_texture(split[1], cube, 'N');
+			texture = ft_strtrim(split[1], "\n");
+			cube->map->north.img = open_texture(texture, cube, 'N');
+			free(texture);
 		}
 		free_split(split);
 	}
@@ -40,7 +41,7 @@ t_bool	check_north(char **dump, int lines, t_cube *cube)
 
 t_bool	check_south(char **dump, int lines, t_cube *cube)
 {
-	(void)cube;
+	char	*texture;
 	char	**split;
 	int		found;
 	int		i;
@@ -53,7 +54,9 @@ t_bool	check_south(char **dump, int lines, t_cube *cube)
 		if (ft_strncmp(split[0], "SO", ft_strlen(split[0])) == 0)
 		{
 			found++;
-			//cube->map->south.img = open_texture(split[1], cube, 'S');
+			texture = ft_strtrim(split[1], "\n");
+			cube->map->south.img = open_texture(texture, cube, 'S');
+			free(texture);
 		}
 		free_split(split);
 	}
@@ -65,7 +68,7 @@ t_bool	check_south(char **dump, int lines, t_cube *cube)
 
 t_bool	check_west(char **dump, int lines, t_cube *cube)
 {
-	(void)cube;
+	char	*texture;
 	char	**split;
 	int		found;
 	int		i;
@@ -78,7 +81,9 @@ t_bool	check_west(char **dump, int lines, t_cube *cube)
 		if (ft_strncmp(split[0], "WE", ft_strlen(split[0])) == 0)
 		{
 			found++;
-			//cube->map->west.img = open_texture(split[1], cube, 'W');
+			texture = ft_strtrim(split[1], "\n");
+			cube->map->west.img = open_texture(texture, cube, 'W');
+			free(texture);
 		}
 		free_split(split);
 	}
@@ -90,7 +95,7 @@ t_bool	check_west(char **dump, int lines, t_cube *cube)
 
 t_bool	check_east(char **dump, int lines, t_cube *cube)
 {
-	(void)cube;
+	char	*texture;
 	char	**split;
 	int		found;
 	int		i;
@@ -103,7 +108,9 @@ t_bool	check_east(char **dump, int lines, t_cube *cube)
 		if (ft_strncmp(split[0], "EA", ft_strlen(split[0])) == 0)
 		{
 			found++;
-			//cube->map->east.img = open_texture(split[1], cube, 'E');
+			texture = ft_strtrim(split[1], "\n");
+			cube->map->east.img = open_texture(texture, cube, 'E');
+			free(texture);
 		}
 		free_split(split);
 	}

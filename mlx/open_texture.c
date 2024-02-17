@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   open_texture.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alfgarci <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 13:40:43 by alfgarci          #+#    #+#             */
-/*   Updated: 2023/11/09 13:40:47 by alfgarci         ###   ########.fr       */
+/*   Updated: 2024/02/17 17:51:03 by alfgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,6 @@ t_img	open_texture(t_path path, t_cube *cube, char dir)
 		img = mlx_xpm_file_to_image(cube->mlx, path, &cube->map->east.width ,
 			&cube->map->east.height);
 	}
-	printf("%s\n", path);
-	printf("%p\n%p\n", &cube->map->east.width, &cube->map->east.height);
-	printf("%p\n", cube->mlx);
 	if (img == NULL)
 		exit_error(ERROR_OPEN_TEXTURE, errno, cube);
 	return (img);

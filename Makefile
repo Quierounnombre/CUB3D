@@ -6,7 +6,7 @@
 #    By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/04 13:36:09 by alfgarci          #+#    #+#              #
-#    Updated: 2024/02/16 13:31:19 by alfgarci         ###   ########.fr        #
+#    Updated: 2024/02/17 17:51:27 by alfgarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,7 +72,7 @@ FILES_MLX =	mlx_open_win \
 			draw_wall \
 			draw_background \
 			ft_pixel_put \
-			#open_texture \
+			open_texture \
 
 MLX_DIR = ./mlx/
 SRCS_MLX = $(addprefix $(MLX_DIR), $(addsuffix .c, $(FILES_MLX)))
@@ -88,6 +88,7 @@ FILES_RAYCASTING =	calc_wall_height \
 					dda \
 					init_ray \
 					raycasting \
+					impact_point_wall \
 
 RAYCASTING_DIR = ./raycasting/
 SRCS_RAYCASTING = $(addprefix $(RAYCASTING_DIR), $(addsuffix .c, $(FILES_RAYCASTING)))
