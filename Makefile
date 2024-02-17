@@ -6,7 +6,7 @@
 #    By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/04 13:36:09 by alfgarci          #+#    #+#              #
-#    Updated: 2024/02/17 17:13:58 by vicgarci         ###   ########.fr        #
+#    Updated: 2024/02/17 17:20:19 by vicgarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -87,7 +87,6 @@ SRCS_PLAYER = $(addprefix $(PLAYER_DIR), $(addsuffix .c, $(FILES_PLAYER)))
 
 FILES_RAYCASTING =	calc_wall_height \
 					calc_distance_to_wall \
-					calc_rays \
 					draw_wall \
 					draw_simple_wall \
 					calc_wall_ratios \

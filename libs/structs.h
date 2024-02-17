@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:22:29 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/02/17 17:13:37 by vicgarci         ###   ########.fr       */
+/*   Updated: 2024/02/17 17:32:47 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,14 @@ typedef struct s_cube
 	t_mlx		mlx;
 	t_mlx_img	*mlx_img;
 }	t_cube;
+
+typedef struct s_ray_info
+{
+	int			column;
+	double		wall_height;
+	t_vector2D	wall_ratios;
+	t_direction	dir;
+}	t_ray_info;
 
 typedef struct s_ray
 {

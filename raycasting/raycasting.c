@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycasting.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:26:08 by alfgarci          #+#    #+#             */
-/*   Updated: 2024/02/16 12:52:56 by alfgarci         ###   ########.fr       */
+/*   Updated: 2024/02/17 17:19:57 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,9 @@ static void	determine_cardinal_direction(t_ray *ray)
 
 void	raycasting(t_cube *cube)
 {
-	int		x;
-	t_ray	*ray;
+	int			x;
+	t_ray		*ray;
+	t_vector2D	v;
 
 	x = 0;
 	while (x < WIDTH)
@@ -70,7 +71,9 @@ void	raycasting(t_cube *cube)
 		determine_cardinal_direction(ray);
 		ray->perp_wall_dist = calc_perp_wall_dist(ray);
 		ray->line_height = (int)calc_wall_height(ray->perp_wall_dist);
-		draw_wall(ray->line_height, x, cube);
+		v.x = x;
+		v.y = 0.5;
+		draw_wall(ray->line_height, v, cube, ray->wall_hit);
 		free(ray);
 		x++;
 	}
