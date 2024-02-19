@@ -6,24 +6,24 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 11:31:20 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/02/17 16:48:20 by vicgarci         ###   ########.fr       */
+/*   Updated: 2024/02/19 16:30:36 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Cub3D.h"
 
 t_color	get_color_in_texture(t_texture *texture, t_vector2D wall_ratios,
-			t_vector2D pos)
+			int pos)
 {
-	double		height_ratio;
-	double		width_ratio;
+	double		height_target_pos;
+	int			width_target_pos;
 	int			target_addres;
 	int			raw_color;
 	t_color		result;
 
-	height_ratio = wall_ratios.x;
-	width_ratio = wall_ratios.y;
-	target_addres = ((int)height_ratio * pos.x) * ((int)width_ratio * pos.y);
+	height_target_pos = wall_ratios.x * pos;
+	width_target_pos = wall_ratios.y * texture->width;
+	target_addres = height_target_pos * width_target_pos;
 	raw_color = (unsigned int)texture->img->adres + target_addres;
 	result = int_to_t_color(raw_color);
 	return (result);

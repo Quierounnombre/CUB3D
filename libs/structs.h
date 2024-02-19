@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:22:29 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/02/17 17:23:21 by alfgarci         ###   ########.fr       */
+/*   Updated: 2024/02/19 16:33:32 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,10 +92,10 @@ typedef struct s_cube
 
 typedef struct s_ray_info
 {
-	int			column;
-	double		wall_height;
-	t_vector2D	wall_ratios;
-	t_direction	dir;
+	int				column;
+	double			wall_height;
+	t_vector2D		wall_ratios;
+	t_direction		dir;
 }	t_ray_info;
 
 typedef struct s_ray
