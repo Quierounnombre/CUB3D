@@ -26,6 +26,7 @@ FILES_STARTUP =	init_player \
 				init_map \
 				init_mlx_img \
 				set_default_colors \
+				init_texture \
 				init \
 
 STARTUP_DIR = ./startup/
