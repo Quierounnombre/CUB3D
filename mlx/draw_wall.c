@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   put_texture_pixel.c                                :+:      :+:    :+:   */
+/*   draw_wall.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/17 16:00:08 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/02/17 16:27:22 by vicgarci         ###   ########.fr       */
+/*   Created: 2023/12/04 17:00:19 by vicgarci          #+#    #+#             */
+/*   Updated: 2024/02/19 16:34:50 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Cub3D.h"
 
-void	put_texture_pixel(t_cube *cube, t_texture *texture,
-			double pos_to_draw, t_vector2D pos)
+void	draw_wall(t_ray_info *ray, t_cube *cube)
 {
-	int			column;
-	t_color		color;
-	t_vector2D	wall_ratios;
 
-	column = pos.x;
-	wall_ratios = calc_wall_ratios(texture, pos);
-	color = get_color_in_texture(texture, wall_ratios, pos);
-	mlx_point_draw(cube, column, pos_to_draw, color);
+	if (ray->dir == UNDEFINE_DIR)
+		draw_simple_wall(cube, ray->column, ray->wall_height);
+	if (ray->dir == NORTH)
+		draw_texture(ray, cube, &(cube->map->north));
+	if (ray->dir == SOUTH)
+		draw_texture(ray, cube, &(cube->map->south));
+	if (ray->dir == EAST)
+		draw_texture(ray, cube, &(cube->map->east));
+	if (ray->dir == WEST)
+		draw_texture(ray, cube, &(cube->map->west));
 }
