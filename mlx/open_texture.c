@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   open_texture.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/09 11:33:19 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/02/17 17:08:37 by vicgarci         ###   ########.fr       */
+/*   Created: 2023/11/09 13:40:43 by alfgarci          #+#    #+#             */
+/*   Updated: 2024/02/19 15:38:10 by alfgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,26 @@ void	open_texture(t_path path, t_cube *cube, t_direction dir,
 		t_texture *texture)
 {
 	if (dir == NORTH)
-		texture->img = open_xpm(cube->mlx, path, &(cube->map->north));
-	if (dir == SOUTH)
-		texture->img = open_xpm(cube->mlx, path, &(cube->map->south));
-	if (dir == WEST)
-		texture->img = open_xpm(cube->mlx, path, &(cube->map->west));
-	if (dir == EAST)
-		texture->img = open_xpm(cube->mlx, path, &(cube->map->east));
-	if (texture->img == NULL)
+	{
+		img = mlx_xpm_file_to_image(cube->mlx, path, &cube->map->north.width,
+				&(cube->map->north.height));
+	}
+	else if (dir == SOUTH)
+	{
+		img = mlx_xpm_file_to_image(cube->mlx, path, &cube->map->south.width,
+				&cube->map->south.height);
+	}
+	else if (dir == WEST)
+	{
+		img = mlx_xpm_file_to_image(cube->mlx, path, &cube->map->west.width,
+				&cube->map->west.height);
+	}
+	else if (dir == EAST)
+	{
+		img = mlx_xpm_file_to_image(cube->mlx, path, &cube->map->east.width,
+				&cube->map->east.height);
+	}
+	if (img == NULL)
 		exit_error(ERROR_OPEN_TEXTURE, errno, cube);
 	texture->img->adres = mlx_get_data_addr(texture->img->img,
 			&texture->img->bits_per_pixel, &texture->img->line,

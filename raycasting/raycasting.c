@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:26:08 by alfgarci          #+#    #+#             */
-/*   Updated: 2024/02/17 17:19:57 by vicgarci         ###   ########.fr       */
+/*   Updated: 2024/02/17 17:30:39 by alfgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,9 +71,8 @@ void	raycasting(t_cube *cube)
 		determine_cardinal_direction(ray);
 		ray->perp_wall_dist = calc_perp_wall_dist(ray);
 		ray->line_height = (int)calc_wall_height(ray->perp_wall_dist);
-		v.x = x;
-		v.y = 0.5;
-		draw_wall(ray->line_height, v, cube, ray->wall_hit);
+		ray->impact_pt = determine_impact_point(ray, cube);
+		draw_wall(ray->line_height, x, cube);
 		free(ray);
 		x++;
 	}

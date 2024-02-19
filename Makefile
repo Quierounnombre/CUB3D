@@ -93,6 +93,7 @@ FILES_RAYCASTING =	calc_wall_height \
 					dda \
 					init_ray \
 					raycasting \
+					impact_point_wall \
 
 RAYCASTING_DIR = ./raycasting/
 SRCS_RAYCASTING = $(addprefix $(RAYCASTING_DIR), $(addsuffix .c, $(FILES_RAYCASTING)))

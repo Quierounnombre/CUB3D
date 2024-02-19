@@ -111,6 +111,8 @@ double		calc_distance_to_wall(t_vector2D p_of_colision, double dist,
 double		calc_wall_height(double side_dist);
 t_vector2D	calc_wall_ratios(t_texture *texture, t_vector2D pos);
 void		dda(t_cube *cube, t_ray *ray);
+void		draw_wall(double wall_height, int column, t_cube *cube);
+double		determine_impact_point(t_ray *ray, t_cube *cube);
 double		calc_perp_wall_dist(t_ray *ray);
 //---------------------------------------------------------------------------
 

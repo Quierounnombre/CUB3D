@@ -110,6 +110,7 @@ typedef struct s_ray
 	double			perp_wall_dist;
 	int				line_height;
 	char			wall_hit;
+	double			impact_pt;
 }	t_ray;
 
 #endif
