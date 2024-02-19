@@ -6,7 +6,7 @@
 #    By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/04 13:36:09 by alfgarci          #+#    #+#              #
-#    Updated: 2024/02/19 16:44:38 by vicgarci         ###   ########.fr        #
+#    Updated: 2024/02/19 17:54:17 by vicgarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,6 @@ NC		=\033[0m
 NAME 	=	cub3d
 
 #---SRC
-
 FILES_STARTUP =	init_player \
 				init_cube \
 				init_map \
@@ -111,12 +110,14 @@ SRC 	=	$(SRCS_STARTUP) \
 
 #---OBJ
 OBJ 	=	${SRC:.c=.o}
+
 #---INC
 INC 	=	.
 
 #---LIBFT-------------------------------
 LIBFT_DIR	=	libft_def
 LIBFT_NAME	=	ft
+
 #---INC
 LIBFT_INC	= ${LIBFT_DIR}
 
