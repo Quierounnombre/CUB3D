@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cub3D.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:19:38 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/02/17 17:34:02 by alfgarci         ###   ########.fr       */
+/*   Updated: 2024/02/19 16:00:40 by alfgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,9 +116,9 @@ t_color		get_color_in_texture(t_texture *texture, t_vector2D wall_ratios,
 void		draw_simple_wall(t_cube *cube, int column, double wall_height);
 t_vector2D	calc_wall_ratios(t_texture *texture, t_vector2D pos);
 void		dda(t_cube *cube, t_ray *ray);
-void		draw_wall(double wall_height, int column, t_cube *cube);
 double		determine_impact_point(t_ray *ray, t_cube *cube);
 double		calc_perp_wall_dist(t_ray *ray);
+t_ray_info	init_ray_info(t_ray *ray, int colum);
 //---------------------------------------------------------------------------
 
 #endif

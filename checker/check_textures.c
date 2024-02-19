@@ -6,7 +6,7 @@
 /*   By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 16:48:44 by alfgarci          #+#    #+#             */
-/*   Updated: 2024/02/17 17:50:00 by alfgarci         ###   ########.fr       */
+/*   Updated: 2024/02/19 15:49:48 by alfgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_bool	check_north(char **dump, int lines, t_cube *cube)
 		{
 			found++;
 			texture = ft_strtrim(split[1], "\n");
-			cube->map->north.img = open_texture(texture, cube, 'N');
+			open_texture(texture, cube, 'N', &cube->map->north);
 			free(texture);
 		}
 		free_split(split);
@@ -55,7 +55,7 @@ t_bool	check_south(char **dump, int lines, t_cube *cube)
 		{
 			found++;
 			texture = ft_strtrim(split[1], "\n");
-			cube->map->south.img = open_texture(texture, cube, 'S');
+			open_texture(texture, cube, 'S', &cube->map->south);
 			free(texture);
 		}
 		free_split(split);
@@ -82,7 +82,7 @@ t_bool	check_west(char **dump, int lines, t_cube *cube)
 		{
 			found++;
 			texture = ft_strtrim(split[1], "\n");
-			cube->map->west.img = open_texture(texture, cube, 'W');
+			open_texture(texture, cube, 'W', &cube->map->west);
 			free(texture);
 		}
 		free_split(split);
@@ -109,7 +109,7 @@ t_bool	check_east(char **dump, int lines, t_cube *cube)
 		{
 			found++;
 			texture = ft_strtrim(split[1], "\n");
-			cube->map->east.img = open_texture(texture, cube, 'E');
+			open_texture(texture, cube, 'E', &cube->map->east);
 			free(texture);
 		}
 		free_split(split);
