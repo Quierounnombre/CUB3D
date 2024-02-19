@@ -12,11 +12,21 @@
 
 #include "../Cub3D.h"
 
-t_img	open_texture(t_path path, t_cube *cube, char dir)
+static t_img	open_xpm(t_cube *cube, t_path path, t_texture *texture)
 {
 	t_img	img;
 
 	img = NULL;
+	img = mlx_xpm_file_to_image(cube->mlx, path, &(texture->width),
+			&(texture->width));
+	ft_printf("PATH %s", path);
+	ft_printf("TXT %p\n", img);
+	return (img);
+}
+
+void	open_texture(t_path path, t_cube *cube, t_direction dir,
+		t_texture *texture)
+{
 	if (dir == NORTH)
 	{
 		img = mlx_xpm_file_to_image(cube->mlx, path, &cube->map->north.width,
@@ -39,5 +49,7 @@ t_img	open_texture(t_path path, t_cube *cube, char dir)
 	}
 	if (img == NULL)
 		exit_error(ERROR_OPEN_TEXTURE, errno, cube);
-	return (img);
+	texture->img->adres = mlx_get_data_addr(texture->img->img,
+			&texture->img->bits_per_pixel, &texture->img->line,
+			&texture->img->endian);
 }

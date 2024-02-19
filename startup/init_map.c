@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 14:08:03 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/01/24 15:52:53 by vicgarci         ###   ########.fr       */
+/*   Updated: 2024/02/09 11:44:19 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ t_map	*init_map(t_cube *cube)
 	local_map = (t_map *)malloc(sizeof(t_map));
 	if (!local_map)
 		exit_error(ERROR_MALLOC, errno, cube);
-	init_texture(&local_map->north);
-	init_texture(&local_map->south);
-	init_texture(&local_map->west);
-	init_texture(&local_map->east);
+	init_texture(&local_map->north, cube);
+	init_texture(&local_map->south, cube);
+	init_texture(&local_map->west, cube);
+	init_texture(&local_map->east, cube);
 	return (local_map);
 }

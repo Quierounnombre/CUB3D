@@ -3,13 +3,12 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+         #
+#    By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/04 13:36:09 by alfgarci          #+#    #+#              #
 #    Updated: 2024/02/17 17:51:27 by alfgarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
 
 ED		=\033[1;31m
 GREEN	=\033[1;32m
@@ -70,9 +69,12 @@ FILES_MLX =	mlx_open_win \
 			draw \
 			put_img \
 			fill_window \
-			draw_wall \
 			draw_background \
 			ft_pixel_put \
+			int_to_t_color \
+			put_texture_pixel \
+			draw_texture \
+			get_color_in_texture \
 			open_texture \
 
 MLX_DIR = ./mlx/
@@ -85,6 +87,9 @@ SRCS_PLAYER = $(addprefix $(PLAYER_DIR), $(addsuffix .c, $(FILES_PLAYER)))
 
 FILES_RAYCASTING =	calc_wall_height \
 					calc_distance_to_wall \
+					draw_wall \
+					draw_simple_wall \
+					calc_wall_ratios \
 					calc_perp_wall_dist \
 					dda \
 					init_ray \

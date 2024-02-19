@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   raycasting.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:26:08 by alfgarci          #+#    #+#             */
 /*   Updated: 2024/02/17 17:30:39 by alfgarci         ###   ########.fr       */
@@ -58,8 +58,9 @@ static void	determine_cardinal_direction(t_ray *ray)
 
 void	raycasting(t_cube *cube)
 {
-	int		x;
-	t_ray	*ray;
+	int			x;
+	t_ray		*ray;
+	t_vector2D	v;
 
 	x = 0;
 	while (x < WIDTH)

@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_texture.c                                     :+:      :+:    :+:   */
+/*   draw_simple_wall.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 15:43:25 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/02/17 16:51:52 by vicgarci         ###   ########.fr       */
+/*   Created: 2024/02/09 11:09:11 by vicgarci          #+#    #+#             */
+/*   Updated: 2024/02/09 11:14:57 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Cub3D.h"
 
-void	init_texture(t_texture *texture, t_cube *cube)
+void	draw_simple_wall(t_cube *cube, int column, double wall_height)
 {
-	texture->height = 0;
-	texture->width = 0;
-	texture->img = init_mlx_img(cube);
+	double	window_dimension;
+	int		start_of_draw;
+	int		end_of_draw;
+
+	window_dimension = (HEIGHT - wall_height) / SPLIT_THE_WIN;
+	start_of_draw = window_dimension;
+	end_of_draw = window_dimension + wall_height;
+	while (start_of_draw <= end_of_draw)
+	{
+		mlx_point_draw(cube, column, start_of_draw,
+			cube->map->wall_color);
+		start_of_draw++;
+	}
 }

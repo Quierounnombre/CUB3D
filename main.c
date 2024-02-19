@@ -57,5 +57,3 @@ int	main(int argc, char **argv)
 	else
 		exit_error(ERROR_PARSE, errno, cube);
 }
-
-
