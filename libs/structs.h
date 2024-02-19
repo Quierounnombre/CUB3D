@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:22:29 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/02/17 17:32:47 by vicgarci         ###   ########.fr       */
+/*   Updated: 2024/02/17 17:23:21 by alfgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,7 @@ typedef struct s_ray
 	double			perp_wall_dist;
 	int				line_height;
 	char			wall_hit;
+	double			impact_pt;
 }	t_ray;
 
 #endif

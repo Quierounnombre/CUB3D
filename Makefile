@@ -6,7 +6,7 @@
 #    By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/04 13:36:09 by alfgarci          #+#    #+#              #
-#    Updated: 2024/02/17 17:20:19 by vicgarci         ###   ########.fr        #
+#    Updated: 2024/02/17 17:51:27 by alfgarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -94,6 +94,7 @@ FILES_RAYCASTING =	calc_wall_height \
 					dda \
 					init_ray \
 					raycasting \
+					impact_point_wall \
 
 RAYCASTING_DIR = ./raycasting/
 SRCS_RAYCASTING = $(addprefix $(RAYCASTING_DIR), $(addsuffix .c, $(FILES_RAYCASTING)))
