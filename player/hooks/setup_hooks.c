@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   setup_hooks.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 12:49:18 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/12/15 18:27:16 by vicgarci         ###   ########.fr       */
+/*   Updated: 2024/02/21 14:32:38 by alfgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,17 @@ static int	movement_hooks(t_key keycode, void *param)
 
 	cube = param;
 	if (keycode == KEY_FORWARD)
-		movement_hook(cube, true);
+		movement_hook_vertical(cube, true);
 	if (keycode == KEY_BACKWARD)
-		movement_hook(cube, false);
+		movement_hook_vertical(cube, false);
 	if (keycode == KEY_ROTATE_RIGHT)
 		rotate_hook(cube, true);
 	if (keycode == KEY_ROTATE_LEFT)
 		rotate_hook(cube, false);
+	if (keycode == KEY_MOVE_RIGHT)
+		movement_hook_horizontal(cube, true);
+	if (keycode == KEY_MOVE_LEFT)
+		movement_hook_horizontal(cube, false);
 	if (keycode == KEY_ESCAPE)
 		close_hook(cube);
 	return (0);
