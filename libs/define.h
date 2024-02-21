@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   define.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:22:25 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/02/17 17:13:07 by vicgarci         ###   ########.fr       */
+/*   Updated: 2024/02/21 14:30:12 by alfgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,9 +91,11 @@ files are up to standard"
 
 # define KEY_FORWARD 13 //w
 # define KEY_BACKWARD 1 //s
-# define KEY_ROTATE_RIGHT 2 //d
-# define KEY_ROTATE_LEFT 0 //a
+# define KEY_ROTATE_RIGHT 124 //esc
+# define KEY_ROTATE_LEFT 123 //esc
 # define KEY_ESCAPE 53 //esc
+# define KEY_MOVE_RIGHT 2 //d
+# define KEY_MOVE_LEFT 0 //a
 
 //TEXTURES
 
