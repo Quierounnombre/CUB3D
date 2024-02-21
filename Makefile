@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+         #
+#    By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/04 13:36:09 by alfgarci          #+#    #+#              #
-#    Updated: 2024/02/19 16:44:38 by vicgarci         ###   ########.fr        #
+#    Updated: 2024/02/21 14:02:06 by alfgarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,8 @@ EXTRAS_DIR = ./extras/
 SRCS_EXTRAS = $(addprefix $(EXTRAS_DIR), $(addsuffix .c, $(FILES_EXTRAS)))
 
 FILES_HOOKS = 	setup_hooks \
-				movement_hook \
+				movement_hook_vertical \
+				movement_hook_horizontal \
 				rotate_hook \
 				close_hook \
 

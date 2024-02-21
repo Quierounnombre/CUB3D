@@ -6,7 +6,7 @@
 /*   By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:19:38 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/02/19 16:00:40 by alfgarci         ###   ########.fr       */
+/*   Updated: 2024/02/21 14:13:17 by alfgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,8 @@ t_color		get_color_in_texture(t_texture *texture, t_vector2D wall_ratios,
 //HOOKS
 //---------------------------------------------------------------------------
 
-void		movement_hook(t_cube *cube, t_bool	is_forward);
+void		movement_hook_vertical(t_cube *cube, t_bool is_forward);
+void		movement_hook_horizontal(t_cube *cube, t_bool is_right);
 void		rotate_hook(t_cube *cube, t_bool is_right);
 int			close_hook(t_cube *cube);
 void		setup_hooks(t_cube *cube);
