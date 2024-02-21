@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 11:31:20 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/02/19 16:30:36 by vicgarci         ###   ########.fr       */
+/*   Updated: 2024/02/21 14:39:05 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ t_color	get_color_in_texture(t_texture *texture, t_vector2D wall_ratios,
 
 	height_target_pos = wall_ratios.x * pos;
 	width_target_pos = wall_ratios.y * texture->width;
-	target_addres = height_target_pos * width_target_pos;
-	raw_color = (unsigned int)texture->img->adres + target_addres;
+	target_addres = (height_target_pos) + (width_target_pos);
+	raw_color = (unsigned int)(texture->img->adres[target_addres]);
 	result = int_to_t_color(raw_color);
 	return (result);
 }
