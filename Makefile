@@ -19,7 +19,6 @@ NC		=\033[0m
 NAME 	=	cub3d
 
 #---SRC
-
 FILES_STARTUP =	init_player \
 				init_cube \
 				init_map \
@@ -112,12 +111,14 @@ SRC 	=	$(SRCS_STARTUP) \
 
 #---OBJ
 OBJ 	=	${SRC:.c=.o}
+
 #---INC
 INC 	=	.
 
 #---LIBFT-------------------------------
 LIBFT_DIR	=	libft_def
 LIBFT_NAME	=	ft
+
 #---INC
 LIBFT_INC	= ${LIBFT_DIR}
 

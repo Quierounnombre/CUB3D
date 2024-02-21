@@ -6,7 +6,7 @@
 /*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 13:40:43 by alfgarci          #+#    #+#             */
-/*   Updated: 2024/02/19 17:46:51 by vicgarci         ###   ########.fr       */
+/*   Updated: 2024/02/21 14:12:50 by vicgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static t_img	open_xpm(t_cube *cube, t_path path, t_texture *texture)
 
 	img = NULL;
 	img = mlx_xpm_file_to_image(cube->mlx, path, &(texture->width),
-			&(texture->width));
+			&(texture->height));
 	return (img);
 }
 

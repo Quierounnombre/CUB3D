@@ -72,7 +72,7 @@ void	raycasting(t_cube *cube)
 		ray->perp_wall_dist = calc_perp_wall_dist(ray);
 		ray->line_height = (int)calc_wall_height(ray->perp_wall_dist);
 		ray->impact_pt = determine_impact_point(ray, cube);
-		ray_info = init_ray_info(ray, x);
+		ray_info = init_ray_info(ray, x, cube);
 		draw_wall(&ray_info, cube);
 		free(ray);
 		x++;
