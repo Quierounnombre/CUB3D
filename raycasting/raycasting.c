@@ -6,7 +6,7 @@
 /*   By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:26:08 by alfgarci          #+#    #+#             */
-/*   Updated: 2024/02/19 17:56:45 by alfgarci         ###   ########.fr       */
+/*   Updated: 2024/02/29 15:07:07 by alfgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,16 +43,16 @@ static void	determine_cardinal_direction(t_ray *ray)
 	if (ray->side_hit == 0)
 	{
 		if (ray->ray_dir.x > 0)
-			ray->wall_hit = EAST;
+			ray->wall_hit = SOUTH;
 		else
-			ray->wall_hit = WEST;
+			ray->wall_hit = NORTH;
 	}
 	else
 	{
 		if (ray->ray_dir.y > 0)
-			ray->wall_hit = SOUTH;
+			ray->wall_hit = EAST;
 		else
-			ray->wall_hit = NORTH;
+			ray->wall_hit = WEST;
 	}
 }
 

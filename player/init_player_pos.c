@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_player_pos.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 15:04:40 by alfgarci          #+#    #+#             */
-/*   Updated: 2023/12/04 15:12:09 by vicgarci         ###   ########.fr       */
+/*   Updated: 2024/02/29 15:06:49 by alfgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ static void	calc_plane_vecor(t_cube *cube)
 	cube->player->plane.y = (-1) * (cube->player->dir.x) * plane_len;
 }
 
-static void	set_coor_player(t_cube *cube, int i, int j, double angle)
+static void	set_coor_player(t_cube *cube, double i, double j, double angle)
 {
-	cube->player->pos.x = j;
-	cube->player->pos.y = i;
+	cube->player->pos.x = i + 0.5;
+	cube->player->pos.y = j + 0.5;
 	cube->player->angle = angle;
 	cube->player->dir.x = cos(angle);
 	cube->player->dir.y = sin(angle);

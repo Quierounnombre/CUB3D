@@ -6,13 +6,13 @@
 /*   By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:26:08 by alfgarci          #+#    #+#             */
-/*   Updated: 2024/02/17 17:46:34 by alfgarci         ###   ########.fr       */
+/*   Updated: 2024/02/29 15:07:30 by alfgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Cub3D.h"
 
-double determine_impact_point(t_ray *ray, t_cube *cube)
+double	determine_impact_point(t_ray *ray, t_cube *cube)
 {
 	double	impact;
 

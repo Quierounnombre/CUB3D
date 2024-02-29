@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cub3D.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:19:38 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/02/21 14:13:17 by alfgarci         ###   ########.fr       */
+/*   Updated: 2024/02/29 15:41:06 by alfgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,10 @@ t_bool		parse(int argc, char **argv);
 t_bool		check_color(char **dump, int lines, t_cube *cube);
 t_bool		check_texture(char **dump, int lines, t_cube *cube);
 t_bool		check_map(char **dump);
+t_bool		check_pos(char **dump);
+int			map_line(char **dump);
 t_bool		is_map_closed(char **map);
-char		**get_map(char **dump, int n_lines, t_cube *cube);
+char		**get_map(char **dump, int map, t_cube *cube);
 void		check_fill_file(t_cube *cube, t_path path);
 //---------------------------------------------------------------------------
 
@@ -82,8 +84,7 @@ t_color		int_to_t_color(int color);
 void		draw_wall(t_ray_info *ray, t_cube *cube);
 void		draw_texture(t_ray_info *ray, t_cube *cube, t_texture *texture);
 void		draw_simple_wall(t_cube *cube, int column, double wall_height);
-t_color		get_color_in_texture(t_texture *texture, t_vector2D wall_ratios,
-				int pos);
+t_color		get_color_in_texture(t_texture *texture, t_ray_info *ray);
 
 //---------------------------------------------------------------------------
 

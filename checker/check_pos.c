@@ -1,30 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   check_pos.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/04 13:36:16 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/02/29 15:13:21 by alfgarci         ###   ########.fr       */
+/*   Created: 2023/11/04 14:43:30 by alfgarci          #+#    #+#             */
+/*   Updated: 2024/02/29 15:05:24 by alfgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cub3D.h"
+#include "../Cub3D.h"
 
-int	main(int argc, char **argv)
+t_bool	check_pos(char **dump)
 {
-	t_cube	*cube;
+	int		start_map;
+	int		j;
+	int		pos;
+	char	tmp;
 
-	cube = NULL;
-	if (parse(argc, argv))
+	pos = 0;
+	start_map = map_line(dump);
+	while (dump[start_map])
 	{
-		cube = init(*argv);
-		check_fill_file(cube, argv[1]);
-		draw(cube);
-		mlx_loop(cube->mlx);
-		free_cube(cube);
+		j = 0;
+		while (dump[start_map][j])
+		{
+			tmp = dump[start_map][j];
+			if (tmp == 'S' || tmp == 'E' || tmp == 'W' || tmp == 'N')
+				pos++;
+			j++;
+		}
+		start_map++;
 	}
+	if (pos == 1)
+		return (true);
 	else
-		exit_error(ERROR_PARSE, errno, cube);
+		return (false);
 }
