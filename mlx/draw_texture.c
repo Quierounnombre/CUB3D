@@ -6,16 +6,16 @@
 /*   By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 11:17:27 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/02/29 14:16:53 by alfgarci         ###   ########.fr       */
+/*   Updated: 2024/02/29 16:05:50 by alfgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Cub3D.h"
 
-static double cacl_per(int start, int end, int valor)
+static double	cacl_per(int start, int end, int valor)
 {
-	double per;
-	double range; 
+	double	per;
+	double	range;
 
 	range = end - start;
 	per = (valor - start) / range;

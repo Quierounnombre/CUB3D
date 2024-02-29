@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_wall.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 17:00:19 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/02/19 16:34:50 by vicgarci         ###   ########.fr       */
+/*   Updated: 2024/02/29 16:05:02 by alfgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	draw_wall(t_ray_info *ray, t_cube *cube)
 {
-
 	if (ray->dir == UNDEFINE_DIR)
 		draw_simple_wall(cube, ray->column, ray->wall_height);
 	if (ray->dir == NORTH)

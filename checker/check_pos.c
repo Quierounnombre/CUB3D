@@ -6,7 +6,7 @@
 /*   By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 14:43:30 by alfgarci          #+#    #+#             */
-/*   Updated: 2024/02/29 10:21:43 by alfgarci         ###   ########.fr       */
+/*   Updated: 2024/02/29 15:05:24 by alfgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,6 @@ t_bool	check_pos(char **dump)
 	}
 	if (pos == 1)
 		return (true);
-	else 
+	else
 		return (false);
 }
