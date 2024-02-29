@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_simple_wall.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 11:09:11 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/02/09 11:14:57 by vicgarci         ###   ########.fr       */
+/*   Updated: 2024/02/29 14:14:44 by alfgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

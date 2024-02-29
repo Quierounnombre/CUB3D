@@ -6,7 +6,7 @@
 /*   By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 11:17:27 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/02/22 11:18:02 by alfgarci         ###   ########.fr       */
+/*   Updated: 2024/02/29 14:16:53 by alfgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	draw_texture(t_ray_info *ray, t_cube *cube, t_texture *texture)
 	start_of_draw = window_dimension;
 	end_of_draw = window_dimension + ray->wall_height;
 	tmp = start_of_draw;
-	while (start_of_draw <= end_of_draw)
+	while (start_of_draw <= end_of_draw - 1)
 	{
 		ray->wall_ratios.x = cacl_per(tmp, end_of_draw, start_of_draw);
 		color = get_color_in_texture(texture, ray);
