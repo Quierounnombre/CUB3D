@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_file.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 14:43:30 by alfgarci          #+#    #+#             */
-/*   Updated: 2024/02/19 17:47:01 by vicgarci         ###   ########.fr       */
+/*   Updated: 2024/02/29 10:44:21 by alfgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void	check_fill_file(t_cube *cube, t_path path)
 	n_lines = count_lines(path, cube);
 	dump = fill_dump(n_lines, path, cube);
 	if (!check_texture(dump, n_lines, cube) || !check_color(dump, n_lines, cube)
-		|| !check_map(dump))
+		|| !check_map(dump) || !check_pos(dump))
 	{
 		free_split(dump);
 		exit_error(ERROR_FORMAT, errno, cube);

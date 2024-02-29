@@ -3,28 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   get_color_in_texture.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 11:31:20 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/02/21 14:39:05 by vicgarci         ###   ########.fr       */
+/*   Updated: 2024/02/29 13:25:29 by alfgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Cub3D.h"
 
-t_color	get_color_in_texture(t_texture *texture, t_vector2D wall_ratios,
-			int pos)
+t_color	get_color_in_texture(t_texture *texture, t_ray_info *ray)
 {
-	double		height_target_pos;
-	int			width_target_pos;
-	int			target_addres;
-	int			raw_color;
-	t_color		result;
+	t_vector2Dint	pos_texture;
+	int				raw_color;
+	t_color			result;
 
-	height_target_pos = wall_ratios.x * pos;
-	width_target_pos = wall_ratios.y * texture->width;
-	target_addres = (height_target_pos) + (width_target_pos);
-	raw_color = (unsigned int)(texture->img->adres[target_addres]);
+	pos_texture.y = ray->wall_ratios.x * texture->height;
+	if (ray->dir != 'S' || ray->dir != 'W')
+		pos_texture.x = ray->wall_ratios.y * texture->height;
+	else
+		pos_texture.x = (ray->wall_ratios.y * -1) * texture->height;
+	raw_color = *(unsigned int *)(texture->img->adres 
+		+ (pos_texture.x * (texture->img->bits_per_pixel / 8)
+		+ (pos_texture.y * texture->img->line)));
 	result = int_to_t_color(raw_color);
 	return (result);
 }

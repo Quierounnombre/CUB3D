@@ -6,7 +6,7 @@
 #    By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/04 13:36:09 by alfgarci          #+#    #+#              #
-#    Updated: 2024/02/21 14:02:06 by alfgarci         ###   ########.fr        #
+#    Updated: 2024/02/29 10:30:01 by alfgarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,7 @@ FILES_CHECKER =	check_color\
 				check_map \
 				check_textures \
 				check_walls \
+				check_pos \
 
 CHECKER_DIR = ./checker/
 SRCS_CHECKER = $(addprefix $(CHECKER_DIR), $(addsuffix .c, $(FILES_CHECKER)))

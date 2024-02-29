@@ -1,35 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   dda.c                                              :+:      :+:    :+:   */
+/*   check_pos.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/04 16:26:08 by alfgarci          #+#    #+#             */
-/*   Updated: 2024/02/29 11:51:37 by alfgarci         ###   ########.fr       */
+/*   Created: 2023/11/04 14:43:30 by alfgarci          #+#    #+#             */
+/*   Updated: 2024/02/29 10:21:43 by alfgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Cub3D.h"
 
-void	dda(t_cube *cube, t_ray *ray)
+t_bool	check_pos(char **dump)
 {
-	while (ray->hit == 0 && ray->map_cor.x < cube->map->height
-		&& cube->map->width)
+	int		start_map;
+	int		j;
+	int		pos;
+	char	tmp;
+
+	pos = 0;
+	start_map = map_line(dump);
+	while (dump[start_map])
 	{
-		if (ray->side.x < ray->side.y)
+		j = 0;
+		while (dump[start_map][j])
 		{
-			ray->side.x += ray->delta.x;
-			ray->map_cor.x += ray->step.x;
-			ray->side_hit = 0;
+			tmp = dump[start_map][j];
+			if (tmp == 'S' || tmp == 'E' || tmp == 'W' || tmp == 'N')
+				pos++;
+			j++;
 		}
-		else
-		{
-			ray->side.y += ray->delta.y;
-			ray->map_cor.y += ray->step.y;
-			ray->side_hit = 1;
-		}
-		if (cube->map->map[ray->map_cor.x][ray->map_cor.y] > 0)
-			ray->hit = 1;
+		start_map++;
 	}
+	if (pos == 1)
+		return (true);
+	else 
+		return (false);
 }
