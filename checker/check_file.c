@@ -6,7 +6,7 @@
 /*   By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 14:43:30 by alfgarci          #+#    #+#             */
-/*   Updated: 2024/02/29 15:41:19 by alfgarci         ###   ########.fr       */
+/*   Updated: 2024/03/07 19:33:09 by alfgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ void	check_fill_file(t_cube *cube, t_path path)
 		free_split(dump);
 		exit_error(ERROR_FORMAT, errno, cube);
 	}
-	map = get_map(dump, n_lines, cube);
+	map = get_map(dump, n_lines, get_max_len_line(dump, map_line(dump)), cube);
 	free_split(dump);
 	if (is_map_closed(map) == false)
 	{

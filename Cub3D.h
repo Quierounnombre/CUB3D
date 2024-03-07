@@ -6,7 +6,7 @@
 /*   By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:19:38 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/02/29 15:41:06 by alfgarci         ###   ########.fr       */
+/*   Updated: 2024/03/07 19:33:30 by alfgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,9 @@ t_bool		check_texture(char **dump, int lines, t_cube *cube);
 t_bool		check_map(char **dump);
 t_bool		check_pos(char **dump);
 int			map_line(char **dump);
+int			get_max_len_line(char **dump, int map_lines);
 t_bool		is_map_closed(char **map);
-char		**get_map(char **dump, int map, t_cube *cube);
+char		**get_map(char **dump, int map, int max_len_line, t_cube *cube);
 void		check_fill_file(t_cube *cube, t_path path);
 //---------------------------------------------------------------------------
 

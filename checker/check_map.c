@@ -6,13 +6,13 @@
 /*   By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 12:47:17 by alfgarci          #+#    #+#             */
-/*   Updated: 2024/02/29 15:40:47 by alfgarci         ###   ########.fr       */
+/*   Updated: 2024/03/07 19:34:19 by alfgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Cub3D.h"
 
-int	get_max_char(char **dump, int map_lines)
+int	get_max_len_line(char **dump, int map_lines)
 {
 	int		i;
 	size_t	max_char;
@@ -55,7 +55,7 @@ char	**reserve_map(int map_lines, int max_char_in_map, t_cube *cube)
 	int		k;
 
 	i = -1;
-	map = (char **)malloc((map_lines + 1) * sizeof(char *));
+	map = ft_calloc(map_lines + 1, sizeof(char *));
 	if (!map)
 		exit_error(ERROR_MALLOC, errno, cube);
 	while (++i < map_lines)
@@ -73,24 +73,20 @@ char	**reserve_map(int map_lines, int max_char_in_map, t_cube *cube)
 	return (map);
 }
 
-char	**get_map(char **dump, int n_lines, t_cube *cube)
+char	**get_map(char **dump, int n_lines, int max_len_line, t_cube *cube)
 {
-	int		map_lines;
 	int		start_map;
-	size_t	max_char_in_map;
 	int		i;
-	size_t	j;
+	int		j;
 	char	**map;
 
-	start_map = map_line(dump);
-	map_lines = n_lines - map_line(dump);
-	max_char_in_map = get_max_char(dump, start_map);
-	map = reserve_map(map_lines, max_char_in_map, cube);
+	start_map = map_line(dump) - 1;
+	map = reserve_map(n_lines - map_line(dump), max_len_line, cube);
 	i = 0;
-	while (dump[start_map])
+	while (dump[++start_map])
 	{
-		j = 0;
-		while (j < ft_strlen(dump[start_map]))
+		j = -1;
+		while (++j < (int)ft_strlen(dump[start_map]))
 		{
 			if (dump[start_map][j] == ' ')
 				map[i][j] = 'v';
@@ -98,18 +94,11 @@ char	**get_map(char **dump, int n_lines, t_cube *cube)
 				break ;
 			else
 				map[i][j] = dump[start_map][j];
-			j++;
 		}
-		while (j < max_char_in_map)
-		{
-			map[i][j] = 'v';
-			j++;
-		}
-		map[i][j - 1] = '\0';
-		i++;
-		start_map++;
+		while (j < max_len_line)
+			map[i][j++] = 'v';
+		map[i++][j - 1] = '\0';
 	}
-	map[i] = NULL;
 	return (map);
 }
 
