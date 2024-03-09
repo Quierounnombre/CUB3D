@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   set_default_colors.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vicgarci <vicgarci@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 14:41:57 by vicgarci          #+#    #+#             */
-/*   Updated: 2023/12/04 17:06:32 by vicgarci         ###   ########.fr       */
+/*   Updated: 2024/03/09 12:20:06 by alfgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

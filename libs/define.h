@@ -6,7 +6,7 @@
 /*   By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:22:25 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/02/29 14:52:27 by alfgarci         ###   ########.fr       */
+/*   Updated: 2024/03/09 13:43:40 by alfgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,7 @@ files are up to standard"
 # define PLAYER_DEFAULT_ANGLE 0
 # define PLAYER_DEFAULT_POS_X 0
 # define PLAYER_DEFAULT_POS_Y 0
+# define PLAYER_MOVEMENT_LIMIT 0.6
 
 //KEYS
 
