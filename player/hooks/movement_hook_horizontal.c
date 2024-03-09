@@ -6,7 +6,7 @@
 /*   By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 12:52:42 by vicgarci          #+#    #+#             */
-/*   Updated: 2024/02/21 15:11:25 by alfgarci         ###   ########.fr       */
+/*   Updated: 2024/03/09 13:43:59 by alfgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,11 @@ void	movement_hook_horizontal(t_cube *cube, t_bool is_right)
 		cube->player->pos.x += delta.x;
 		cube->player->pos.y += delta.y;
 	}
-	else
+	else if (!is_right
+		&& !cube->map->map[(int)(pos.x - delta.x)][(int)(pos.y - delta.y)])
 	{
-		if (!cube->map->map[(int)(pos.x - delta.x)][(int)(pos.y)])
-		{
-			cube->player->pos.x -= delta.x;
-			cube->player->pos.y -= delta.y;
-		}
+		cube->player->pos.x -= delta.x;
+		cube->player->pos.y -= delta.y;
 	}
 	draw(cube);
 }
