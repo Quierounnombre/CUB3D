@@ -6,7 +6,7 @@
 /*   By: alfgarci <alfgarci@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 17:52:23 by alfgarci          #+#    #+#             */
-/*   Updated: 2024/03/09 12:26:59 by alfgarci         ###   ########.fr       */
+/*   Updated: 2024/03/09 15:04:51 by alfgarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ t_bool	check_color_floor(char **dump, int lines, t_cube *cube)
 		{
 			found++;
 			split_c = ft_split(split[1], ',');
-			cube->map->floor.r = ft_wrap(ft_atoi(split_c[0]), 0, 255);
-			cube->map->floor.g = ft_wrap(ft_atoi(split_c[1]), 0, 255);
-			cube->map->floor.b = ft_wrap(ft_atoi(split_c[2]), 0, 255);
+			cube->map->floor.r = ft_wrap(ft_atoi(split_c[0]), 0, 256);
+			cube->map->floor.g = ft_wrap(ft_atoi(split_c[1]), 0, 256);
+			cube->map->floor.b = ft_wrap(ft_atoi(split_c[2]), 0, 256);
 			free_split(split_c);
 		}
 		free_split(split);
@@ -57,9 +57,9 @@ t_bool	check_color_ceiller(char **dump, int lines, t_cube *cube)
 		{
 			found++;
 			split_c = ft_split(split[1], ',');
-			cube->map->celing.r = ft_wrap(ft_atoi(split_c[0]), 0, 255);
-			cube->map->celing.g = ft_wrap(ft_atoi(split_c[1]), 0, 255);
-			cube->map->celing.b = ft_wrap(ft_atoi(split_c[2]), 0, 255);
+			cube->map->celing.r = ft_wrap(ft_atoi(split_c[0]), 0, 256);
+			cube->map->celing.g = ft_wrap(ft_atoi(split_c[1]), 0, 256);
+			cube->map->celing.b = ft_wrap(ft_atoi(split_c[2]), 0, 256);
 			free_split(split_c);
 		}
 		free_split(split);
